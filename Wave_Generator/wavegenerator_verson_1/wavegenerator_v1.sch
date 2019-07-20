@@ -1338,17 +1338,6 @@ F 3 "~" H 5300 2250 50  0001 C CNN
 	1    5300 2250
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:GND #PWR0103
-U 1 1 5D8C0155
-P 5500 1150
-F 0 "#PWR0103" H 5500 900 50  0001 C CNN
-F 1 "GND" H 5505 977 50  0000 C CNN
-F 2 "" H 5500 1150 50  0001 C CNN
-F 3 "" H 5500 1150 50  0001 C CNN
-	1    5500 1150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5100 1150 5250 1150
 Wire Wire Line
@@ -1378,24 +1367,8 @@ F 3 "" H 5250 1750 50  0001 C CNN
 	1    5250 1750
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:GND #PWR0105
-U 1 1 5D8F5A55
-P 5450 1750
-F 0 "#PWR0105" H 5450 1500 50  0001 C CNN
-F 1 "GND" H 5550 1800 50  0000 C CNN
-F 2 "" H 5450 1750 50  0001 C CNN
-F 3 "" H 5450 1750 50  0001 C CNN
-	1    5450 1750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5350 1750 5450 1750
-Connection ~ 5450 1750
 Wire Wire Line
 	5650 1450 5650 1900
-Wire Wire Line
-	5350 1150 5500 1150
 Wire Wire Line
 	4350 1100 4350 1200
 Wire Wire Line
@@ -1608,4 +1581,7 @@ Text Notes 2300 6400 2    79   ~ 0
 -5V Inverter
 Wire Wire Line
 	1850 1200 2950 1200
+NoConn ~ 5350 1750
+NoConn ~ 5450 1750
+NoConn ~ 5350 1150
 $EndSCHEMATC
