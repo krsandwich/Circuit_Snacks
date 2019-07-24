@@ -1,4 +1,4 @@
-15955505687531381
+15957070934298381
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -71715,12 +71715,19 @@ varistor SIOV
 2
 2
 wavegenerator_v1
+01x05_pin_header
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+5
+5
+wavegenerator_v1
 01x06_pin_header
 Through hole straight pin header, 1x06, 2.54mm pitch, single row
 Through hole pin header THT 1x06 2.54mm single row
 0
-6
-6
+5
+5
 wavegenerator_v1
 BNC_connector_731000105
 
