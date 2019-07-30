@@ -127,10 +127,10 @@ Wire Wire Line
 Wire Wire Line
 	2050 5000 2050 5100
 $Comp
-L Regulator_Switching:MC33063AD U5
+L Regulator_Switching:MC33063AD U3
 U 1 1 5D1E6E42
 P 1650 5100
-F 0 "U5" H 1650 5567 50  0000 C CNN
+F 0 "U3" H 1650 5567 50  0000 C CNN
 F 1 "MC33063AD" H 1650 5476 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1700 4650 50  0001 L CNN
 F 3 "http://www.onsemi.com/pub_link/Collateral/MC34063A-D.PDF" H 2150 5000 50  0001 C CNN
@@ -527,10 +527,10 @@ Wire Wire Line
 Wire Wire Line
 	6100 4750 6250 4750
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU U1
+L MCU_Microchip_ATmega:ATmega328P-AU U2
 U 1 1 5D258DD6
 P 8600 2300
-F 0 "U1" H 7950 1400 50  0000 C CNN
+F 0 "U2" H 7950 1400 50  0000 C CNN
 F 1 "ATmega328P-AU" H 7750 1300 50  0000 C CNN
 F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 8600 2300 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 8600 2300 50  0001 C CNN
@@ -818,10 +818,10 @@ F 3 "" H 1500 2800 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Regulator_Linear:AP1117-33 U3
+L Regulator_Linear:AP1117-33 U1
 U 1 1 5D2563E2
 P 4250 4800
-F 0 "U3" H 4250 5050 50  0000 C CNN
+F 0 "U1" H 4250 5050 50  0000 C CNN
 F 1 "LinReg" H 4250 4950 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4250 4600 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/lm337-n.pdf" H 4250 4800 50  0001 C CNN
