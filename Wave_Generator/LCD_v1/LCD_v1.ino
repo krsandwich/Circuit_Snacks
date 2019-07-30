@@ -23,13 +23,8 @@ uint8_t mode;
 uint8_t last_button_state;
 uint8_t current_button_state;
 
-char * current_frequency;
-
-float p = 3.1415926;
-
 void setup(void) {
   Serial.begin(57600);
-//  FreqCount.begin(1000);
   
   tft.initR(INITR_144GREENTAB); // Init ST7735R chip, green tab
   pinMode(WS_0, OUTPUT);
@@ -77,26 +72,19 @@ void loop() {
     }
   }
   last_button_state = current_button_state;
-//  if (FreqCount.available()) {
-//    unsigned long count = FreqCount.read();
-//    //tft.fillScreen(ST77XX_BLACK);
-//    sprintf(current_frequency,"%lu",count);
-//    drawfreq(current_frequency, ST77XX_WHITE);
-//  }
- // delay(2000);
     delay(20);
 }
 
 void drawtext(char *text, uint16_t color) {
   tft.setCursor(0, 0);
-  tft.setTextColor(color);
+  tft.setTextColor(color, ST77XX_BLACK );
   tft.setTextWrap(true);
   tft.print(text);
 }
 
 void drawfreq(char *text, uint16_t color) {
   tft.setCursor(0, 100);
-  tft.setTextColor(color);
+  tft.setTextColor(color, ST77XX_BLACK );
   tft.setTextWrap(true);
   tft.print(text);
 }
