@@ -282,10 +282,10 @@ F 8 "Maxim Integrated" H 3350 2400 50  0001 L BNN "Field8"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small_US R5
+L Device:R_Small_US R6
 U 1 1 5D1CCA8A
 P 1550 1600
-F 0 "R5" H 1618 1646 50  0000 L CNN
+F 0 "R6" H 1618 1646 50  0000 L CNN
 F 1 "560" H 1618 1555 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 1550 1600 50  0001 C CNN
 F 3 "~" H 1550 1600 50  0001 C CNN
@@ -340,10 +340,10 @@ Wire Wire Line
 	1850 1150 2000 1150
 Connection ~ 1850 1300
 $Comp
-L Device:R_Small_US R6
+L Device:R_Small_US R7
 U 1 1 5D1DA50B
 P 1900 1900
-F 0 "R6" H 1968 1946 50  0000 L CNN
+F 0 "R7" H 1968 1946 50  0000 L CNN
 F 1 "180k" H 1968 1855 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 1900 1900 50  0001 C CNN
 F 3 "~" H 1900 1900 50  0001 C CNN
@@ -1178,8 +1178,6 @@ Wire Wire Line
 Wire Wire Line
 	2550 1300 2650 1300
 Wire Wire Line
-	2150 1300 2200 1300
-Wire Wire Line
 	1550 1300 1550 1400
 Wire Wire Line
 	1550 1300 1750 1300
@@ -1607,26 +1605,37 @@ Wire Wire Line
 $Comp
 L Device:R_Small_US R4
 U 1 1 5D422A8A
-P 2000 1000
-F 0 "R4" V 1795 1000 50  0000 C CNN
-F 1 "1.42M" V 1886 1000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 2000 1000 50  0001 C CNN
-F 3 "~" H 2000 1000 50  0001 C CNN
-	1    2000 1000
+P 1850 1000
+F 0 "R4" V 1645 1000 50  0000 C CNN
+F 1 "1.3M" V 1736 1000 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 1850 1000 50  0001 C CNN
+F 3 "~" H 1850 1000 50  0001 C CNN
+	1    1850 1000
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2100 1000 2200 1000
-Wire Wire Line
-	2200 1000 2200 1300
-Connection ~ 2200 1300
-Wire Wire Line
-	2200 1300 2350 1300
-Wire Wire Line
-	1900 1000 1750 1000
 Wire Wire Line
 	1750 1000 1750 1300
 Connection ~ 1750 1300
 Wire Wire Line
 	1750 1300 1850 1300
+$Comp
+L Device:R_Small_US R5
+U 1 1 5D47F25A
+P 2150 1000
+F 0 "R5" V 1945 1000 50  0000 C CNN
+F 1 "120k" V 2036 1000 50  0000 C CNN
+F 2 "" H 2150 1000 50  0001 C CNN
+F 3 "~" H 2150 1000 50  0001 C CNN
+	1    2150 1000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2150 1300 2250 1300
+Wire Wire Line
+	2250 1000 2250 1300
+Connection ~ 2250 1300
+Wire Wire Line
+	2250 1300 2350 1300
+Wire Wire Line
+	1950 1000 2050 1000
 $EndSCHEMATC
