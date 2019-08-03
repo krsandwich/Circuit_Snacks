@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:powersupply_version_1 2-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -869,13 +870,9 @@ Wire Wire Line
 Wire Wire Line
 	8050 3600 7950 3600
 Wire Wire Line
-	7950 3600 7950 3950
-Wire Wire Line
 	7600 5350 7500 5350
 Wire Wire Line
 	7500 5350 7500 3950
-Wire Wire Line
-	7500 3950 7950 3950
 Connection ~ 7600 5350
 Wire Wire Line
 	7600 5350 7600 5550
@@ -981,4 +978,60 @@ Wire Wire Line
 Connection ~ 9200 3450
 Wire Wire Line
 	9200 3450 9400 3450
+$Comp
+L power:+5V #PWR?
+U 1 1 5D45F821
+P 8750 4450
+F 0 "#PWR?" H 8750 4300 50  0001 C CNN
+F 1 "+5V" H 8765 4623 50  0000 C CNN
+F 2 "" H 8750 4450 50  0001 C CNN
+F 3 "" H 8750 4450 50  0001 C CNN
+	1    8750 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5D460F2D
+P 8000 4900
+F 0 "#PWR?" H 8000 4650 50  0001 C CNN
+F 1 "GND" H 8005 4727 50  0000 C CNN
+F 2 "" H 8000 4900 50  0001 C CNN
+F 3 "" H 8000 4900 50  0001 C CNN
+	1    8000 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4900 8050 4900
+Wire Wire Line
+	8700 4450 8750 4450
+Wire Wire Line
+	7500 3950 7950 3950
+Wire Wire Line
+	7950 3600 7950 3950
+$Comp
+L power:GND #PWR?
+U 1 1 5D46746E
+P 8050 3750
+F 0 "#PWR?" H 8050 3500 50  0001 C CNN
+F 1 "GND" H 8055 3577 50  0000 C CNN
+F 2 "" H 8050 3750 50  0001 C CNN
+F 3 "" H 8050 3750 50  0001 C CNN
+	1    8050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR?
+U 1 1 5D46A949
+P 8750 3300
+F 0 "#PWR?" H 8750 3150 50  0001 C CNN
+F 1 "+5V" H 8765 3473 50  0000 C CNN
+F 2 "" H 8750 3300 50  0001 C CNN
+F 3 "" H 8750 3300 50  0001 C CNN
+	1    8750 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 3300 8750 3300
+Text Label 8700 3750 0    50   ~ 0
+mayhavetogroundthese
 $EndSCHEMATC
