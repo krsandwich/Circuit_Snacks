@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:wavegenerator_v1-cache
+LIBS:wavegenerator-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -168,7 +168,7 @@ U 1 1 5D241E68
 P 5800 4950
 F 0 "J2" H 5857 5417 50  0000 C CNN
 F 1 "USB_B_Micro" H 5857 5326 50  0000 C CNN
-F 2 "wavegenerator_v1:USB_Micro-B_Amphenol_10118194-0001LF_Horizontal" H 5950 4900 50  0001 C CNN
+F 2 "wavegenerator:USB_Micro-B_Amphenol_10118194-0001LF_Horizontal" H 5950 4900 50  0001 C CNN
 F 3 "~" H 5950 4900 50  0001 C CNN
 	1    5800 4950
 	1    0    0    -1  
@@ -253,12 +253,12 @@ F 3 "~" H 950 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wavegenerator_v1:MAX038CPP U4
+L wavegenerator:MAX038CPP U4
 U 1 1 5D1E353F
 P 3350 2400
 F 0 "U4" H 3350 3970 50  0000 C CNN
 F 1 "MAX038CPP" H 3350 3879 50  0000 C CNN
-F 2 "wavegenerator_v1:MAX038CPP-W" H 3350 2400 50  0001 L BNN
+F 2 "wavegenerator:MAX038CPP-W" H 3350 2400 50  0001 L BNN
 F 3 "" H 3350 2400 50  0001 L BNN
 F 4 "MAX038CPP" H 3350 2400 50  0001 L BNN "Field4"
 F 5 "DIP-20 Maxim Integrated" H 3350 2400 50  0001 L BNN "Field5"
@@ -285,7 +285,7 @@ U 1 1 5D1CF8DB
 P 1550 1850
 F 0 "RV2" H 1481 1896 50  0000 R CNN
 F 1 "20k" H 1481 1805 50  0000 R CNN
-F 2 "wavegenerator_v1:Potentiometer_PTV09A" H 1550 1850 50  0001 C CNN
+F 2 "wavegenerator:Potentiometer_PTV09A" H 1550 1850 50  0001 C CNN
 F 3 "~" H 1550 1850 50  0001 C CNN
 	1    1550 1850
 	1    0    0    1   
@@ -316,7 +316,7 @@ U 1 1 5D1D6226
 P 2000 1300
 F 0 "RV1" V 2200 1300 50  0000 R CNN
 F 1 "1M" V 2100 1250 50  0000 R CNN
-F 2 "wavegenerator_v1:Potentiometer_PTV09A" H 2000 1300 50  0001 C CNN
+F 2 "wavegenerator:Potentiometer_PTV09A" H 2000 1300 50  0001 C CNN
 F 3 "~" H 2000 1300 50  0001 C CNN
 	1    2000 1300
 	0    -1   -1   0   
@@ -734,12 +734,12 @@ $EndComp
 Wire Wire Line
 	7800 1100 8000 1100
 $Comp
-L wavegenerator_v1:SP3T_V1 SW3
+L wavegenerator:SP3T SW3
 U 1 1 5D250C2F
 P 1500 2850
 F 0 "SW3" H 1250 2350 50  0000 C CNN
 F 1 "SP3T" H 1250 2450 50  0000 C CNN
-F 2 "wavegenerator_v1:SP3T_OS103011MS8QP1" H 1500 2800 50  0001 C CNN
+F 2 "wavegenerator:SP3T_OS103011MS8QP1" H 1500 2800 50  0001 C CNN
 F 3 "" H 1500 2800 50  0001 C CNN
 	1    1500 2850
 	-1   0    0    1   
@@ -907,12 +907,12 @@ F 3 "~" H 2750 7100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wavegenerator_v1:TFT_LCD MOD1
+L wavegenerator:TFT_LCD MOD1
 U 1 1 5D34C1D1
 P 8600 4400
 F 0 "MOD1" H 9728 3396 50  0000 L CNN
 F 1 "TFT_LCD" H 9728 3305 50  0000 L CNN
-F 2 "wavegenerator_v1:TFT_LCD_ST7735" H 9050 4350 50  0001 C CNN
+F 2 "wavegenerator:TFT_LCD_ST7735" H 9050 4350 50  0001 C CNN
 F 3 "" H 9050 4350 50  0001 C CNN
 	1    8600 4400
 	1    0    0    -1  
@@ -940,18 +940,18 @@ F 3 "" H 4250 5100 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wavegenerator_v1:PinHeaders J1
+L wavegenerator:PinHeaders J1
 U 1 1 5D2280FD
 P 10200 800
 F 0 "J1" H 10100 850 50  0000 C CNN
 F 1 "01x05" H 10100 750 50  0000 C CNN
-F 2 "wavegenerator_v1:01x05_pin_header" H 10200 800 50  0001 C CNN
+F 2 "wavegenerator:01x05_pin_header" H 10200 800 50  0001 C CNN
 F 3 "~" H 10200 800 50  0001 C CNN
 	1    10200 800 
 	-1   0    0    -1  
 $EndComp
 $Comp
-L wavegenerator_v1:1x2Pinheader J4
+L wavegenerator:1x2Pinheader J4
 U 1 1 5D3E4848
 P 5850 2200
 F 0 "J4" H 5800 1700 50  0000 C CNN
@@ -1093,7 +1093,7 @@ U 1 1 5D6293F8
 P 6350 2450
 F 0 "J3" H 6300 2700 50  0000 L CNN
 F 1 "Conn_Coaxial" H 6200 2600 50  0000 L CNN
-F 2 "wavegenerator_v1:BNC_connector_731000105" H 6350 2450 50  0001 C CNN
+F 2 "wavegenerator:BNC_connector_731000105" H 6350 2450 50  0001 C CNN
 F 3 " ~" H 6350 2450 50  0001 C CNN
 	1    6350 2450
 	1    0    0    -1  
@@ -1111,11 +1111,7 @@ Wire Wire Line
 Wire Wire Line
 	1550 1300 1750 1300
 Wire Wire Line
-	4050 3200 4050 2950
-Connection ~ 4050 2950
-Wire Wire Line
 	4050 3500 4050 3650
-Connection ~ 4050 3650
 Wire Wire Line
 	4050 3400 4200 3400
 Connection ~ 4200 3400
@@ -1347,7 +1343,7 @@ U 1 1 5D65F834
 P 4350 2050
 F 0 "RV3" H 4200 2000 50  0000 C CNN
 F 1 "1k" H 4200 2100 50  0000 C CNN
-F 2 "wavegenerator_v1:Potentiometer_PTV09A" H 4350 2050 50  0001 C CNN
+F 2 "wavegenerator:Potentiometer_PTV09A" H 4350 2050 50  0001 C CNN
 F 3 "~" H 4350 2050 50  0001 C CNN
 	1    4350 2050
 	1    0    0    1   
@@ -1574,18 +1570,6 @@ Wire Wire Line
 	4700 1750 4700 1850
 Connection ~ 4700 1850
 Wire Wire Line
-	4050 2950 4050 2700
-Connection ~ 4050 2700
-Wire Wire Line
-	4050 2700 4050 2450
-Connection ~ 4050 3200
-Wire Wire Line
-	2650 3050 2650 3250
-Connection ~ 2650 3450
-Connection ~ 2650 3250
-Wire Wire Line
-	2650 3250 2650 3450
-Wire Wire Line
 	4350 2250 4600 2250
 Wire Wire Line
 	4500 2050 4600 2050
@@ -1603,4 +1587,8 @@ $EndComp
 Connection ~ 4600 2050
 Wire Wire Line
 	4600 2050 4700 2050
+Wire Wire Line
+	4050 2450 4050 3200
+Wire Wire Line
+	2650 3050 2650 3450
 $EndSCHEMATC

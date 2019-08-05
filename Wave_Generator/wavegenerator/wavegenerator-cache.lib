@@ -401,11 +401,11 @@ X GND 1 0 0 0 D 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# wavegenerator_v1_1x2Pinheader
+# wavegenerator_1x2Pinheader
 #
-DEF wavegenerator_v1_1x2Pinheader U 0 40 Y Y 1 F N
+DEF wavegenerator_1x2Pinheader U 0 40 Y Y 1 F N
 F0 "U" 0 150 50 H V C CNN
-F1 "wavegenerator_v1_1x2Pinheader" 0 0 50 H V C CNN
+F1 "wavegenerator_1x2Pinheader" 0 0 50 H V C CNN
 F2 "" 0 150 50 H I C CNN
 F3 "" 0 150 50 H I C CNN
 DRAW
@@ -419,11 +419,11 @@ X ~ 2 200 -350 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# wavegenerator_v1_MAX038CPP
+# wavegenerator_MAX038CPP
 #
-DEF wavegenerator_v1_MAX038CPP U 0 40 Y Y 1 L N
+DEF wavegenerator_MAX038CPP U 0 40 Y Y 1 L N
 F0 "U" -500 1439 50 H V L BNN
-F1 "wavegenerator_v1_MAX038CPP" -500 -1557 50 H V L BNN
+F1 "wavegenerator_MAX038CPP" -500 -1557 50 H V L BNN
 F2 "21-0043D_20" 0 0 50 H I L BNN
 F3 "Ic Gen Waveform Hi-Freq 20-Dip" 0 0 50 H I L BNN
 F4 "MAX038CPP" 0 0 50 H I L BNN
@@ -456,11 +456,11 @@ X GND 9 700 -50 200 L 40 40 0 0 W
 ENDDRAW
 ENDDEF
 #
-# wavegenerator_v1_PinHeaders
+# wavegenerator_PinHeaders
 #
-DEF wavegenerator_v1_PinHeaders U 0 40 Y Y 1 F N
+DEF wavegenerator_PinHeaders U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "wavegenerator_v1_PinHeaders" 0 100 50 H V C CNN
+F1 "wavegenerator_PinHeaders" 0 100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -483,11 +483,11 @@ X ~ 5 200 -550 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# wavegenerator_v1_SP3T_V1
+# wavegenerator_SP3T
 #
-DEF wavegenerator_v1_SP3T_V1 U 0 40 Y Y 1 F N
+DEF wavegenerator_SP3T U 0 40 Y Y 1 F N
 F0 "U" 0 -50 50 H V C CNN
-F1 "wavegenerator_v1_SP3T_V1" 0 50 50 H V C CNN
+F1 "wavegenerator_SP3T" 0 50 50 H V C CNN
 F2 "" 0 -50 50 H I C CNN
 F3 "" 0 -50 50 H I C CNN
 DRAW
@@ -503,11 +503,11 @@ X ~ 4 150 -400 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# wavegenerator_v1_TFT_LCD
+# wavegenerator_TFT_LCD
 #
-DEF wavegenerator_v1_TFT_LCD U 0 40 Y Y 1 F N
+DEF wavegenerator_TFT_LCD U 0 40 Y Y 1 F N
 F0 "U" 450 -50 50 H V C CNN
-F1 "wavegenerator_v1_TFT_LCD" 450 -150 50 H V C CNN
+F1 "wavegenerator_TFT_LCD" 450 -150 50 H V C CNN
 F2 "" 450 -50 50 H I C CNN
 F3 "" 450 -50 50 H I C CNN
 DRAW

@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:powersupply_version_1 2-cache
+LIBS:powersupply-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
@@ -29,7 +29,7 @@ NoConn ~ 1950 1350
 NoConn ~ 1950 1450
 NoConn ~ 1950 1550
 $Comp
-L powersupply_version_1:RFM-0505S U?
+L powersupply:RFM-0505S U?
 U 1 1 5D303F43
 P 2800 900
 F 0 "U?" H 2800 825 50  0000 C CNN
@@ -73,7 +73,7 @@ Wire Wire Line
 Wire Wire Line
 	2550 1150 2550 1200
 $Comp
-L powersupply_version_1:TFT_LCD U?
+L powersupply:TFT_LCD U?
 U 1 1 5D37FF21
 P 5150 4850
 F 0 "U?" H 5828 3596 50  0000 L CNN
@@ -105,7 +105,7 @@ NoConn ~ 4850 7150
 NoConn ~ 19450 10300
 NoConn ~ 25200 10700
 $Comp
-L powersupply_version_1:MC33063AP1 U?
+L powersupply:MC33063AP1 U?
 U 1 1 5D455E56
 P 5900 1400
 F 0 "U?" H 5900 1515 50  0000 C CNN
@@ -551,7 +551,7 @@ Connection ~ 1300 6250
 Text Label 3000 5300 0    50   ~ 0
 Ref_Amustfigureoutwhattodowiththis
 $Comp
-L powersupply_version_1:LM358P U?
+L powersupply:LM358P U?
 U 1 1 5D4A8FA5
 P 8400 3150
 F 0 "U?" H 8375 3265 50  0000 C CNN
@@ -562,7 +562,7 @@ F 3 "" H 8400 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L powersupply_version_1:LM358P U?
+L powersupply:LM358P U?
 U 1 1 5D4AA099
 P 8400 4300
 F 0 "U?" H 8375 4415 50  0000 C CNN
@@ -872,7 +872,7 @@ Wire Wire Line
 	10200 5550 10200 4900
 Connection ~ 9700 5550
 $Comp
-L powersupply_version_1:1x2Pinheader U?
+L powersupply:1x2Pinheader U?
 U 1 1 5D48A8A7
 P 10850 3850
 F 0 "U?" V 10862 3688 50  0000 L CNN

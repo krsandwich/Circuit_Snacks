@@ -367,11 +367,11 @@ X VCC 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# powersupply_version_1_1x2Pinheader
+# powersupply_1x2Pinheader
 #
-DEF powersupply_version_1_1x2Pinheader U 0 40 Y Y 1 F N
+DEF powersupply_1x2Pinheader U 0 40 Y Y 1 F N
 F0 "U" 0 150 50 H V C CNN
-F1 "powersupply_version_1_1x2Pinheader" 0 0 50 H V C CNN
+F1 "powersupply_1x2Pinheader" 0 0 50 H V C CNN
 F2 "" 0 150 50 H I C CNN
 F3 "" 0 150 50 H I C CNN
 DRAW
@@ -385,11 +385,11 @@ X ~ 2 200 -350 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# powersupply_version_1_LM358P
+# powersupply_LM358P
 #
-DEF powersupply_version_1_LM358P U 0 40 Y Y 1 F N
+DEF powersupply_LM358P U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "powersupply_version_1_LM358P" 0 100 50 H V C CNN
+F1 "powersupply_LM358P" 0 100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -405,11 +405,11 @@ X In2+ 8 300 -600 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# powersupply_version_1_MC33063AP1
+# powersupply_MC33063AP1
 #
-DEF powersupply_version_1_MC33063AP1 U 0 40 Y Y 1 F N
+DEF powersupply_MC33063AP1 U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "powersupply_version_1_MC33063AP1" 0 100 50 H V C CNN
+F1 "powersupply_MC33063AP1" 0 100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -425,11 +425,11 @@ X ~ 8 250 -150 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
-# powersupply_version_1_RFM-0505S
+# powersupply_RFM-0505S
 #
-DEF powersupply_version_1_RFM-0505S U 0 40 Y Y 1 F N
+DEF powersupply_RFM-0505S U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "powersupply_version_1_RFM-0505S" 0 -100 50 H V C CNN
+F1 "powersupply_RFM-0505S" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
@@ -441,11 +441,11 @@ X +Vout 4 250 -600 100 L 50 50 1 1 O
 ENDDRAW
 ENDDEF
 #
-# powersupply_version_1_TFT_LCD
+# powersupply_TFT_LCD
 #
-DEF powersupply_version_1_TFT_LCD U 0 40 Y Y 1 F N
+DEF powersupply_TFT_LCD U 0 40 Y Y 1 F N
 F0 "U" 0 0 50 H V C CNN
-F1 "powersupply_version_1_TFT_LCD" 0 -100 50 H V C CNN
+F1 "powersupply_TFT_LCD" 0 -100 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name wavegenerator_v1)(type KiCad)(uri ${KIPRJMOD}/wavegenerator_v1.pretty)(options "")(descr ""))
-)
