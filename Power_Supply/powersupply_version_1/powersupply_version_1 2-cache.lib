@@ -367,6 +367,24 @@ X VCC 1 0 0 0 U 50 50 1 1 W N
 ENDDRAW
 ENDDEF
 #
+# powersupply_version_1_1x2Pinheader
+#
+DEF powersupply_version_1_1x2Pinheader U 0 40 Y Y 1 F N
+F0 "U" 0 150 50 H V C CNN
+F1 "powersupply_version_1_1x2Pinheader" 0 0 50 H V C CNN
+F2 "" 0 150 50 H I C CNN
+F3 "" 0 150 50 H I C CNN
+DRAW
+S -100 -200 0 -400 0 1 0 f
+S 34 -345 0 -355 1 1 6 F
+S 34 -245 0 -255 1 1 6 F
+P 2 1 1 6 50 -350 34 -350 N
+P 2 1 1 6 50 -250 34 -250 N
+X ~ 1 200 -250 150 L 50 50 1 1 P
+X ~ 2 200 -350 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # powersupply_version_1_LM358P
 #
 DEF powersupply_version_1_LM358P U 0 40 Y Y 1 F N
@@ -404,24 +422,6 @@ X ~ 5 250 -900 100 L 50 50 1 1 I
 X ~ 6 250 -650 100 L 50 50 1 1 I
 X ~ 7 250 -400 100 L 50 50 1 1 I
 X ~ 8 250 -150 100 L 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# powersupply_version_1_MCP4706
-#
-DEF powersupply_version_1_MCP4706 U 0 40 Y Y 1 F N
-F0 "U" 0 0 50 H V C CNN
-F1 "powersupply_version_1_MCP4706" 0 -100 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-S 450 -850 -200 -150 0 1 0 f
-X Vout 1 -300 -300 100 R 50 50 1 1 O
-X VSS 2 -300 -500 100 R 50 50 1 1 I
-X VDD 3 -300 -700 100 R 50 50 1 1 I
-X SDA 4 550 -700 100 L 50 50 1 1 I
-X SCL 5 550 -500 100 L 50 50 1 1 I
-X Vref 6 550 -300 100 L 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
