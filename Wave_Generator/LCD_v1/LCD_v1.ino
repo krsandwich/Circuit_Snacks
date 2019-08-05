@@ -30,34 +30,14 @@ boolean isCount;
 
 char str[6];
 
-
-void init_pins(){
-   pinMode(WS_0, OUTPUT);
-  pinMode(WS_1, OUTPUT);
-  digitalWrite(WS_0, LOW);
-  digitalWrite(WS_1, LOW);
-  
-  pinMode(TFT_CS, OUTPUT);
-  pinMode(TFT_DC, OUTPUT);
-  pinMode(TFT_RST, OUTPUT);
-  pinMode(MOSI, OUTPUT);
-  pinMode(SCK, OUTPUT);
-  
-  pinMode(BUTTON, INPUT_PULLUP);
-
-}
-
-
 void setup(void) {
   Serial.begin(57600);
-  FreqMeasure.begin();
   init_pins();
   isCount = true;
   FreqCount.begin(100);
   tft.initR(INITR_144GREENTAB); // Init ST7735R chip, green tab
   tft.setRotation(1);
   tft.fillScreen(ST77XX_BLACK);
-  //tft.setFont(&FreeMono12pt7b);
   tft.setTextSize(2);
   drawSquare(ST77XX_CYAN);
 }
@@ -101,14 +81,12 @@ void loop() {
     if (FreqCount.available()) {
       count = FreqCount.read();
       count *= 10;
-      if(count <= 1000){
+      if(count < 1000){
         isCount = false;
         FreqCount.end();
         FreqMeasure.begin();
-        drawScreen(count);
-      }else{
-        drawScreen(count);
       }
+      drawScreen(count);
     }
   }else{
      if (FreqMeasure.available()) {
@@ -118,10 +96,8 @@ void loop() {
           isCount = true;
           FreqMeasure.end();
           FreqCount.begin(100);
-          drawScreen(frequency);
-        }else{
-          drawScreen(frequency);
         }
+        drawScreen(frequency);
     }
   }
 }
@@ -174,12 +150,10 @@ void drawTriangle(uint16_t color){
 }
 
 void drawScreen(double input){
-  // put your main code here, to run repeatedly:
-    //tft.fillRect(60, 35, 20,20,ST77XX_BLACK);
     if(input >= 1000000.) {
       drawtext("MHz", ST77XX_WHITE, 85, 30);
       dtostrf(input / 1000000., 5, 2, str);
-      drawtext(str, ST77XX_WHITE, 10, 20);
+      drawtext(str, ST77XX_WHITE, 10, 30);
     }
     else if(input >= 1000.) {
       drawtext("KHz", ST77XX_WHITE, 85, 30);
@@ -191,4 +165,20 @@ void drawScreen(double input){
       dtostrf(input, 5, 2, str);
       drawtext(str, ST77XX_WHITE, 10, 30);
   }
+}
+
+void init_pins(){
+  pinMode(WS_0, OUTPUT);
+  pinMode(WS_1, OUTPUT);
+  digitalWrite(WS_0, LOW);
+  digitalWrite(WS_1, LOW);
+  
+  pinMode(TFT_CS, OUTPUT);
+  pinMode(TFT_DC, OUTPUT);
+  pinMode(TFT_RST, OUTPUT);
+  pinMode(MOSI, OUTPUT);
+  pinMode(SCK, OUTPUT);
+  
+  pinMode(BUTTON, INPUT_PULLUP);
+
 }
