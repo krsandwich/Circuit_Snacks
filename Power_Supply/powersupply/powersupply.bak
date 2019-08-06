@@ -246,8 +246,6 @@ F 3 "" H 5250 2250 50  0001 C CNN
 $EndComp
 Text Label 5100 2650 2    50   ~ 0
 Boost_out
-Text Label 6600 2050 0    50   ~ 0
-Boost_in
 Text Label 3000 4050 0    50   ~ 0
 DAC
 $Comp
@@ -1190,4 +1188,17 @@ Wire Wire Line
 Connection ~ 3100 4250
 Wire Wire Line
 	3550 4250 3700 4250
+$Comp
+L power:+5V #PWR?
+U 1 1 5D5B38BD
+P 6800 2050
+F 0 "#PWR?" H 6800 1900 50  0001 C CNN
+F 1 "+5V" H 6815 2223 50  0000 C CNN
+F 2 "" H 6800 2050 50  0001 C CNN
+F 3 "" H 6800 2050 50  0001 C CNN
+	1    6800 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2050 6800 2050
 $EndSCHEMATC

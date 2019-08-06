@@ -320,17 +320,6 @@ F 3 "" H 8400 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L powersupply:LM358P U?
-U 1 1 5D4AA099
-P 8400 4300
-F 0 "U?" H 8375 4415 50  0000 C CNN
-F 1 "LM358P" H 8375 4324 50  0000 C CNN
-F 2 "" H 8400 4300 50  0001 C CNN
-F 3 "" H 8400 4300 50  0001 C CNN
-	1    8400 4300
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R_Small_US R?
 U 1 1 5D4AC3D3
 P 7400 3350
@@ -403,17 +392,6 @@ F 3 "~" H 7800 5500 50  0001 C CNN
 	1    7800 5500
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:R_Small_US R?
-U 1 1 5D4C174A
-P 8450 5600
-F 0 "R?" V 8650 5600 50  0000 C CNN
-F 1 "100" V 8550 5600 50  0000 C CNN
-F 2 "" H 8450 5600 50  0001 C CNN
-F 3 "~" H 8450 5600 50  0001 C CNN
-	1    8450 5600
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	8050 3600 7950 3600
 Text Label 7400 3250 2    50   ~ 0
@@ -470,8 +448,6 @@ Wire Wire Line
 	9400 4650 9050 4650
 Wire Wire Line
 	9050 4650 9050 5100
-Wire Wire Line
-	9050 5100 7900 5100
 Wire Wire Line
 	7900 5100 7900 4750
 Wire Wire Line
@@ -744,11 +720,6 @@ Wire Wire Line
 	8700 3750 8700 3600
 Connection ~ 8700 3750
 Connection ~ 8700 3600
-Wire Wire Line
-	8700 4600 8700 4750
-Wire Wire Line
-	8700 4900 8700 4750
-Connection ~ 8700 4750
 $Comp
 L power:GND #PWR?
 U 1 1 5D4B109A
@@ -760,7 +731,6 @@ F 3 "" H 8700 4900 50  0001 C CNN
 	1    8700 4900
 	1    0    0    -1  
 $EndComp
-Connection ~ 8700 4900
 $Comp
 L Device:L_Small L?
 U 1 1 5D4B1E6E
@@ -837,12 +807,6 @@ Wire Wire Line
 	7500 3950 7500 5600
 Wire Wire Line
 	7500 5600 7800 5600
-Connection ~ 7800 5600
-Wire Wire Line
-	7800 5600 8350 5600
-Wire Wire Line
-	8550 5600 9200 5600
-Connection ~ 9200 5600
 Wire Wire Line
 	10200 4900 10200 5600
 Wire Wire Line
@@ -1201,4 +1165,25 @@ F 3 "" H 6800 2050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6600 2050 6800 2050
+Connection ~ 9200 5600
+Wire Wire Line
+	8550 5600 9200 5600
+Connection ~ 7800 5600
+Wire Wire Line
+	7800 5600 8350 5600
+Wire Wire Line
+	9050 5100 7900 5100
+$Comp
+L Device:R_Small_US R?
+U 1 1 5D4C174A
+P 8450 5600
+F 0 "R?" V 8650 5600 50  0000 C CNN
+F 1 "100" V 8550 5600 50  0000 C CNN
+F 2 "" H 8450 5600 50  0001 C CNN
+F 3 "~" H 8450 5600 50  0001 C CNN
+	1    8450 5600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8700 4600 8700 4900
 $EndSCHEMATC
