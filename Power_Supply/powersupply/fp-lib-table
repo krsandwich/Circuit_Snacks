@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name powersupply)(type KiCad)(uri ${KIPRJMOD}/powersupply.pretty)(options "")(descr ""))
+)
