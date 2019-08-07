@@ -1005,13 +1005,13 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x02 U9
 U 1 1 5D48A8A7
-P 10300 4450
-F 0 "U9" H 10200 3850 50  0000 L CNN
-F 1 "1x2" H 10200 3950 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 10300 4600 50  0001 C CNN
-F 3 "" H 10300 4600 50  0001 C CNN
-	1    10300 4450
-	-1   0    0    1   
+P 10300 4350
+F 0 "U9" H 10200 3750 50  0000 L CNN
+F 1 "1x2" H 10200 3850 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 10300 4500 50  0001 C CNN
+F 3 "" H 10300 4500 50  0001 C CNN
+	1    10300 4350
+	-1   0    0    -1  
 $EndComp
 Connection ~ 9900 3750
 Text Label 10500 5050 2    50   ~ 0
@@ -1074,8 +1074,6 @@ Wire Wire Line
 Wire Wire Line
 	10850 3750 10850 4350
 Connection ~ 10500 3750
-Wire Wire Line
-	10850 4450 10850 5050
 Wire Wire Line
 	10850 5050 10500 5050
 Connection ~ 10500 5050
@@ -1277,13 +1275,13 @@ Connection ~ 3850 1250
 $Comp
 L Connector_Generic:Conn_01x02 U8
 U 1 1 5D4A34EF
-P 10650 4450
-F 0 "U8" H 10550 3850 50  0000 L CNN
-F 1 "1x2" H 10550 3950 50  0000 L CNN
-F 2 "powersupply:Banana Sockets" H 10650 4600 50  0001 C CNN
-F 3 "" H 10650 4600 50  0001 C CNN
-	1    10650 4450
-	-1   0    0    1   
+P 10650 4350
+F 0 "U8" H 10550 3750 50  0000 L CNN
+F 1 "1x2" H 10550 3850 50  0000 L CNN
+F 2 "powersupply:Banana Sockets" H 10650 4500 50  0001 C CNN
+F 3 "" H 10650 4500 50  0001 C CNN
+	1    10650 4350
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	3000 4250 3450 4250
@@ -1497,4 +1495,6 @@ F 3 "~" H 5900 3300 50  0001 C CNN
 	1    5900 3300
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	10850 4450 10850 5050
 $EndSCHEMATC
