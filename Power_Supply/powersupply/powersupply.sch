@@ -171,7 +171,7 @@ F 3 "" H 7400 3650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 7400 3250 2    50   ~ 0
-Vlim
+V_lin_ctrl
 Wire Wire Line
 	8050 2900 8050 3300
 $Comp
@@ -1056,10 +1056,7 @@ Wire Wire Line
 Wire Wire Line
 	9050 3750 9050 4100
 Wire Wire Line
-	9700 3250 9700 3650
-Wire Wire Line
 	9700 3650 9700 3750
-Connection ~ 9700 3650
 $Comp
 L power:+5V #PWR0113
 U 1 1 5D5B3C67
