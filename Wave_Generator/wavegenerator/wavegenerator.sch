@@ -68,10 +68,10 @@ F 3 "~" H 1500 5900 50  0001 C CNN
 $EndComp
 Connection ~ 1650 5800
 $Comp
-L Device:D_Zener_Small D1
+L Device:D_Zener_Small D101
 U 1 1 5D1C049C
 P 2700 5600
-F 0 "D1" V 2654 5668 50  0000 L CNN
+F 0 "D101" V 2654 5668 50  0000 L CNN
 F 1 "1N5819" V 2745 5668 50  0000 L CNN
 F 2 "Diode_SMD:D_SOD-123" V 2700 5600 50  0001 C CNN
 F 3 "~" V 2700 5600 50  0001 C CNN
@@ -79,10 +79,10 @@ F 3 "~" V 2700 5600 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:L_Core_Iron L1
+L Device:L_Core_Iron L101
 U 1 1 5D1C1934
 P 3100 5650
-F 0 "L1" H 3188 5696 50  0000 L CNN
+F 0 "L101" H 3188 5696 50  0000 L CNN
 F 1 "82uH" H 3188 5605 50  0000 L CNN
 F 2 "Inductor_SMD:L_7.3x7.3_H3.5" H 3100 5650 50  0001 C CNN
 F 3 "~" H 3100 5650 50  0001 C CNN
@@ -114,10 +114,10 @@ Wire Wire Line
 Wire Wire Line
 	2050 5000 2050 5100
 $Comp
-L Regulator_Switching:MC33063AD U3
+L Regulator_Switching:MC33063AD U102
 U 1 1 5D1E6E42
 P 1650 5100
-F 0 "U3" H 1650 5567 50  0000 C CNN
+F 0 "U102" H 1650 5567 50  0000 C CNN
 F 1 "MC33063AD" H 1650 5476 50  0000 C CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 1700 4650 50  0001 L CNN
 F 3 "http://www.onsemi.com/pub_link/Collateral/MC34063A-D.PDF" H 2150 5000 50  0001 C CNN
@@ -210,10 +210,10 @@ F 3 "" H 10000 1350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C8
+L Device:C_Small C6
 U 1 1 5D379378
 P 800 2150
-F 0 "C8" H 892 2196 50  0000 L CNN
+F 0 "C6" H 892 2196 50  0000 L CNN
 F 1 "470pF" H 892 2105 50  0000 L CNN
 F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 800 2150 50  0001 C CNN
 F 3 "~" H 800 2150 50  0001 C CNN
@@ -231,10 +231,10 @@ Wire Wire Line
 Wire Wire Line
 	1350 2650 1300 2650
 $Comp
-L Device:C_Small C10
+L Device:C_Small C8
 U 1 1 5D37A6B1
 P 1300 2900
-F 0 "C10" H 1392 2946 50  0000 L CNN
+F 0 "C8" H 1392 2946 50  0000 L CNN
 F 1 "4.7uF" H 1392 2855 50  0000 L CNN
 F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 1300 2900 50  0001 C CNN
 F 3 "~" H 1300 2900 50  0001 C CNN
@@ -242,10 +242,10 @@ F 3 "~" H 1300 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C9
+L Device:C_Small C7
 U 1 1 5D379EFA
 P 950 2700
-F 0 "C9" H 1042 2746 50  0000 L CNN
+F 0 "C7" H 1042 2746 50  0000 L CNN
 F 1 "47nF" H 1042 2655 50  0000 L CNN
 F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 950 2700 50  0001 C CNN
 F 3 "~" H 950 2700 50  0001 C CNN
@@ -253,10 +253,10 @@ F 3 "~" H 950 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wavegenerator:MAX038CPP U4
+L wavegenerator:MAX038CPP U2
 U 1 1 5D1E353F
 P 3350 2400
-F 0 "U4" H 3350 3970 50  0000 C CNN
+F 0 "U2" H 3350 3970 50  0000 C CNN
 F 1 "MAX038CPP" H 3350 3879 50  0000 C CNN
 F 2 "wavegenerator:MAX038CPP-W" H 3350 2400 50  0001 L BNN
 F 3 "" H 3350 2400 50  0001 L BNN
@@ -372,10 +372,10 @@ F 3 "~" H 4200 1100 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C_Small C11
+L Device:C_Small C9
 U 1 1 5D2356A9
 P 1100 1500
-F 0 "C11" H 1192 1546 50  0000 L CNN
+F 0 "C9" H 1192 1546 50  0000 L CNN
 F 1 "1uF" H 1192 1455 50  0000 L CNN
 F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 1100 1500 50  0001 C CNN
 F 3 "~" H 1100 1500 50  0001 C CNN
@@ -394,10 +394,10 @@ F 3 "" H 1100 1600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C_Small C6
+L Device:C_Small C5
 U 1 1 5D248DFE
 P 4450 3400
-F 0 "C6" V 4650 3400 50  0000 C CNN
+F 0 "C5" V 4650 3400 50  0000 C CNN
 F 1 "1uF" V 4550 3400 50  0000 C CNN
 F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4450 3400 50  0001 C CNN
 F 3 "~" H 4450 3400 50  0001 C CNN
@@ -512,10 +512,10 @@ Wire Wire Line
 Wire Wire Line
 	6100 4750 6250 4750
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU U2
+L MCU_Microchip_ATmega:ATmega328P-AU U1
 U 1 1 5D258DD6
 P 8600 2300
-F 0 "U2" H 7950 1400 50  0000 C CNN
+F 0 "U1" H 7950 1400 50  0000 C CNN
 F 1 "ATmega328P-AU" H 7750 1300 50  0000 C CNN
 F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 8600 2300 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 8600 2300 50  0001 C CNN
@@ -637,10 +637,10 @@ F 3 "~" H 10250 2800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Crystal_Small Y1
+L Device:Crystal_Small Y101
 U 1 1 5D264732
 P 9400 1800
-F 0 "Y1" V 9450 1700 39  0000 R CNN
+F 0 "Y101" V 9450 1700 39  0000 R CNN
 F 1 "16MHz" V 9400 1750 39  0000 R CNN
 F 2 "Crystal:Crystal_SMD_ECS_CSM3X-2Pin_7.6x4.1mm" H 9400 1800 50  0001 C CNN
 F 3 "~" H 9400 1800 50  0001 C CNN
@@ -745,10 +745,10 @@ F 3 "" H 1500 2800 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Regulator_Linear:AP1117-33 U1
+L Regulator_Linear:AP1117-33 U101
 U 1 1 5D2563E2
 P 4250 4800
-F 0 "U1" H 4250 5050 50  0000 C CNN
+F 0 "U101" H 4250 5050 50  0000 C CNN
 F 1 "AZ1117E-3.3" H 4250 4950 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 4250 4600 50  0001 C CIN
 F 3 "http://www.ti.com/lit/ds/symlink/lm337-n.pdf" H 4250 4800 50  0001 C CNN
@@ -1440,53 +1440,14 @@ F 3 "~" H 4700 1950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4350 1850
-$Comp
-L Device:C_Small C5
-U 1 1 5D571033
-P 4200 1300
-F 0 "C5" V 4300 1300 50  0000 C CNN
-F 1 "10nF" V 4400 1300 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4200 1300 50  0001 C CNN
-F 3 "~" H 4200 1300 50  0001 C CNN
-	1    4200 1300
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	4050 1100 4050 1300
-Wire Wire Line
-	4050 1300 4100 1300
-Wire Wire Line
-	4300 1300 4400 1300
-Wire Wire Line
-	4400 1300 4400 1100
 Wire Wire Line
 	4400 1100 4300 1100
-Connection ~ 4400 1300
-Wire Wire Line
-	4400 1300 4400 1350
-$Comp
-L Device:C_Small C7
-U 1 1 5D5888D6
-P 4450 3600
-F 0 "C7" V 4550 3600 50  0000 C CNN
-F 1 "10nF" V 4650 3600 50  0000 C CNN
-F 2 "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm" H 4450 3600 50  0001 C CNN
-F 3 "~" H 4450 3600 50  0001 C CNN
-	1    4450 3600
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4200 3400 4350 3400
-Wire Wire Line
-	4350 3400 4350 3600
-Connection ~ 4350 3400
-Wire Wire Line
-	4550 3600 4650 3600
 Wire Wire Line
 	4550 3400 4650 3400
 Wire Wire Line
 	4650 3400 4650 3600
-Connection ~ 4650 3600
 Wire Wire Line
 	4350 1850 4700 1850
 Wire Wire Line
@@ -1591,4 +1552,6 @@ Wire Wire Line
 	4050 2450 4050 3200
 Wire Wire Line
 	2650 3050 2650 3450
+Wire Wire Line
+	4400 1100 4400 1350
 $EndSCHEMATC
