@@ -236,10 +236,10 @@ V_boost_ctrl
 Text Label 2400 5200 0    50   ~ 0
 SDA
 $Comp
-L powersupply:TFT_OLED U4
+L powersupply:TFT_OLED MOD1
 U 1 1 5D37FF21
 P 2050 6700
-F 0 "U4" H 2000 6700 50  0000 L CNN
+F 0 "MOD1" H 2000 6700 50  0000 L CNN
 F 1 "TFT_OLED" H 1900 6550 50  0000 L CNN
 F 2 "powersupply:TFT_OLED_display" H 2050 6700 50  0001 C CNN
 F 3 "" H 2050 6700 50  0001 C CNN
@@ -1044,10 +1044,10 @@ up
 Wire Wire Line
 	2750 950  3050 950 
 $Comp
-L Connector_Generic:Conn_01x02 U8
+L Connector_Generic:Conn_01x02 J4
 U 1 1 5D4A34EF
 P 10650 4350
-F 0 "U8" H 10600 4000 50  0000 L CNN
+F 0 "J4" H 10600 4000 50  0000 L CNN
 F 1 "1x2" H 10600 4100 50  0000 L CNN
 F 2 "powersupply:Banana Sockets" H 10650 4500 50  0001 C CNN
 F 3 "" H 10650 4500 50  0001 C CNN
