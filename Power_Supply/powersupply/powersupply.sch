@@ -393,13 +393,13 @@ F 3 "" H 5000 6800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 2400 4200 0    50   ~ 0
-up
+center
 Text Label 2400 4400 0    50   ~ 0
 left
 Text Label 2400 4600 0    50   ~ 0
 down
 Text Label 2400 4000 0    50   ~ 0
-center
+right
 Text Label 4550 7100 2    50   ~ 0
 up
 Text Label 4550 7250 2    50   ~ 0
@@ -1040,7 +1040,7 @@ Wire Wire Line
 	3000 7500 3200 7500
 Connection ~ 3000 7500
 Text Label 2400 4800 0    50   ~ 0
-right
+up
 Wire Wire Line
 	2750 950  3050 950 
 $Comp
@@ -1106,7 +1106,7 @@ U 1 1 5D4B6929
 P 10050 800
 F 0 "TP3" H 9992 826 50  0000 R CNN
 F 1 "+3.3" H 9992 917 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10250 800 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 10250 800 50  0001 C CNN
 F 3 "~" H 10250 800 50  0001 C CNN
 	1    10050 800 
 	-1   0    0    1   
@@ -1117,7 +1117,7 @@ U 1 1 5D4B73A5
 P 10550 800
 F 0 "TP2" H 10492 826 50  0000 R CNN
 F 1 "+5_isolated" H 10492 917 50  0000 R CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10750 800 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 10750 800 50  0001 C CNN
 F 3 "~" H 10750 800 50  0001 C CNN
 	1    10550 800 
 	-1   0    0    1   
@@ -1128,7 +1128,7 @@ U 1 1 5D4B7B24
 P 10600 1650
 F 0 "TP1" H 10658 1768 50  0000 L CNN
 F 1 "Boost_out" H 10658 1677 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10800 1650 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 10800 1650 50  0001 C CNN
 F 3 "~" H 10800 1650 50  0001 C CNN
 	1    10600 1650
 	1    0    0    -1  
@@ -1139,7 +1139,7 @@ U 1 1 5D4B85BC
 P 9550 1400
 F 0 "TP4" H 9608 1518 50  0000 L CNN
 F 1 "Current_limit" H 9608 1427 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 9750 1400 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 9750 1400 50  0001 C CNN
 F 3 "~" H 9750 1400 50  0001 C CNN
 	1    9550 1400
 	1    0    0    -1  
@@ -1154,7 +1154,7 @@ U 1 1 5D4BBCE8
 P 9550 1650
 F 0 "TP5" H 9608 1768 50  0000 L CNN
 F 1 "Voltage_limit" H 9608 1677 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 9750 1650 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 9750 1650 50  0001 C CNN
 F 3 "~" H 9750 1650 50  0001 C CNN
 	1    9550 1650
 	1    0    0    -1  
@@ -1169,7 +1169,7 @@ U 1 1 5D4BF42E
 P 10600 1400
 F 0 "TP6" H 10658 1518 50  0000 L CNN
 F 1 "Boost_ctrl" H 10658 1427 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 10800 1400 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 10800 1400 50  0001 C CNN
 F 3 "~" H 10800 1400 50  0001 C CNN
 	1    10600 1400
 	1    0    0    -1  
@@ -1184,7 +1184,7 @@ U 1 1 5D4C0DDA
 P 9550 850
 F 0 "TP7" H 9608 968 50  0000 L CNN
 F 1 "GND" H 9608 877 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x01_P2.54mm_Vertical" H 9750 850 50  0001 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 9750 850 50  0001 C CNN
 F 3 "~" H 9750 850 50  0001 C CNN
 	1    9550 850 
 	1    0    0    -1  
@@ -1291,12 +1291,12 @@ Wire Wire Line
 $Comp
 L power:+3.3V #PWR07
 U 1 1 5D56EC9F
-P 1200 7500
-F 0 "#PWR07" H 1200 7350 50  0001 C CNN
-F 1 "+3.3V" H 1050 7550 50  0000 C CNN
-F 2 "" H 1200 7500 50  0001 C CNN
-F 3 "" H 1200 7500 50  0001 C CNN
-	1    1200 7500
+P 950 7500
+F 0 "#PWR07" H 950 7350 50  0001 C CNN
+F 1 "+3.3V" H 800 7550 50  0000 C CNN
+F 2 "" H 950 7500 50  0001 C CNN
+F 3 "" H 950 7500 50  0001 C CNN
+	1    950  7500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1324,17 +1324,6 @@ F 3 "" H 750 6850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR06
-U 1 1 5D56D783
-P 1200 7100
-F 0 "#PWR06" H 1200 6850 50  0001 C CNN
-F 1 "GND" H 1050 7000 50  0000 C CNN
-F 2 "" H 1200 7100 50  0001 C CNN
-F 3 "" H 1200 7100 50  0001 C CNN
-	1    1200 7100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Connector:TestPoint TP11
 U 1 1 5D59533A
 P 700 7650
@@ -1345,7 +1334,6 @@ F 3 "~" H 900 7650 50  0001 C CNN
 	1    700  7650
 	1    0    0    -1  
 $EndComp
-Connection ~ 1200 7500
 $Comp
 L Connector:TestPoint TP10
 U 1 1 5D5A6880
@@ -1357,7 +1345,6 @@ F 3 "~" H 1400 7500 50  0001 C CNN
 	1    1200 7500
 	-1   0    0    1   
 $EndComp
-Connection ~ 1200 7100
 $Comp
 L Connector:TestPoint TP9
 U 1 1 5D59F280
@@ -1374,7 +1361,7 @@ L Connector:TestPoint TP8
 U 1 1 5D58A893
 P 750 6850
 F 0 "TP8" H 692 6876 50  0001 R CNN
-F 1 "pin_1_alt" H 692 6967 50  0000 R CNN
+F 1 "pin_1_alt" H 900 6650 50  0000 R CNN
 F 2 "powersupply:pads" H 950 6850 50  0001 C CNN
 F 3 "~" H 950 6850 50  0001 C CNN
 	1    750  6850
@@ -1457,7 +1444,7 @@ L Device:R_Small_US R18
 U 1 1 5D62CB9E
 P 3350 900
 F 0 "R18" H 3418 946 50  0000 L CNN
-F 1 "300" H 3418 855 50  0000 L CNN
+F 1 "560" H 3418 855 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 3350 900 50  0001 C CNN
 F 3 "~" H 3350 900 50  0001 C CNN
 	1    3350 900 
@@ -1573,4 +1560,45 @@ Wire Wire Line
 	8500 2900 9200 2900
 Wire Wire Line
 	10850 4450 10850 4800
+$Comp
+L power:GND #PWR06
+U 1 1 5D56D783
+P 950 7100
+F 0 "#PWR06" H 950 6850 50  0001 C CNN
+F 1 "GND" H 800 7000 50  0000 C CNN
+F 2 "" H 950 7100 50  0001 C CNN
+F 3 "" H 950 7100 50  0001 C CNN
+	1    950  7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP12
+U 1 1 5D59450B
+P 950 7100
+F 0 "TP12" H 1008 7218 50  0001 L CNN
+F 1 "Pad1_default" H 1050 7000 50  0000 L CNN
+F 2 "powersupply:pads" H 1150 7100 50  0001 C CNN
+F 3 "~" H 1150 7100 50  0001 C CNN
+	1    950  7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 7100 950  7100
+Connection ~ 1200 7100
+Connection ~ 950  7100
+$Comp
+L Connector:TestPoint TP13
+U 1 1 5D5A2114
+P 950 7500
+F 0 "TP13" H 892 7526 50  0001 R CNN
+F 1 "TestPoint" H 892 7617 50  0001 R CNN
+F 2 "powersupply:pads" H 1150 7500 50  0001 C CNN
+F 3 "~" H 1150 7500 50  0001 C CNN
+	1    950  7500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1200 7500 950  7500
+Connection ~ 1200 7500
+Connection ~ 950  7500
 $EndSCHEMATC
