@@ -29,10 +29,10 @@ NoConn ~ 1200 1350
 NoConn ~ 1200 1450
 NoConn ~ 1200 1550
 $Comp
-L powersupply:RFM-0505S U3
+L powersupply:RFM-0505S U1
 U 1 1 5D303F43
 P 2400 850
-F 0 "U3" H 2400 775 50  0000 C CNN
+F 0 "U1" H 2400 775 50  0000 C CNN
 F 1 "B0505S-2WR2" H 2400 684 50  0000 C CNN
 F 2 "powersupply:B0505S-2WR2-Isolator" H 2400 850 50  0001 C CNN
 F 3 "" H 2400 850 50  0001 C CNN
@@ -106,10 +106,10 @@ F 3 "" H 6200 1150 50  0001 C CNN
 $EndComp
 Connection ~ 6200 1150
 $Comp
-L powersupply:ATSAMD10D13A-SS U2
+L powersupply:ATSAMD10D13A-SS U102
 U 1 1 5D47B7D4
 P 2100 3450
-F 0 "U2" H 1150 3150 50  0000 C CNN
+F 0 "U102" H 1150 3150 50  0000 C CNN
 F 1 "ATSAMD10D13A-SS" H 1100 3000 50  0000 C CNN
 F 2 "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm" H 2100 2300 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42242-SAM-D10_Datasheet.pdf" H 2100 2550 50  0001 C CNN
@@ -117,10 +117,10 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42242-SAM-D10_Datashe
 	1    0    0    -1  
 $EndComp
 $Comp
-L powersupply:LM358P U7
+L powersupply:LM358P U3
 U 1 1 5D4A8FA5
 P 8600 2500
-F 0 "U7" H 8575 2615 50  0000 C CNN
+F 0 "U3" H 8575 2615 50  0000 C CNN
 F 1 "LM358P" H 8575 2524 50  0000 C CNN
 F 2 "Package_DIP:DIP-8_W7.62mm" H 8600 2500 50  0001 C CNN
 F 3 "" H 8600 2500 50  0001 C CNN
@@ -275,10 +275,10 @@ Wire Wire Line
 Wire Wire Line
 	3150 5250 3150 5400
 $Comp
-L Regulator_Linear:AZ1117-3.3 U1
+L Regulator_Linear:AZ1117-3.3 U101
 U 1 1 5D489A61
 P 5600 1150
-F 0 "U1" H 5600 1392 50  0000 C CNN
+F 0 "U101" H 5600 1392 50  0000 C CNN
 F 1 "AZ1117E-3.3" H 5600 1301 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 5600 1400 50  0001 C CIN
 F 3 "https://www.diodes.com/assets/Datasheets/AZ1117.pdf" H 5600 1150 50  0001 C CNN
@@ -369,10 +369,10 @@ SWCLK
 Text Label 7500 1300 2    50   ~ 0
 SWDIO
 $Comp
-L powersupply:joystick-K1-1506DN-01 U5
+L powersupply:joystick-K1-1506DN-01 U4
 U 1 1 5D4C0110
 P 5750 6400
-F 0 "U5" H 5750 6400 50  0000 C CNN
+F 0 "U4" H 5750 6400 50  0000 C CNN
 F 1 "joystick-K1-1506DN-01" H 5800 6300 50  0000 C CNN
 F 2 "powersupply:K1-1506DN-01_joystick" H 5750 6400 50  0001 C CNN
 F 3 "" H 5750 6400 50  0001 C CNN
@@ -486,10 +486,10 @@ F 3 "~" H 9150 2800 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L powersupply:MC33063AP1 U6
+L powersupply:MC33063AP1 U2
 U 1 1 5D455E56
 P 5750 4100
-F 0 "U6" H 5750 4215 50  0000 C CNN
+F 0 "U2" H 5750 4215 50  0000 C CNN
 F 1 "MC33063AP1" H 5750 4124 50  0000 C CNN
 F 2 "Package_DIP:DIP-8_W7.62mm" H 5750 4100 50  0001 C CNN
 F 3 "" H 5750 4100 50  0001 C CNN
@@ -999,10 +999,10 @@ F 3 "~" H 6700 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D_Schottky_Small D2
+L Device:D_Schottky_Small D3
 U 1 1 5D4E566E
 P 8600 2250
-F 0 "D2" H 8600 2045 50  0000 C CNN
+F 0 "D3" H 8600 2045 50  0000 C CNN
 F 1 "1N5819" H 8600 2136 50  0000 C CNN
 F 2 "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal" V 8600 2250 50  0001 C CNN
 F 3 "~" V 8600 2250 50  0001 C CNN
@@ -1010,10 +1010,10 @@ F 3 "~" V 8600 2250 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:D_Schottky_Small D1
+L Device:D_Schottky_Small D2
 U 1 1 5D4EED9B
 P 6850 4550
-F 0 "D1" V 6896 4482 50  0000 R CNN
+F 0 "D2" V 6896 4482 50  0000 R CNN
 F 1 "1N5819" V 6805 4482 50  0000 R CNN
 F 2 "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal" V 6850 4550 50  0001 C CNN
 F 3 "~" V 6850 4550 50  0001 C CNN
@@ -1021,10 +1021,10 @@ F 3 "~" V 6850 4550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:TestPoint TP3
+L Connector:TestPoint TP1
 U 1 1 5D4B6929
 P 1250 6900
-F 0 "TP3" H 1192 6926 50  0000 R CNN
+F 0 "TP1" H 1192 6926 50  0000 R CNN
 F 1 "+3.3" H 1192 7017 50  0000 R CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 1450 6900 50  0001 C CNN
 F 3 "~" H 1450 6900 50  0001 C CNN
@@ -1043,10 +1043,10 @@ F 3 "~" H 1950 6900 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:TestPoint TP1
+L Connector:TestPoint TP6
 U 1 1 5D4B7B24
 P 4300 7200
-F 0 "TP1" H 4358 7318 50  0000 L CNN
+F 0 "TP6" H 4358 7318 50  0000 L CNN
 F 1 "Boost_out" H 4358 7227 50  0000 L CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 4500 7200 50  0001 C CNN
 F 3 "~" H 4500 7200 50  0001 C CNN
@@ -1054,10 +1054,10 @@ F 3 "~" H 4500 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector:TestPoint TP4
+L Connector:TestPoint TP3
 U 1 1 5D4B85BC
 P 3250 6950
-F 0 "TP4" H 3308 7068 50  0000 L CNN
+F 0 "TP3" H 3308 7068 50  0000 L CNN
 F 1 "Current_limit" H 3308 6977 50  0000 L CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 3450 6950 50  0001 C CNN
 F 3 "~" H 3450 6950 50  0001 C CNN
@@ -1084,11 +1084,11 @@ Current_limit_divider
 Text Label 3250 7200 2    50   ~ 0
 Voltage_limit_divider
 $Comp
-L Connector:TestPoint TP6
+L Connector:TestPoint TP4
 U 1 1 5D4BF42E
 P 4300 6950
-F 0 "TP6" H 4358 7068 50  0000 L CNN
-F 1 "Boost_ctrl" H 4358 6977 50  0000 L CNN
+F 0 "TP4" H 4358 7068 50  0000 L CNN
+F 1 "Boost_c" H 4358 6977 50  0000 L CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 4500 6950 50  0001 C CNN
 F 3 "~" H 4500 6950 50  0001 C CNN
 	1    4300 6950
@@ -1473,12 +1473,12 @@ F 3 "~" H 2950 1500 50  0001 C CNN
 $EndComp
 Connection ~ 2950 1600
 $Comp
-L Device:LED D4
+L Device:LED D1
 U 1 1 5D62BB53
 P 3700 1450
-F 0 "D4" V 3739 1332 50  0000 R CNN
+F 0 "D1" V 3739 1332 50  0000 R CNN
 F 1 "C503B 2.1V" V 3648 1332 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 3700 1450 50  0001 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 3700 1450 50  0001 C CNN
 F 3 "~" H 3700 1450 50  0001 C CNN
 	1    3700 1450
 	0    -1   -1   0   
