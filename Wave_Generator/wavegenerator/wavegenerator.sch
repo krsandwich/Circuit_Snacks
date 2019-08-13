@@ -163,10 +163,10 @@ F 3 "~" H 7800 800 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:USB_B_Micro J2
+L Connector:USB_B_Micro J101
 U 1 1 5D241E68
 P 5800 4950
-F 0 "J2" H 5857 5417 50  0000 C CNN
+F 0 "J101" H 5857 5417 50  0000 C CNN
 F 1 "USB_B_Micro" H 5857 5326 50  0000 C CNN
 F 2 "wavegenerator:USB_Micro-B_Amphenol_10118194-0001LF_Horizontal" H 5950 4900 50  0001 C CNN
 F 3 "~" H 5950 4900 50  0001 C CNN
@@ -253,10 +253,10 @@ F 3 "~" H 950 2700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L wavegenerator:MAX038CPP U2
+L wavegenerator:MAX038CPP U1
 U 1 1 5D1E353F
 P 3350 2400
-F 0 "U2" H 3350 3970 50  0000 C CNN
+F 0 "U1" H 3350 3970 50  0000 C CNN
 F 1 "MAX038CPP" H 3350 3879 50  0000 C CNN
 F 2 "wavegenerator:MAX038CPP-W" H 3350 2400 50  0001 L BNN
 F 3 "" H 3350 2400 50  0001 L BNN
@@ -512,10 +512,10 @@ Wire Wire Line
 Wire Wire Line
 	6100 4750 6250 4750
 $Comp
-L MCU_Microchip_ATmega:ATmega328P-AU U1
+L MCU_Microchip_ATmega:ATmega328P-AU U103
 U 1 1 5D258DD6
 P 8600 2300
-F 0 "U1" H 7950 1400 50  0000 C CNN
+F 0 "U103" H 7950 1400 50  0000 C CNN
 F 1 "ATmega328P-AU" H 7750 1300 50  0000 C CNN
 F 2 "Package_QFP:TQFP-32_7x7mm_P0.8mm" H 8600 2300 50  0001 C CIN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf" H 8600 2300 50  0001 C CNN
@@ -1417,7 +1417,6 @@ Wire Wire Line
 	9200 3200 9550 3200
 Text Label 9200 3300 0    50   ~ 0
 freq
-Connection ~ 4050 1100
 Wire Wire Line
 	4050 1100 4100 1100
 Wire Wire Line

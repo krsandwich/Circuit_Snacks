@@ -19,17 +19,9 @@ There are a couple changes that we are making in order to USB power our circuit,
 
 *Please note that you will be replacing a couple resistors, a regulator, a diode, and an inductor so some of the parts given to you in your kit will remain unused.*
 
+### Building
 
-![alt text](pictures/front_page.png)
-
-
-Complete all assembly instructions through #22 before pausing and going on to Step 2: testing.
-
-
-![alt text](pictures/back_page.png)
-
-
-Finally, attach the nylon feet to the back of the board. This will prevent any unwanted changes to the signal due to the back of the board touching the table. 
+[Click here](Oscilloscope Instructions.pdf) to see the instructions for building your oscilloscope. 
 
 
 ### Testing

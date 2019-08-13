@@ -1,3 +1,3 @@
 (sym_lib_table
-  (lib (name wavegenerator)(type Legacy)(uri /Users/clarissadaniel/Desktop/LabBench2.0/Wave_Generator/wavegenerator/wavegenerator.lib)(options "")(descr ""))
+  (lib (name wavegenerator)(type Legacy)(uri /Users/kyleekrzanich/Desktop/LabBench2.0/Wave_Generator/wavegenerator/wavegenerator.lib)(options "")(descr ""))
 )
