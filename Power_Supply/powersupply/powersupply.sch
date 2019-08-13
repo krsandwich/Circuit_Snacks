@@ -374,7 +374,7 @@ U 1 1 5D4C0110
 P 5750 6400
 F 0 "SW2" H 5750 6400 50  0000 C CNN
 F 1 "joystick-K1-1506DN-01" H 5800 6300 50  0000 C CNN
-F 2 "powersupply:K1-1506DN-01_joystick" H 5750 6400 50  0001 C CNN
+F 2 "powersupply:directional_switch_10mm" H 5750 6400 50  0001 C CNN
 F 3 "" H 5750 6400 50  0001 C CNN
 	1    5750 6400
 	1    0    0    -1  

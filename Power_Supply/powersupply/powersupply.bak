@@ -981,10 +981,10 @@ F 3 "~" V 6850 4550 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector:TestPoint TP1
+L Connector:TestPoint TP2
 U 1 1 5D4B6929
 P 1250 6900
-F 0 "TP1" H 1192 6926 50  0000 R CNN
+F 0 "TP2" H 1192 6926 50  0000 R CNN
 F 1 "+3.3" H 1192 7017 50  0000 R CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 1450 6900 50  0001 C CNN
 F 3 "~" H 1450 6900 50  0001 C CNN
@@ -992,10 +992,10 @@ F 3 "~" H 1450 6900 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L Connector:TestPoint TP2
+L Connector:TestPoint TP1
 U 1 1 5D4B73A5
 P 1750 6900
-F 0 "TP2" H 1692 6926 50  0000 R CNN
+F 0 "TP1" H 1692 6926 50  0000 R CNN
 F 1 "+5_isolated" H 1692 7017 50  0000 R CNN
 F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 1950 6900 50  0001 C CNN
 F 3 "~" H 1950 6900 50  0001 C CNN
