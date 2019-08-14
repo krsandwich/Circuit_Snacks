@@ -21,7 +21,7 @@ There are a couple changes that we are making in order to USB power our circuit,
 
 ### Building
 
-[Click here](Oscilloscope Instructions.pdf) to see the instructions for building your oscilloscope. 
+[Click here](oscilloscope_instructions.pdf) to see the instructions for building your oscilloscope. 
 
 
 ### Testing
