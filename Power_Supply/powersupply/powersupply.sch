@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector:USB_B_Micro J2
+L Connector:USB_B_Micro J101
 U 1 1 5D3004BA
 P 900 1350
-F 0 "J2" H 957 1817 50  0000 C CNN
+F 0 "J101" H 957 1817 50  0000 C CNN
 F 1 "USB_B_Micro" H 957 1726 50  0000 C CNN
 F 2 "powersupply:USB_Micro-B_Amphenol_10118194-0001LF_Horizontal" H 1050 1300 50  0001 C CNN
 F 3 "~" H 1050 1300 50  0001 C CNN
@@ -810,10 +810,10 @@ $EndComp
 Wire Wire Line
 	10100 2750 10100 3150
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x02 J2
 U 1 1 5D48A8A7
 P 10500 3350
-F 0 "J3" H 10450 3000 50  0000 L CNN
+F 0 "J2" H 10450 3000 50  0000 L CNN
 F 1 "1x2" H 10450 3100 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 10500 3500 50  0001 C CNN
 F 3 "" H 10500 3500 50  0001 C CNN
@@ -937,10 +937,10 @@ Connection ~ 10450 5700
 Text Label 2500 4450 0    50   ~ 0
 up
 $Comp
-L Connector_Generic:Conn_01x02 J4
+L Connector_Generic:Conn_01x02 J3
 U 1 1 5D4A34EF
 P 10850 3350
-F 0 "J4" H 10800 3000 50  0000 L CNN
+F 0 "J3" H 10800 3000 50  0000 L CNN
 F 1 "1x2" H 10800 3100 50  0000 L CNN
 F 2 "powersupply:Banana Sockets" H 10850 3500 50  0001 C CNN
 F 3 "" H 10850 3500 50  0001 C CNN
