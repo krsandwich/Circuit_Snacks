@@ -66,10 +66,10 @@ Wire Wire Line
 NoConn ~ 19450 10300
 NoConn ~ 25200 10700
 $Comp
-L powersupply:ATSAMD10D13A-SS U102
+L powersupply:ATSAMD10D13A-SS U103
 U 1 1 5D47B7D4
 P 1950 3400
-F 0 "U102" H 1000 3100 50  0000 C CNN
+F 0 "U103" H 1000 3100 50  0000 C CNN
 F 1 "ATSAMD10D13A-SS" H 950 2950 50  0000 C CNN
 F 2 "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm" H 1950 2250 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-42242-SAM-D10_Datasheet.pdf" H 1950 2500 50  0001 C CNN
@@ -339,7 +339,7 @@ U 1 1 5D4E54B6
 P 9150 5400
 F 0 "R1" H 9218 5446 50  0000 L CNN
 F 1 "0.1" H 9218 5355 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 9150 5400 50  0001 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" H 9150 5400 50  0001 C CNN
 F 3 "~" H 9150 5400 50  0001 C CNN
 	1    9150 5400
 	1    0    0    -1  
@@ -446,7 +446,7 @@ U 1 1 5D4B6929
 P 2750 6900
 F 0 "TP2" H 2692 6926 50  0000 R CNN
 F 1 "+3.3" H 2692 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 2950 6900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2950 6900 50  0001 C CNN
 F 3 "~" H 2950 6900 50  0001 C CNN
 	1    2750 6900
 	-1   0    0    1   
@@ -457,7 +457,7 @@ U 1 1 5D4B73A5
 P 3200 6900
 F 0 "TP1" H 3142 6926 50  0000 R CNN
 F 1 "+5_isolated" H 3142 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 3400 6900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3400 6900 50  0001 C CNN
 F 3 "~" H 3400 6900 50  0001 C CNN
 	1    3200 6900
 	-1   0    0    1   
@@ -468,7 +468,7 @@ U 1 1 5D4B7B24
 P 5850 7200
 F 0 "TP6" H 5908 7318 50  0000 L CNN
 F 1 "Boost_out" H 5908 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 6050 7200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 7200 50  0001 C CNN
 F 3 "~" H 6050 7200 50  0001 C CNN
 	1    5850 7200
 	1    0    0    -1  
@@ -479,7 +479,7 @@ U 1 1 5D4B85BC
 P 4800 6950
 F 0 "TP3" H 4858 7068 50  0000 L CNN
 F 1 "Current_limit" H 4858 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 5000 6950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 6950 50  0001 C CNN
 F 3 "~" H 5000 6950 50  0001 C CNN
 	1    4800 6950
 	1    0    0    -1  
@@ -494,7 +494,7 @@ U 1 1 5D4BBCE8
 P 4800 7200
 F 0 "TP5" H 4858 7318 50  0000 L CNN
 F 1 "Voltage_limit" H 4858 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 5000 7200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 7200 50  0001 C CNN
 F 3 "~" H 5000 7200 50  0001 C CNN
 	1    4800 7200
 	1    0    0    -1  
@@ -507,7 +507,7 @@ U 1 1 5D4BF42E
 P 5850 6950
 F 0 "TP4" H 5908 7068 50  0000 L CNN
 F 1 "Boost_c" H 5908 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 6050 6950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 6950 50  0001 C CNN
 F 3 "~" H 6050 6950 50  0001 C CNN
 	1    5850 6950
 	1    0    0    -1  
@@ -522,7 +522,7 @@ U 1 1 5D4C0DDA
 P 2300 7150
 F 0 "TP7" H 2358 7268 50  0000 L CNN
 F 1 "GND" H 2358 7177 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 2500 7150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2500 7150 50  0001 C CNN
 F 3 "~" H 2500 7150 50  0001 C CNN
 	1    2300 7150
 	1    0    0    -1  
@@ -664,10 +664,10 @@ F 3 "" H 2800 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L powersupply:INA199 U10
+L powersupply:INA199 U102
 U 1 1 5D650116
 P 5250 5650
-F 0 "U10" H 5225 6025 50  0000 C CNN
+F 0 "U102" H 5225 6025 50  0000 C CNN
 F 1 "INA199" H 5225 5934 50  0000 C CNN
 F 2 "Package_TO_SOT_SMD:SOT-363_SC-70-6" H 5250 5950 50  0001 C CNN
 F 3 "" H 5250 5950 50  0001 C CNN
@@ -785,7 +785,7 @@ U 1 1 5D62BB53
 P 3950 1300
 F 0 "D1" V 3989 1182 50  0000 R CNN
 F 1 "C503B 2.1V" V 3898 1182 50  0000 R CNN
-F 2 "LED_THT:LED_D5.0mm" H 3950 1300 50  0001 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 3950 1300 50  0001 C CNN
 F 3 "~" H 3950 1300 50  0001 C CNN
 	1    3950 1300
 	0    -1   -1   0   
@@ -798,7 +798,7 @@ U 1 1 5D4FADCE
 P 3550 1350
 F 0 "D101" V 3500 1500 50  0000 C CNN
 F 1 "6V" V 3600 1450 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-323" V 3550 1350 50  0001 C CNN
+F 2 "Diode_SMD:D_SOD-123" V 3550 1350 50  0001 C CNN
 F 3 "~" V 3550 1350 50  0001 C CNN
 	1    3550 1350
 	0    1    1    0   
@@ -1342,7 +1342,7 @@ U 1 1 5D46EC73
 P 9250 2350
 F 0 "C5" H 9341 2396 50  0000 L CNN
 F 1 "470uF" H 9341 2305 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 9250 2350 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 9250 2350 50  0001 C CNN
 F 3 "~" H 9250 2350 50  0001 C CNN
 	1    9250 2350
 	-1   0    0    -1  
@@ -1384,7 +1384,7 @@ U 1 1 5D45B91C
 P 7950 1750
 F 0 "C4" H 7700 1800 50  0000 L CNN
 F 1 "470uF" H 7600 1700 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 7950 1750 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 7950 1750 50  0001 C CNN
 F 3 "~" H 7950 1750 50  0001 C CNN
 	1    7950 1750
 	1    0    0    -1  
