@@ -1,3 +1,5 @@
+![alt text](Circuit_Snacks_Logo.png)
+
 # LabBench2.0
 Low-cost, minimal power DIY lab equipment
 
