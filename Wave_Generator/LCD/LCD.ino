@@ -3,7 +3,7 @@
 #include <SPI.h>
 #include <FreqMeasure.h>
 #include <FreqCount.h>
-#include <Fonts/FreeMono12pt7b.h>
+#include "circuit_snacks_logo.h"
 
 #define WS_0 6
 #define WS_1 7
@@ -26,20 +26,19 @@ uint8_t current_button_state = 1;
 
 double count =0;
 float frequency =0.0;
-boolean isCount;
+boolean isCount = true;
 
 char str[6];
 
 void setup(void) {
   Serial.begin(57600);
   init_pins();
-  isCount = true;
-  FreqCount.begin(100);
-  tft.initR(INITR_144GREENTAB); // Init ST7735R chip, green tab
-  tft.setRotation(1);
+  init_screen();
+  tft.drawBitmap(25, 20, logo, logoWidth, logoHeight,ST77XX_CYAN);
+  delay(2000);
   tft.fillScreen(ST77XX_BLACK);
-  tft.setTextSize(2);
   drawSquare(ST77XX_CYAN);
+  FreqCount.begin(100);
 }
 
 void loop() {
@@ -181,4 +180,11 @@ void init_pins(){
   
   pinMode(BUTTON, INPUT_PULLUP);
 
+}
+
+void init_screen(){
+  tft.initR(INITR_144GREENTAB); // Init ST7735R chip, green tab
+  tft.fillScreen(ST77XX_BLACK);
+  tft.setRotation(1);
+  tft.setTextSize(2);
 }
