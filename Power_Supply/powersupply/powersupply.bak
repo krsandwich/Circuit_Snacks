@@ -446,7 +446,7 @@ U 1 1 5D4B6929
 P 2750 6900
 F 0 "TP2" H 2692 6926 50  0000 R CNN
 F 1 "+3.3" H 2692 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 2950 6900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2950 6900 50  0001 C CNN
 F 3 "~" H 2950 6900 50  0001 C CNN
 	1    2750 6900
 	-1   0    0    1   
@@ -457,7 +457,7 @@ U 1 1 5D4B73A5
 P 3200 6900
 F 0 "TP1" H 3142 6926 50  0000 R CNN
 F 1 "+5_isolated" H 3142 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 3400 6900 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3400 6900 50  0001 C CNN
 F 3 "~" H 3400 6900 50  0001 C CNN
 	1    3200 6900
 	-1   0    0    1   
@@ -468,7 +468,7 @@ U 1 1 5D4B7B24
 P 5850 7200
 F 0 "TP6" H 5908 7318 50  0000 L CNN
 F 1 "Boost_out" H 5908 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 6050 7200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 7200 50  0001 C CNN
 F 3 "~" H 6050 7200 50  0001 C CNN
 	1    5850 7200
 	1    0    0    -1  
@@ -479,7 +479,7 @@ U 1 1 5D4B85BC
 P 4800 6950
 F 0 "TP3" H 4858 7068 50  0000 L CNN
 F 1 "Current_limit" H 4858 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 5000 6950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 6950 50  0001 C CNN
 F 3 "~" H 5000 6950 50  0001 C CNN
 	1    4800 6950
 	1    0    0    -1  
@@ -494,7 +494,7 @@ U 1 1 5D4BBCE8
 P 4800 7200
 F 0 "TP5" H 4858 7318 50  0000 L CNN
 F 1 "Voltage_limit" H 4858 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 5000 7200 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 7200 50  0001 C CNN
 F 3 "~" H 5000 7200 50  0001 C CNN
 	1    4800 7200
 	1    0    0    -1  
@@ -507,7 +507,7 @@ U 1 1 5D4BF42E
 P 5850 6950
 F 0 "TP4" H 5908 7068 50  0000 L CNN
 F 1 "Boost_c" H 5908 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 6050 6950 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 6950 50  0001 C CNN
 F 3 "~" H 6050 6950 50  0001 C CNN
 	1    5850 6950
 	1    0    0    -1  
@@ -522,7 +522,7 @@ U 1 1 5D4C0DDA
 P 2300 7150
 F 0 "TP7" H 2358 7268 50  0000 L CNN
 F 1 "GND" H 2358 7177 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical" H 2500 7150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2500 7150 50  0001 C CNN
 F 3 "~" H 2500 7150 50  0001 C CNN
 	1    2300 7150
 	1    0    0    -1  
