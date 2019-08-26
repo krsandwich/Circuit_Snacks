@@ -3,6 +3,10 @@
 
 #define VOLTAGE_READ_PIN 19
 #define CURRENT_READ_PIN 20
+#define DAC_SET_PIN 18
+#define LINEAR_SET_PIN 14
+#define CURRENT_SET_PIN 15
+
 #define UP 3
 #define DOWN 1
 #define CENTER 6
@@ -31,19 +35,26 @@ uint8_t mode = 0;
 
 
 uint32_t voltage_set =5000;
-uint32_t current_set = 100;
+uint32_t current_set = 220;
 
 uint32_t boost_increment= 53;
 uint32_t linear_increment= 31;
 uint32_t linear_divider= 0;
+uint32_t current_increment = 5;
 
 uint32_t voltage_read = 0;
 uint32_t current_read = 0;
 
+uint16_t mod_adj_current = 1000;
+uint16_t div_adj_current = 100;
+
+uint16_t mod_adj_voltage = 10000;
+uint16_t div_adj_voltage = 1000;
 
 U8X8_SSD1306_128X64_NONAME_HW_I2C u8x8(/* reset=*/ U8X8_PIN_NONE);
 
-char buf[10];
+char buf[8];
+
 void setup() {
  // put your setup code here, to run once:
 
@@ -53,35 +64,30 @@ void setup() {
    pinMode(CENTER, INPUT_PULLUP);
    pinMode(RIGHT, INPUT_PULLUP);
    pinMode(7, OUTPUT); //COMMON of joystick 
-   digitalWrite(7,0); //COMMON of joystick 
    
    u8x8.begin();
-
-   analogWrite(18,1024); // pin 18 is DAC  //- (voltage_set%1000 * 50)
-   analogWrite(14, 0);
-   analogWrite(15, 1023);
 
 }
 
 void loop() {
   down_state_curr = digitalRead(DOWN);
-   if((down_state_prev == 1) && (down_state_curr == 0) && voltage_set > 0)
+   if((down_state_prev == 1) && (down_state_curr == 0))
    {
      if(mode){
-        current_set -= current_adjust;
+        if(current_set >= 0) current_set -= current_adjust;
      }else{
-        voltage_set -= voltage_adjust;
+        if(voltage_set >= 0) voltage_set -= voltage_adjust;
      }
    }
    down_state_prev = down_state_curr;
 
   up_state_curr = digitalRead(UP);
-   if((up_state_prev == 1) && (up_state_curr == 0) && voltage_set < 10000)
+   if((up_state_prev == 1) && (up_state_curr == 0))
    {
      if(mode){
-        current_set += current_adjust;
+        if(current_set <= 220) current_set += current_adjust;
      }else{
-        voltage_set += voltage_adjust;
+        if(voltage_set < 10000) voltage_set += voltage_adjust;
      }
    }
    up_state_prev = up_state_curr;
@@ -112,6 +118,7 @@ void loop() {
    linear_divider = voltage_set * linear_increment* 100 /(10000 + 23200);
    analogWrite(14, linear_divider); 
 
+   analogWrite(CURRENT_SET_PIN, (117 + current_increment*current_set));
 
 
  // put your main code here, to run repeatedly:
@@ -129,16 +136,16 @@ void loop() {
 
 void drawIntendedVoltage(){
   
-     uint16_t mod_adj = 10000;
-     uint16_t div_adj = 1000;
+   mod_adj_voltage = 10000;
+   div_adj_voltage = 1000;
      u8x8.drawString(1, 30, ".");
      for (int i = 0; i < 3; i++){
-        itoa(((voltage_set%mod_adj)/div_adj), buf, 10);
+        itoa(((voltage_set%mod_adj_voltage)/div_adj_voltage), buf, 10);
         if (digit_voltage_adjust_state == i && mode == 0) u8x8.setInverseFont(1);
         if(i== 0) u8x8.drawString(0, 30, buf);
         else u8x8.drawString(1 + i, 30, buf);
-        mod_adj /= 10;
-        div_adj /= 10;
+        mod_adj_voltage /= 10;
+        div_adj_voltage /= 10;
         u8x8.setInverseFont(0);
      }
      u8x8.drawString(4, 30, "V");
@@ -147,14 +154,14 @@ void drawIntendedVoltage(){
 
 void drawIntendedCurrent(){
   
-     uint16_t mod_adj = 1000;
-     uint16_t div_adj = 100;
+     mod_adj_current = 1000;
+     div_adj_current = 100;
      for (int i = 0; i < 3; i++){
-        itoa(((current_set%mod_adj)/div_adj), buf, 10);
+        itoa(((current_set%mod_adj_current)/div_adj_current), buf, 10);
         if (digit_current_adjust_state == i && mode == 1) u8x8.setInverseFont(1);
         u8x8.drawString(10 + i, 30, buf);
-        mod_adj /= 10;
-        div_adj /= 10;
+        mod_adj_current /= 10;
+        div_adj_current /= 10;
         u8x8.setInverseFont(0);
      }
      u8x8.drawString(14, 30, "mA");
@@ -164,27 +171,33 @@ void drawActualVoltage(){
    u8x8.setFont(u8x8_font_5x8_r);
    voltage_read = analogRead(VOLTAGE_READ_PIN);
    voltage_read = voltage_read * 3300 * (1796+511) / 511 / 1024;
-   uint16_t mod_adj = 10000;
-   uint16_t div_adj = 1000;
+   
+   mod_adj_voltage = 10000;
+   div_adj_voltage = 1000;
    u8x8.draw2x2String(2, 0, ".");
      for (int i = 0; i < 3; i++){
-        itoa(((voltage_read%mod_adj)/div_adj), buf, 10);
+        itoa(((voltage_read%mod_adj_voltage)/div_adj_voltage), buf, 10);
         if(i== 0) u8x8.draw2x2String(0, 0, buf);
         else u8x8.draw2x2String(2 + 2* i, 0, buf);
-        mod_adj /= 10;
-        div_adj /= 10;
+        mod_adj_voltage /= 10;
+        div_adj_voltage /= 10;
      }
    u8x8.draw2x2String(10, 0, "V");
-//   itoa(voltage_read, buf, 10);
-//   u8x8.draw2x2String(0, 0, buf);
 }
 void drawActualCurrent(){
    current_read = analogRead(CURRENT_READ_PIN);
+   current_read = (current_read-5)*3300*10/50/1024;
    //need math
 
-   itoa(current_read, buf, 10);
-   u8x8.draw2x2String(0, 19, buf);
+   mod_adj_current = 1000;
+   div_adj_current = 100;
+     
+   for (int i = 0; i < 3; i++){
+      itoa(((current_read%mod_adj_current)/div_adj_current), buf, 10);
+      u8x8.draw2x2String(2 * i, 19, buf);
+      mod_adj_current /= 10;
+      div_adj_current /= 10;
+   }
    u8x8.draw2x2String(10, 19, "mA");
-//   itoa(voltage_read, buf, 10);
-//   u8x8.draw2x2String(0, 0, buf);
+
 }

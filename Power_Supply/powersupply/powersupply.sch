@@ -649,7 +649,6 @@ F 3 "~" H 3250 3300 50  0001 C CNN
 	1    3250 3300
 	1    0    0    -1  
 $EndComp
-Connection ~ 3250 3200
 $Comp
 L power:GND #PWR03
 U 1 1 5D629B9E
@@ -851,7 +850,6 @@ F 3 "~" H 3950 1050 50  0001 C CNN
 	1    3950 1050
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2350 3200
 NoConn ~ 1350 3850
 NoConn ~ 1350 4050
 $Comp
@@ -1593,6 +1591,7 @@ Wire Notes Line
 	450  6500 11200 6500
 Wire Notes Line
 	2000 6500 2000 7800
+Connection ~ 3250 3200
 Wire Wire Line
 	2350 3200 3250 3200
 $EndSCHEMATC
