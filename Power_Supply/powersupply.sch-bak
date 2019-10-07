@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:powersupply-cache
-EELAYER 30 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -25,7 +25,6 @@ F 3 "~" H 1200 1200 50  0001 C CNN
 	1    1050 1250
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1350 1450
 $Comp
 L power:+5V #PWR0102
 U 1 1 5D305F94
@@ -76,7 +75,7 @@ L Device:Q_PMOS_GDS Q1
 U 1 1 5D4B2BFF
 P 9600 3750
 F 0 "Q1" H 9806 3704 50  0000 L CNN
-F 1 "Q_PMOS_GDS" H 9806 3795 50  0000 L CNN
+F 1 "IRF9Z24NPBF" H 9806 3795 50  0000 L CNN
 F 2 "powersupply:IRF9540N-PMOS" H 9800 3850 50  0001 C CNN
 F 3 "~" H 9600 3750 50  0001 C CNN
 	1    9600 3750
@@ -205,12 +204,12 @@ Connection ~ 9400 4600
 Wire Wire Line
 	9400 4600 9400 4650
 $Comp
-L Device:R_Small_US R1
+L Device:R_Small_US R122
 U 1 1 5D4E54B6
 P 9150 5400
-F 0 "R1" H 9218 5446 50  0000 L CNN
+F 0 "R122" H 9218 5446 50  0000 L CNN
 F 1 "0.1" H 9218 5355 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P12.70mm_Horizontal" H 9150 5400 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 9150 5400 50  0001 C CNN
 F 3 "~" H 9150 5400 50  0001 C CNN
 	1    9150 5400
 	1    0    0    -1  
@@ -597,36 +596,11 @@ F 3 "~" H 3950 1300 50  0001 C CNN
 	1    3950 1300
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Device:D_Zener_Small D101
-U 1 1 5D4FADCE
-P 3550 1350
-F 0 "D101" V 3500 1500 50  0000 C CNN
-F 1 "6V" V 3600 1450 50  0000 C CNN
-F 2 "Diode_SMD:D_SOD-123" V 3550 1350 50  0001 C CNN
-F 3 "~" V 3550 1350 50  0001 C CNN
-	1    3550 1350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	2950 950  3050 950 
-Connection ~ 3200 950 
-Wire Wire Line
-	3200 950  3550 950 
-Wire Wire Line
-	3550 950  3550 1250
 Wire Wire Line
 	3550 1450 3950 1450
-Wire Wire Line
-	3550 950  3950 950 
-Connection ~ 3550 950 
 Text Label 1350 1050 0    50   ~ 0
 USB_5V
-Text Label 2400 1000 2    50   ~ 0
-USB_5V
 Text Label 1050 1650 0    50   ~ 0
-USB_GND
-Text Label 2400 1150 2    50   ~ 0
 USB_GND
 Connection ~ 9200 3750
 Wire Wire Line
@@ -645,7 +619,7 @@ L Device:R_Small_US R2
 U 1 1 5D62CB9E
 P 3950 1050
 F 0 "R2" H 4018 1096 50  0000 L CNN
-F 1 "580" H 4018 1005 50  0000 L CNN
+F 1 "4.99k" H 4018 1005 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 3950 1050 50  0001 C CNN
 F 3 "~" H 3950 1050 50  0001 C CNN
 	1    3950 1050
@@ -1208,8 +1182,6 @@ Text Notes 5650 1800 0    118  ~ 0
 Power Supply
 Text Notes 800  650  0    79   ~ 0
 Mirco USB
-Text Notes 2850 650  0    79   ~ 0
-2W Isolator
 Text Notes 5200 650  0    79   ~ 0
 3.3V Regulator
 Text Notes 8550 2950 0    118  ~ 0
@@ -1319,38 +1291,8 @@ NoConn ~ 2150 4900
 NoConn ~ 2150 5200
 NoConn ~ 2150 5300
 NoConn ~ 2150 5400
-Connection ~ 3550 1450
 Wire Notes Line
 	450  1850 6900 1850
-Wire Wire Line
-	2950 1300 2950 950 
-Wire Wire Line
-	2900 1300 2950 1300
-$Comp
-L power:GND #PWR0101
-U 1 1 5D30523C
-P 2900 1450
-F 0 "#PWR0101" H 2900 1200 50  0001 C CNN
-F 1 "GND" H 2900 1300 50  0000 C CNN
-F 2 "" H 2900 1450 50  0001 C CNN
-F 3 "" H 2900 1450 50  0001 C CNN
-	1    2900 1450
-	1    0    0    -1  
-$EndComp
-Connection ~ 2900 1450
-$Comp
-L powersupply:RFM-0505S U1
-U 1 1 5D303F43
-P 2650 700
-F 0 "U1" H 2650 625 50  0000 C CNN
-F 1 "B0505S-2WR2" H 2650 534 50  0000 C CNN
-F 2 "powersupply:B0505S-2WR2-Isolator" H 2650 700 50  0001 C CNN
-F 3 "" H 2650 700 50  0001 C CNN
-	1    2650 700 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 1450 3100 1450
 $Comp
 L power:+3.3V #PWR0132
 U 1 1 5DA9F3AB
@@ -1362,15 +1304,12 @@ F 3 "" H 1350 2600 50  0001 C CNN
 	1    1350 2600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1750 2600 1650 2600
 Connection ~ 1450 2600
 Wire Wire Line
 	1450 2600 1350 2600
 Connection ~ 1550 2600
 Wire Wire Line
 	1550 2600 1450 2600
-Connection ~ 1650 2600
 Wire Wire Line
 	1650 2600 1550 2600
 Connection ~ 1350 2600
@@ -1485,7 +1424,7 @@ L Device:R_Small_US R120
 U 1 1 5D8F9436
 P 2500 4900
 F 0 "R120" H 2400 5000 50  0000 C CNN
-F 1 "4.99k" H 2350 4900 50  0000 C CNN
+F 1 "1.5k" H 2350 4900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 2500 4900 50  0001 C CNN
 F 3 "~" H 2500 4900 50  0001 C CNN
 	1    2500 4900
@@ -1497,7 +1436,7 @@ Text Label 2150 5000 0    50   ~ 0
 D-
 Wire Wire Line
 	3450 3550 3500 3550
-Text Label 2150 4400 0    50   ~ 0
+Text Label 2150 3900 0    50   ~ 0
 V_current_amplified
 Text Label 2950 4200 0    50   ~ 0
 V_lin_ctrl
@@ -1764,13 +1703,6 @@ F 3 "" H 2350 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1850 2350 2350 2350
-Wire Wire Line
-	2350 2150 2350 2350
-Wire Wire Line
-	2350 1950 2350 2150
-Connection ~ 2350 2150
-Wire Wire Line
 	1650 1950 2350 1950
 $Comp
 L Device:C_Small C114
@@ -1784,18 +1716,16 @@ F 3 "~" H 2500 2750 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1650 2350 1650 2500
-Wire Wire Line
 	1450 1950 1450 2600
 $Comp
 L Device:C_Small C112
 U 1 1 5D9CAA66
-P 1800 2500
-F 0 "C112" V 1750 2650 50  0000 L CNN
-F 1 ".1uF" V 1850 2650 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1800 2500 50  0001 C CNN
-F 3 "~" H 1800 2500 50  0001 C CNN
-	1    1800 2500
+P 1850 2300
+F 0 "C112" V 1800 2450 50  0000 L CNN
+F 1 ".1uF" V 1900 2450 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 1850 2300 50  0001 C CNN
+F 3 "~" H 1850 2300 50  0001 C CNN
+	1    1850 2300
 	0    1    1    0   
 $EndComp
 $Comp
@@ -1824,18 +1754,15 @@ $Comp
 L Device:C_Small C113
 U 1 1 5D9C7E76
 P 2300 2750
-F 0 "C113" H 2400 2700 50  0000 L CNN
-F 1 ".1uF" H 2400 2750 50  0000 L CNN
+F 0 "C113" H 2350 2700 50  0000 L CNN
+F 1 ".1uF" H 2350 2800 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric" H 2300 2750 50  0001 C CNN
 F 3 "~" H 2300 2750 50  0001 C CNN
 	1    2300 2750
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	1750 2600 2300 2600
-Wire Wire Line
 	2300 2600 2300 2650
-Connection ~ 1750 2600
 Wire Wire Line
 	2300 2600 2500 2600
 Wire Wire Line
@@ -1863,24 +1790,6 @@ F 3 "" H 2500 2850 50  0001 C CNN
 	1    2500 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 1000 2400 700 
-Wire Wire Line
-	2400 700  3050 700 
-Wire Wire Line
-	3050 700  3050 950 
-Connection ~ 3050 950 
-Wire Wire Line
-	3050 950  3200 950 
-Wire Wire Line
-	2400 1150 2400 1750
-Wire Wire Line
-	2400 1750 3100 1750
-Wire Wire Line
-	3100 1750 3100 1450
-Connection ~ 3100 1450
-Wire Wire Line
-	3100 1450 3550 1450
 $Comp
 L Device:C_Small C115
 U 1 1 5DA21A2E
@@ -1892,28 +1801,6 @@ F 3 "~" H 1550 1750 50  0001 C CNN
 	1    1550 1750
 	0    -1   -1   0   
 $EndComp
-$Comp
-L Device:C_Small C117
-U 1 1 5DA28490
-P 1750 2350
-F 0 "C117" V 1800 2200 50  0000 L CNN
-F 1 "10uF" V 1700 2150 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 1750 2350 50  0001 C CNN
-F 3 "~" H 1750 2350 50  0001 C CNN
-	1    1750 2350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C_Small C116
-U 1 1 5DA2EBCD
-P 2050 2150
-F 0 "C116" V 2100 2300 50  0000 L CNN
-F 1 "10uF" V 2000 2250 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2050 2150 50  0001 C CNN
-F 3 "~" H 2050 2150 50  0001 C CNN
-	1    2050 2150
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1450 1750 1450 1950
 Connection ~ 1450 1950
@@ -1923,22 +1810,84 @@ Wire Wire Line
 	2350 1750 2350 1950
 Connection ~ 2350 1950
 Wire Wire Line
-	1650 2500 1700 2500
-Connection ~ 1650 2500
-Wire Wire Line
-	1650 2500 1650 2600
-Wire Wire Line
-	1900 2500 2350 2500
-Wire Wire Line
-	2350 2500 2350 2350
-Connection ~ 2350 2350
-Connection ~ 2350 2500
-Wire Wire Line
 	1550 2450 1550 2600
 Wire Wire Line
 	1550 2250 1550 2150
 Wire Wire Line
-	1550 2150 1950 2150
+	2350 1950 2350 2150
 Wire Wire Line
-	2150 2150 2350 2150
+	1550 2150 2350 2150
+Connection ~ 2350 2150
+Wire Wire Line
+	2350 2150 2350 2300
+$Comp
+L Device:Ferrite_Bead_Small FB101
+U 1 1 5DA05D0F
+P 1750 2500
+F 0 "FB101" V 1750 2700 50  0000 C CNN
+F 1 "ind" V 1800 2700 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" V 1680 2500 50  0001 C CNN
+F 3 "~" H 1750 2500 50  0001 C CNN
+	1    1750 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1650 2500 1650 2600
+Connection ~ 1650 2600
+Wire Wire Line
+	1850 2500 1850 2600
+Wire Wire Line
+	1750 2600 1850 2600
+Connection ~ 1850 2600
+Wire Wire Line
+	1850 2600 2300 2600
+Wire Wire Line
+	1750 2300 1650 2300
+Wire Wire Line
+	1650 2300 1650 2500
+Connection ~ 1650 2500
+Wire Wire Line
+	1950 2300 2350 2300
+Connection ~ 2350 2300
+Wire Wire Line
+	2350 2300 2350 2500
+Wire Wire Line
+	3200 950  3950 950 
+$Comp
+L power:GND #PWR0101
+U 1 1 5DA818DA
+P 3550 1450
+F 0 "#PWR0101" H 3550 1200 50  0001 C CNN
+F 1 "GND" H 3555 1277 50  0000 C CNN
+F 2 "" H 3550 1450 50  0001 C CNN
+F 3 "" H 3550 1450 50  0001 C CNN
+	1    3550 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0137
+U 1 1 5DA82284
+P 1850 1050
+F 0 "#PWR0137" H 1850 900 50  0001 C CNN
+F 1 "+5V" H 1865 1223 50  0000 C CNN
+F 2 "" H 1850 1050 50  0001 C CNN
+F 3 "" H 1850 1050 50  0001 C CNN
+	1    1850 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1050 1850 1050
+NoConn ~ 1350 1450
+$Comp
+L power:GND #PWR0139
+U 1 1 5DA8A57D
+P 1050 1650
+F 0 "#PWR0139" H 1050 1400 50  0001 C CNN
+F 1 "GND" H 1055 1477 50  0000 C CNN
+F 2 "" H 1050 1650 50  0001 C CNN
+F 3 "" H 1050 1650 50  0001 C CNN
+	1    1050 1650
+	1    0    0    -1  
+$EndComp
+Connection ~ 1050 1650
 $EndSCHEMATC
