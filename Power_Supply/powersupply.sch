@@ -1894,7 +1894,7 @@ U 1 1 5D9C1B22
 P 2700 5650
 F 0 "J4" H 2808 5931 50  0000 C CNN
 F 1 "Conn_01x03_Male" H 2808 5840 50  0000 C CNN
-F 2 "Connector:FanPinHeader_1x03_P2.54mm_Vertical" H 2700 5650 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 2700 5650 50  0001 C CNN
 F 3 "~" H 2700 5650 50  0001 C CNN
 	1    2700 5650
 	1    0    0    -1  
