@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 29)
+    (drawings 30)
     (tracks 619)
     (zones 0)
     (modules 80)
@@ -3785,6 +3785,9 @@
     )
   )
 
+  (gr_text "D   C" (at 41.148 36.068) (layer F.SilkS)
+    (effects (font (size 1.5 1.5) (thickness 0.3)))
+  )
   (gr_text "V Boost\nCtrl" (at 75.47 51.7) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.25)) (justify right))
   )
