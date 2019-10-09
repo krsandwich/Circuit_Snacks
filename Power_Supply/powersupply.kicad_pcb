@@ -1,4 +1,4 @@
-(kicad_pcb (version 20171130) (host pcbnew "(5.1.4-0-10_14)")
+(kicad_pcb (version 20171130) (host pcbnew "(5.1.2-1)-1")
 
   (general
     (thickness 1.6)
@@ -34,7 +34,7 @@
   )
 
   (setup
-    (last_trace_width 0.4)
+    (last_trace_width 0.25)
     (user_trace_width 0.4)
     (trace_clearance 0.2)
     (zone_clearance 0.508)
@@ -233,7 +233,7 @@
     (descr "Through hole straight socket strip, 1x03, 2.54mm pitch, single row (from Kicad 4.0.7), script generated")
     (tags "Through hole socket strip THT 1x03 2.54mm single row")
     (path /5D9C1B22)
-    (fp_text reference J4 (at 0 -2.77 90) (layer F.SilkS)
+    (fp_text reference J4 (at 2.674 2.444 180) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value Conn_01x03_Male (at 0 7.85 90) (layer F.Fab)
@@ -416,7 +416,7 @@
     (descr "Through hole straight pin header, 1x01, 2.54mm pitch, single row")
     (tags "Through hole pin header THT 1x01 2.54mm single row")
     (path /5D4BF42E)
-    (fp_text reference TP4 (at -1.59 -2.8) (layer F.SilkS)
+    (fp_text reference TP4 (at -1.632 -2.544) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.25)))
     )
     (fp_text value Boost_c (at 0 2.33) (layer F.Fab)
@@ -2296,7 +2296,7 @@
     (descr "Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
     (tags "Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm")
     (path /5D62CB9E)
-    (fp_text reference R2 (at 5.28 -0.1 270) (layer F.SilkS)
+    (fp_text reference R2 (at 5.28 -0.1) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 4.99k (at 5.08 2.37) (layer F.Fab)
@@ -3504,7 +3504,7 @@
     (tags "USB USB_B USB_micro USB_OTG")
     (path /5D3004BA)
     (attr smd)
-    (fp_text reference J101 (at 5.275 0.225) (layer F.SilkS)
+    (fp_text reference J101 (at 6.23 0.225) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value USB_B_Micro (at -0.025 4.435) (layer F.Fab)
