@@ -1,5 +1,5 @@
-<img src="Circuit_Snacks_Logo.png" alt="Kitten"
-	title="Logo" width="150" height="150" align="center" />
+<center><img src="Circuit_Snacks_Logo.png" alt="Logo"
+	title="Logo" width="150" height="150"/> </center>
 
 # LabBench2.0
 Low-cost, minimal power DIY lab equipment
