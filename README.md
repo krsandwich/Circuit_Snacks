@@ -1,4 +1,4 @@
-![alt text](Circuit_Snacks_Logo.png| width=100)
+![alt text](Circuit_Snacks_Logo.png  =250x250)
 
 # LabBench2.0
 Low-cost, minimal power DIY lab equipment
