@@ -281,10 +281,10 @@ SDA
 Text Label 6000 4000 0    50   ~ 0
 SCK
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x02 J1
 U 1 1 5D4A34EF
 P 10650 4850
-F 0 "J3" H 10600 4500 50  0000 L CNN
+F 0 "J1" H 10600 4500 50  0000 L CNN
 F 1 "1x2" H 10600 4600 50  0000 L CNN
 F 2 "powersupply:Banana Sockets" H 10650 5000 50  0001 C CNN
 F 3 "" H 10650 5000 50  0001 C CNN
@@ -586,12 +586,12 @@ Wire Wire Line
 Wire Wire Line
 	10850 4950 10850 5300
 $Comp
-L Device:LED D102
+L Device:LED D101
 U 1 1 5D62BB53
 P 3950 1300
-F 0 "D102" V 3989 1182 50  0000 R CNN
+F 0 "D101" V 3989 1182 50  0000 R CNN
 F 1 "C503B 2.1V" V 3898 1182 50  0000 R CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3950 1300 50  0001 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 3950 1300 50  0001 C CNN
 F 3 "~" H 3950 1300 50  0001 C CNN
 	1    3950 1300
 	0    -1   -1   0   
@@ -649,72 +649,10 @@ Wire Wire Line
 	10000 750  9000 750 
 Wire Wire Line
 	10000 1150 10000 750 
-$Comp
-L Connector:TestPoint TP13
-U 1 1 5D5A2114
-P 4400 4000
-F 0 "TP13" H 4342 4026 50  0001 R CNN
-F 1 "pin_2_pad_alt" H 4342 4117 50  0001 R CNN
-F 2 "powersupply:pads" H 4600 4000 50  0001 C CNN
-F 3 "~" H 4600 4000 50  0001 C CNN
-	1    4400 4000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5D59450B
-P 4400 3600
-F 0 "TP12" H 4458 3718 50  0001 L CNN
-F 1 "Pad1_default" H 4150 3850 50  0001 L CNN
-F 2 "powersupply:pads" H 4600 3600 50  0001 C CNN
-F 3 "~" H 4600 3600 50  0001 C CNN
-	1    4400 3600
-	1    0    0    -1  
-$EndComp
-Connection ~ 4400 3600
-$Comp
-L power:GND #PWR06
-U 1 1 5D56D783
-P 4400 3600
-F 0 "#PWR06" H 4400 3350 50  0001 C CNN
-F 1 "GND" H 4250 3500 50  0000 C CNN
-F 2 "" H 4400 3600 50  0001 C CNN
-F 3 "" H 4400 3600 50  0001 C CNN
-	1    4400 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 3600 4400 3600
 Wire Wire Line
 	4700 3600 4650 3600
-Connection ~ 4650 3600
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5D59F280
-P 4650 3600
-F 0 "TP9" H 4708 3718 50  0001 L CNN
-F 1 "pad_1" H 4450 3550 50  0000 L CNN
-F 2 "powersupply:pads" H 4850 3600 50  0001 C CNN
-F 3 "~" H 4850 3600 50  0001 C CNN
-	1    4650 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 4000 4400 4000
 Wire Wire Line
 	4700 4000 4650 4000
-Connection ~ 4650 4000
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5D5A6880
-P 4650 4000
-F 0 "TP10" H 4592 4026 50  0001 R CNN
-F 1 "pad_2" H 4850 3950 50  0000 R CNN
-F 2 "powersupply:pads" H 4850 4000 50  0001 C CNN
-F 3 "~" H 4850 4000 50  0001 C CNN
-	1    4650 4000
-	-1   0    0    1   
-$EndComp
 $Comp
 L Connector:TestPoint TP11
 U 1 1 5D59533A
@@ -735,18 +673,6 @@ F 1 "+3.3V" H 4800 4450 50  0000 C CNN
 F 2 "" H 4950 4400 50  0001 C CNN
 F 3 "" H 4950 4400 50  0001 C CNN
 	1    4950 4400
-	1    0    0    -1  
-$EndComp
-Connection ~ 4400 4000
-$Comp
-L power:+3.3V #PWR07
-U 1 1 5D56EC9F
-P 4400 4000
-F 0 "#PWR07" H 4400 3850 50  0001 C CNN
-F 1 "+3.3V" H 4250 4050 50  0000 C CNN
-F 2 "" H 4400 4000 50  0001 C CNN
-F 3 "" H 4400 4000 50  0001 C CNN
-	1    4400 4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1824,7 +1750,7 @@ U 1 1 5DA05D0F
 P 1750 2500
 F 0 "FB101" V 1750 2700 50  0000 C CNN
 F 1 "ind" V 1800 2700 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" V 1680 2500 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1680 2500 50  0001 C CNN
 F 3 "~" H 1750 2500 50  0001 C CNN
 	1    1750 2500
 	0    1    1    0   
@@ -1889,10 +1815,10 @@ F 3 "" H 1050 1650 50  0001 C CNN
 $EndComp
 Connection ~ 1050 1650
 $Comp
-L Connector:Conn_01x03_Male J4
+L Connector:Conn_01x03_Male J102
 U 1 1 5D9C1B22
 P 2700 5650
-F 0 "J4" H 2808 5931 50  0000 C CNN
+F 0 "J102" H 2808 5931 50  0000 C CNN
 F 1 "Conn_01x03_Male" H 2808 5840 50  0000 C CNN
 F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 2700 5650 50  0001 C CNN
 F 3 "~" H 2700 5650 50  0001 C CNN
@@ -1920,4 +1846,74 @@ Text Label 2150 5200 0    50   ~ 0
 SWDIO
 Text Label 2150 5300 0    50   ~ 0
 SWCLK
+$Comp
+L powersupply:Default_Jumper J104
+U 1 1 5DA84826
+P 4100 3450
+F 0 "J104" V 4146 3328 50  0000 L CNN
+F 1 "Default_Jumper" V 4055 3328 50  0000 L CNN
+F 2 "powersupply:Default_Jumper" H 4100 3450 50  0001 C CNN
+F 3 "" H 4100 3450 50  0001 C CNN
+	1    4100 3450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 3450 4650 3600
+$Comp
+L powersupply:Default_Jumper J103
+U 1 1 5DA8D41B
+P 4100 4300
+F 0 "J103" V 4054 4178 50  0000 L CNN
+F 1 "Default_Jumper" V 4145 4178 50  0000 L CNN
+F 2 "powersupply:Default_Jumper" H 4100 4300 50  0001 C CNN
+F 3 "" H 4100 4300 50  0001 C CNN
+	1    4100 4300
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	4650 4000 4650 4300
+$Comp
+L power:GND #PWR0141
+U 1 1 5DA962E0
+P 4400 3750
+F 0 "#PWR0141" H 4400 3500 50  0001 C CNN
+F 1 "GND" H 4550 3650 50  0000 C CNN
+F 2 "" H 4400 3750 50  0001 C CNN
+F 3 "" H 4400 3750 50  0001 C CNN
+	1    4400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0142
+U 1 1 5DA968DF
+P 4400 4000
+F 0 "#PWR0142" H 4400 3850 50  0001 C CNN
+F 1 "+3.3V" H 4250 4050 50  0000 C CNN
+F 2 "" H 4400 4000 50  0001 C CNN
+F 3 "" H 4400 4000 50  0001 C CNN
+	1    4400 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0143
+U 1 1 5DA975C6
+P 4400 3150
+F 0 "#PWR0143" H 4400 3000 50  0001 C CNN
+F 1 "+3.3V" H 4250 3200 50  0000 C CNN
+F 2 "" H 4400 3150 50  0001 C CNN
+F 3 "" H 4400 3150 50  0001 C CNN
+	1    4400 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 5DA97C54
+P 4400 4600
+F 0 "#PWR0144" H 4400 4350 50  0001 C CNN
+F 1 "GND" H 4550 4500 50  0000 C CNN
+F 2 "" H 4400 4600 50  0001 C CNN
+F 3 "" H 4400 4600 50  0001 C CNN
+	1    4400 4600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
