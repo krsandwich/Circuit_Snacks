@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:powersupply-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1908,4 +1908,28 @@ $EndComp
 NoConn ~ 4150 7500
 NoConn ~ 4600 7500
 NoConn ~ 5050 7500
+$Comp
+L Device:R_Small_US R?
+U 1 1 5DC15C01
+P 700 4000
+F 0 "R?" H 600 4100 50  0000 C CNN
+F 1 "1.5k" H 550 4000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 700 4000 50  0001 C CNN
+F 3 "~" H 700 4000 50  0001 C CNN
+	1    700  4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  4100 850  4100
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5DC39F86
+P 700 3900
+F 0 "#PWR?" H 700 3750 50  0001 C CNN
+F 1 "+3.3V" H 715 4073 50  0000 C CNN
+F 2 "" H 700 3900 50  0001 C CNN
+F 3 "" H 700 3900 50  0001 C CNN
+	1    700  3900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

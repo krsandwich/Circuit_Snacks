@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:powersupply-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -281,10 +281,10 @@ SDA
 Text Label 6000 4000 0    50   ~ 0
 SCK
 $Comp
-L Connector_Generic:Conn_01x02 J3
+L Connector_Generic:Conn_01x02 J1
 U 1 1 5D4A34EF
 P 10650 4850
-F 0 "J3" H 10600 4500 50  0000 L CNN
+F 0 "J1" H 10600 4500 50  0000 L CNN
 F 1 "1x2" H 10600 4600 50  0000 L CNN
 F 2 "powersupply:Banana Sockets" H 10650 5000 50  0001 C CNN
 F 3 "" H 10650 5000 50  0001 C CNN
@@ -467,28 +467,6 @@ F 3 "~" H 850 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR08
-U 1 1 5D56DFE0
-P 5350 4450
-F 0 "#PWR08" H 5350 4200 50  0001 C CNN
-F 1 "GND" H 5500 4350 50  0000 C CNN
-F 2 "" H 5350 4450 50  0001 C CNN
-F 3 "" H 5350 4450 50  0001 C CNN
-	1    5350 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP8
-U 1 1 5D58A893
-P 4950 4400
-F 0 "TP8" H 4892 4426 50  0001 R CNN
-F 1 "pin_1_alt" H 5300 4450 50  0000 R CNN
-F 2 "powersupply:pads" H 5150 4400 50  0001 C CNN
-F 3 "~" H 5150 4400 50  0001 C CNN
-	1    4950 4400
-	-1   0    0    1   
-$EndComp
-$Comp
 L powersupply:INA199 U102
 U 1 1 5D650116
 P 5250 5650
@@ -586,12 +564,12 @@ Wire Wire Line
 Wire Wire Line
 	10850 4950 10850 5300
 $Comp
-L Device:LED D1
+L Device:LED D101
 U 1 1 5D62BB53
 P 3950 1300
-F 0 "D1" V 3989 1182 50  0000 R CNN
+F 0 "D101" V 3989 1182 50  0000 R CNN
 F 1 "C503B 2.1V" V 3898 1182 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 3950 1300 50  0001 C CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H 3950 1300 50  0001 C CNN
 F 3 "~" H 3950 1300 50  0001 C CNN
 	1    3950 1300
 	0    -1   -1   0   
@@ -615,12 +593,12 @@ Connection ~ 9700 4250
 Wire Wire Line
 	9700 4250 9900 4250
 $Comp
-L Device:R_Small_US R2
+L Device:R_Small_US R123
 U 1 1 5D62CB9E
 P 3950 1050
-F 0 "R2" H 4018 1096 50  0000 L CNN
+F 0 "R123" H 4018 1096 50  0000 L CNN
 F 1 "4.99k" H 4018 1005 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 3950 1050 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 3950 1050 50  0001 C CNN
 F 3 "~" H 3950 1050 50  0001 C CNN
 	1    3950 1050
 	1    0    0    -1  
@@ -649,106 +627,10 @@ Wire Wire Line
 	10000 750  9000 750 
 Wire Wire Line
 	10000 1150 10000 750 
-$Comp
-L Connector:TestPoint TP13
-U 1 1 5D5A2114
-P 4400 4000
-F 0 "TP13" H 4342 4026 50  0001 R CNN
-F 1 "pin_2_pad_alt" H 4342 4117 50  0001 R CNN
-F 2 "powersupply:pads" H 4600 4000 50  0001 C CNN
-F 3 "~" H 4600 4000 50  0001 C CNN
-	1    4400 4000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP12
-U 1 1 5D59450B
-P 4400 3600
-F 0 "TP12" H 4458 3718 50  0001 L CNN
-F 1 "Pad1_default" H 4150 3850 50  0001 L CNN
-F 2 "powersupply:pads" H 4600 3600 50  0001 C CNN
-F 3 "~" H 4600 3600 50  0001 C CNN
-	1    4400 3600
-	1    0    0    -1  
-$EndComp
-Connection ~ 4400 3600
-$Comp
-L power:GND #PWR06
-U 1 1 5D56D783
-P 4400 3600
-F 0 "#PWR06" H 4400 3350 50  0001 C CNN
-F 1 "GND" H 4250 3500 50  0000 C CNN
-F 2 "" H 4400 3600 50  0001 C CNN
-F 3 "" H 4400 3600 50  0001 C CNN
-	1    4400 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 3600 4400 3600
 Wire Wire Line
 	4700 3600 4650 3600
-Connection ~ 4650 3600
-$Comp
-L Connector:TestPoint TP9
-U 1 1 5D59F280
-P 4650 3600
-F 0 "TP9" H 4708 3718 50  0001 L CNN
-F 1 "pad_1" H 4450 3550 50  0000 L CNN
-F 2 "powersupply:pads" H 4850 3600 50  0001 C CNN
-F 3 "~" H 4850 3600 50  0001 C CNN
-	1    4650 3600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 4000 4400 4000
 Wire Wire Line
 	4700 4000 4650 4000
-Connection ~ 4650 4000
-$Comp
-L Connector:TestPoint TP10
-U 1 1 5D5A6880
-P 4650 4000
-F 0 "TP10" H 4592 4026 50  0001 R CNN
-F 1 "pad_2" H 4850 3950 50  0000 R CNN
-F 2 "powersupply:pads" H 4850 4000 50  0001 C CNN
-F 3 "~" H 4850 4000 50  0001 C CNN
-	1    4650 4000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP11
-U 1 1 5D59533A
-P 5350 4450
-F 0 "TP11" H 5408 4568 50  0001 L CNN
-F 1 "pin_2_alt" H 5408 4477 50  0000 L CNN
-F 2 "powersupply:pads" H 5550 4450 50  0001 C CNN
-F 3 "~" H 5550 4450 50  0001 C CNN
-	1    5350 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR05
-U 1 1 5D56E643
-P 4950 4400
-F 0 "#PWR05" H 4950 4250 50  0001 C CNN
-F 1 "+3.3V" H 4800 4450 50  0000 C CNN
-F 2 "" H 4950 4400 50  0001 C CNN
-F 3 "" H 4950 4400 50  0001 C CNN
-	1    4950 4400
-	1    0    0    -1  
-$EndComp
-Connection ~ 4400 4000
-$Comp
-L power:+3.3V #PWR07
-U 1 1 5D56EC9F
-P 4400 4000
-F 0 "#PWR07" H 4400 3850 50  0001 C CNN
-F 1 "+3.3V" H 4250 4050 50  0000 C CNN
-F 2 "" H 4400 4000 50  0001 C CNN
-F 3 "" H 4400 4000 50  0001 C CNN
-	1    4400 4000
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:D_Schottky_Small D2
 U 1 1 5D4EED9B
@@ -1824,7 +1706,7 @@ U 1 1 5DA05D0F
 P 1750 2500
 F 0 "FB101" V 1750 2700 50  0000 C CNN
 F 1 "ind" V 1800 2700 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" V 1680 2500 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 1680 2500 50  0001 C CNN
 F 3 "~" H 1750 2500 50  0001 C CNN
 	1    1750 2500
 	0    1    1    0   
@@ -1889,12 +1771,12 @@ F 3 "" H 1050 1650 50  0001 C CNN
 $EndComp
 Connection ~ 1050 1650
 $Comp
-L Connector:Conn_01x03_Male J4
+L Connector:Conn_01x03_Male J102
 U 1 1 5D9C1B22
 P 2700 5650
-F 0 "J4" H 2808 5931 50  0000 C CNN
+F 0 "J102" H 2808 5931 50  0000 C CNN
 F 1 "Conn_01x03_Male" H 2808 5840 50  0000 C CNN
-F 2 "Connector:FanPinHeader_1x03_P2.54mm_Vertical" H 2700 5650 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical" H 2700 5650 50  0001 C CNN
 F 3 "~" H 2700 5650 50  0001 C CNN
 	1    2700 5650
 	1    0    0    -1  
@@ -1920,4 +1802,110 @@ Text Label 2150 5200 0    50   ~ 0
 SWDIO
 Text Label 2150 5300 0    50   ~ 0
 SWCLK
+$Comp
+L powersupply:Default_Jumper J104
+U 1 1 5DA84826
+P 4100 3450
+F 0 "J104" V 4146 3328 50  0000 L CNN
+F 1 "Default_Jumper" V 4055 3328 50  0000 L CNN
+F 2 "powersupply:Default_Jumper" H 4100 3450 50  0001 C CNN
+F 3 "" H 4100 3450 50  0001 C CNN
+	1    4100 3450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4650 3450 4650 3600
+$Comp
+L powersupply:Default_Jumper J103
+U 1 1 5DA8D41B
+P 4100 4300
+F 0 "J103" V 4054 4178 50  0000 L CNN
+F 1 "Default_Jumper" V 4145 4178 50  0000 L CNN
+F 2 "powersupply:Default_Jumper" H 4100 4300 50  0001 C CNN
+F 3 "" H 4100 4300 50  0001 C CNN
+	1    4100 4300
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	4650 4000 4650 4300
+$Comp
+L power:GND #PWR0141
+U 1 1 5DA962E0
+P 4400 3750
+F 0 "#PWR0141" H 4400 3500 50  0001 C CNN
+F 1 "GND" H 4550 3650 50  0000 C CNN
+F 2 "" H 4400 3750 50  0001 C CNN
+F 3 "" H 4400 3750 50  0001 C CNN
+	1    4400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0142
+U 1 1 5DA968DF
+P 4400 4000
+F 0 "#PWR0142" H 4400 3850 50  0001 C CNN
+F 1 "+3.3V" H 4250 4050 50  0000 C CNN
+F 2 "" H 4400 4000 50  0001 C CNN
+F 3 "" H 4400 4000 50  0001 C CNN
+	1    4400 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0143
+U 1 1 5DA975C6
+P 4400 3150
+F 0 "#PWR0143" H 4400 3000 50  0001 C CNN
+F 1 "+3.3V" H 4250 3200 50  0000 C CNN
+F 2 "" H 4400 3150 50  0001 C CNN
+F 3 "" H 4400 3150 50  0001 C CNN
+	1    4400 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0144
+U 1 1 5DA97C54
+P 4400 4600
+F 0 "#PWR0144" H 4400 4350 50  0001 C CNN
+F 1 "GND" H 4550 4500 50  0000 C CNN
+F 2 "" H 4400 4600 50  0001 C CNN
+F 3 "" H 4400 4600 50  0001 C CNN
+	1    4400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP8
+U 1 1 5DA56401
+P 4150 7500
+F 0 "TP8" H 4208 7618 50  0000 L CNN
+F 1 "Fiducial" H 4208 7527 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.75mm_Dia_1.5mm_Outer" H 4350 7500 50  0001 C CNN
+F 3 "~" H 4350 7500 50  0001 C CNN
+	1    4150 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP9
+U 1 1 5DA5D582
+P 4600 7500
+F 0 "TP9" H 4658 7618 50  0000 L CNN
+F 1 "Fiducial" H 4658 7527 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.75mm_Dia_1.5mm_Outer" H 4800 7500 50  0001 C CNN
+F 3 "~" H 4800 7500 50  0001 C CNN
+	1    4600 7500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP10
+U 1 1 5DA5D941
+P 5050 7500
+F 0 "TP10" H 5108 7618 50  0000 L CNN
+F 1 "Fiducial" H 5108 7527 50  0000 L CNN
+F 2 "Fiducial:Fiducial_0.75mm_Dia_1.5mm_Outer" H 5250 7500 50  0001 C CNN
+F 3 "~" H 5250 7500 50  0001 C CNN
+	1    5050 7500
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4150 7500
+NoConn ~ 4600 7500
+NoConn ~ 5050 7500
 $EndSCHEMATC
