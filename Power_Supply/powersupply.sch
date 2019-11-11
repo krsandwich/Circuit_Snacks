@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:powersupply-cache
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -80,17 +80,6 @@ F 2 "powersupply:IRF9540N-PMOS" H 9800 3850 50  0001 C CNN
 F 3 "~" H 9600 3750 50  0001 C CNN
 	1    9600 3750
 	1    0    0    1   
-$EndComp
-$Comp
-L powersupply:joystick-K1-1506DN-01 SW2
-U 1 1 5D4C0110
-P 5150 1950
-F 0 "SW2" H 5150 1950 50  0000 C CNN
-F 1 "joystick-K1-1506DN-01" H 5200 1850 50  0000 C CNN
-F 2 "powersupply:directional_switch_10mm" H 5150 1950 50  0001 C CNN
-F 3 "" H 5150 1950 50  0001 C CNN
-	1    5150 1950
-	1    0    0    -1  
 $EndComp
 Text Label 4700 2250 2    50   ~ 0
 up
@@ -1166,8 +1155,6 @@ NoConn ~ 850  4300
 NoConn ~ 850  4400
 NoConn ~ 850  4700
 NoConn ~ 850  4800
-NoConn ~ 850  5400
-NoConn ~ 2150 4700
 NoConn ~ 2150 4800
 NoConn ~ 2150 4900
 NoConn ~ 2150 5400
@@ -1213,15 +1200,15 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 	1    1550 4100
 	1    0    0    -1  
 $EndComp
-Text Label 850  4900 2    50   ~ 0
+Text Label 2150 4700 0    50   ~ 0
 center
-Text Label 850  5000 2    50   ~ 0
+Text Label 850  5300 2    50   ~ 0
 down
 Text Label 850  5100 2    50   ~ 0
 up
 Text Label 850  5200 2    50   ~ 0
 left
-Text Label 850  5300 2    50   ~ 0
+Text Label 850  5400 2    50   ~ 0
 right
 Text Label 850  4600 2    50   ~ 0
 SDA
@@ -1909,10 +1896,10 @@ NoConn ~ 4150 7500
 NoConn ~ 4600 7500
 NoConn ~ 5050 7500
 $Comp
-L Device:R_Small_US R?
+L Device:R_Small_US R124
 U 1 1 5DC15C01
 P 700 4000
-F 0 "R?" H 600 4100 50  0000 C CNN
+F 0 "R124" H 600 4100 50  0000 C CNN
 F 1 "1.5k" H 550 4000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" H 700 4000 50  0001 C CNN
 F 3 "~" H 700 4000 50  0001 C CNN
@@ -1922,14 +1909,25 @@ $EndComp
 Wire Wire Line
 	700  4100 850  4100
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0145
 U 1 1 5DC39F86
 P 700 3900
-F 0 "#PWR?" H 700 3750 50  0001 C CNN
+F 0 "#PWR0145" H 700 3750 50  0001 C CNN
 F 1 "+3.3V" H 715 4073 50  0000 C CNN
 F 2 "" H 700 3900 50  0001 C CNN
 F 3 "" H 700 3900 50  0001 C CNN
 	1    700  3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L powersupply:joystick-K1-1506DN-01 SW2
+U 1 1 5DCEFD6A
+P 5150 1950
+F 0 "SW2" H 5150 1915 50  0000 C CNN
+F 1 "joystick-K1-1506DN-01" H 5150 1824 50  0000 C CNN
+F 2 "powersupply:directional_switch_10mm" H 5150 1950 50  0001 C CNN
+F 3 "" H 5150 1950 50  0001 C CNN
+	1    5150 1950
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
