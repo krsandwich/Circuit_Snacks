@@ -1,6 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:powersupply-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -76,7 +75,7 @@ U 1 1 5D4B2BFF
 P 9600 3750
 F 0 "Q1" H 9806 3704 50  0000 L CNN
 F 1 "IRF9Z24NPBF" H 9806 3795 50  0000 L CNN
-F 2 "powersupply:IRF9540N-PMOS" H 9800 3850 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Horizontal_TabUp" H 9800 3850 50  0001 C CNN
 F 3 "~" H 9600 3750 50  0001 C CNN
 	1    9600 3750
 	1    0    0    1   
@@ -297,7 +296,7 @@ U 1 1 5D4B6929
 P 2750 6900
 F 0 "TP2" H 2692 6926 50  0000 R CNN
 F 1 "+3.3" H 2692 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2950 6900 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 2950 6900 50  0001 C CNN
 F 3 "~" H 2950 6900 50  0001 C CNN
 	1    2750 6900
 	-1   0    0    1   
@@ -307,8 +306,8 @@ L Connector:TestPoint TP1
 U 1 1 5D4B73A5
 P 3200 6900
 F 0 "TP1" H 3142 6926 50  0000 R CNN
-F 1 "+5_isolated" H 3142 7017 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 3400 6900 50  0001 C CNN
+F 1 "+5" H 3142 7017 50  0000 R CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 3400 6900 50  0001 C CNN
 F 3 "~" H 3400 6900 50  0001 C CNN
 	1    3200 6900
 	-1   0    0    1   
@@ -319,7 +318,7 @@ U 1 1 5D4B7B24
 P 5850 7200
 F 0 "TP6" H 5908 7318 50  0000 L CNN
 F 1 "Boost_out" H 5908 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 7200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 6050 7200 50  0001 C CNN
 F 3 "~" H 6050 7200 50  0001 C CNN
 	1    5850 7200
 	1    0    0    -1  
@@ -330,7 +329,7 @@ U 1 1 5D4B85BC
 P 4800 6950
 F 0 "TP3" H 4858 7068 50  0000 L CNN
 F 1 "Current_limit" H 4858 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 6950 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 5000 6950 50  0001 C CNN
 F 3 "~" H 5000 6950 50  0001 C CNN
 	1    4800 6950
 	1    0    0    -1  
@@ -338,14 +337,14 @@ $EndComp
 Text Label 9400 4600 0    50   ~ 0
 Voltage_limit_divider
 Text Label 4800 6950 2    50   ~ 0
-Current_limit_divider
+V_curr_lim
 $Comp
 L Connector:TestPoint TP5
 U 1 1 5D4BBCE8
 P 4800 7200
 F 0 "TP5" H 4858 7318 50  0000 L CNN
 F 1 "Voltage_limit" H 4858 7227 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 5000 7200 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 5000 7200 50  0001 C CNN
 F 3 "~" H 5000 7200 50  0001 C CNN
 	1    4800 7200
 	1    0    0    -1  
@@ -358,7 +357,7 @@ U 1 1 5D4BF42E
 P 5850 6950
 F 0 "TP4" H 5908 7068 50  0000 L CNN
 F 1 "Boost_c" H 5908 6977 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 6050 6950 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 6050 6950 50  0001 C CNN
 F 3 "~" H 6050 6950 50  0001 C CNN
 	1    5850 6950
 	1    0    0    -1  
@@ -373,7 +372,7 @@ U 1 1 5D4C0DDA
 P 2300 7150
 F 0 "TP7" H 2358 7268 50  0000 L CNN
 F 1 "GND" H 2358 7177 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 2500 7150 50  0001 C CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 2500 7150 50  0001 C CNN
 F 3 "~" H 2500 7150 50  0001 C CNN
 	1    2300 7150
 	1    0    0    -1  
@@ -1148,7 +1147,6 @@ F 3 "" H 1350 5600 50  0001 C CNN
 	1    1350 5600
 	1    0    0    -1  
 $EndComp
-NoConn ~ 850  3500
 NoConn ~ 850  3600
 NoConn ~ 850  3700
 NoConn ~ 850  4300
@@ -1898,25 +1896,23 @@ NoConn ~ 5050 7500
 $Comp
 L Device:R_Small_US R124
 U 1 1 5DC15C01
-P 700 4000
-F 0 "R124" H 600 4100 50  0000 C CNN
-F 1 "1.5k" H 550 4000 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" H 700 4000 50  0001 C CNN
-F 3 "~" H 700 4000 50  0001 C CNN
-	1    700  4000
-	1    0    0    -1  
+P 550 4200
+F 0 "R124" H 450 4300 50  0000 C CNN
+F 1 "4.99k" H 400 4200 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 550 4200 50  0001 C CNN
+F 3 "~" H 550 4200 50  0001 C CNN
+	1    550  4200
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	700  4100 850  4100
 $Comp
 L power:+3.3V #PWR0145
 U 1 1 5DC39F86
-P 700 3900
-F 0 "#PWR0145" H 700 3750 50  0001 C CNN
-F 1 "+3.3V" H 715 4073 50  0000 C CNN
-F 2 "" H 700 3900 50  0001 C CNN
-F 3 "" H 700 3900 50  0001 C CNN
-	1    700  3900
+P 0 4000
+F 0 "#PWR0145" H 0   3850 50  0001 C CNN
+F 1 "+3.3V" H 15  4173 50  0000 C CNN
+F 2 "" H 0   4000 50  0001 C CNN
+F 3 "" H 0   4000 50  0001 C CNN
+	1    0    4000
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1930,4 +1926,99 @@ F 3 "" H 5150 1950 50  0001 C CNN
 	1    5150 1950
 	1    0    0    -1  
 $EndComp
+$Comp
+L Switch:SW_Push SW3
+U 1 1 5DEC94BB
+P 200 4100
+F 0 "SW3" H 200 4400 50  0000 C CNN
+F 1 "KMR2" H 200 4300 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2" H 200 4150 50  0001 C CNN
+F 3 "" H 200 4150 50  0001 C CNN
+	1    200  4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0146
+U 1 1 5DED0756
+P 550 4350
+F 0 "#PWR0146" H 550 4100 50  0001 C CNN
+F 1 "GND" H 555 4177 50  0000 C CNN
+F 2 "" H 550 4350 50  0001 C CNN
+F 3 "" H 550 4350 50  0001 C CNN
+	1    550  4350
+	1    0    0    -1  
+$EndComp
+Text Notes -2000 4350 0    50   ~ 0
+PB2 is AKA BOOT1, which is used broken \nout to a pin header on the generic “blue pill” \nboards. An STM32duino bootloader has been \nwritten and precompiled for this configuration\nand is called TARGET_GENERIC_F103_PC13 in \nconfig.h. Note that the button is active high.
+Wire Wire Line
+	400  4100 550  4100
+Connection ~ 550  4100
+Wire Wire Line
+	550  4100 850  4100
+Wire Wire Line
+	550  4300 550  4350
+Wire Wire Line
+	0    4000 0    4100
+$Comp
+L Device:R_Small_US R125
+U 1 1 5E04829A
+P -400 3500
+F 0 "R125" H -332 3546 50  0000 L CNN
+F 1 "4.99k" H -332 3455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H -400 3500 50  0001 C CNN
+F 3 "~" H -400 3500 50  0001 C CNN
+	1    -400 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:LED D102
+U 1 1 5E0490DC
+P -750 3500
+F 0 "D102" V -711 3382 50  0000 R CNN
+F 1 "C503B 2.1V" V -802 3382 50  0000 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric" H -750 3500 50  0001 C CNN
+F 3 "~" H -750 3500 50  0001 C CNN
+	1    -750 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+3.3V #PWR05
+U 1 1 5E049BCB
+P -950 3450
+F 0 "#PWR05" H -950 3300 50  0001 C CNN
+F 1 "+3.3V" H -935 3623 50  0000 C CNN
+F 2 "" H -950 3450 50  0001 C CNN
+F 3 "" H -950 3450 50  0001 C CNN
+	1    -950 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-950 3450 -950 3500
+Wire Wire Line
+	-950 3500 -900 3500
+Wire Wire Line
+	-600 3500 -500 3500
+Wire Wire Line
+	-300 3500 -150 3500
+Wire Wire Line
+	-150 3500 -150 3750
+Wire Wire Line
+	-150 3750 700  3750
+Wire Wire Line
+	700  3750 700  3500
+Wire Wire Line
+	700  3500 850  3500
+$Comp
+L Connector:TestPoint TP11
+U 1 1 5E0812C2
+P 4800 6700
+F 0 "TP11" H 4858 6818 50  0000 L CNN
+F 1 "V_lin_ctrl" H 4858 6727 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_1.5x1.5mm_Drill0.7mm" H 5000 6700 50  0001 C CNN
+F 3 "~" H 5000 6700 50  0001 C CNN
+	1    4800 6700
+	1    0    0    -1  
+$EndComp
+Text Label 4800 6700 2    50   ~ 0
+V_lin_ctrl
 $EndSCHEMATC

@@ -76,7 +76,7 @@ U 1 1 5D4B2BFF
 P 9600 3750
 F 0 "Q1" H 9806 3704 50  0000 L CNN
 F 1 "IRF9Z24NPBF" H 9806 3795 50  0000 L CNN
-F 2 "powersupply:IRF9540N-PMOS" H 9800 3850 50  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-3_Horizontal_TabDown" H 9800 3850 50  0001 C CNN
 F 3 "~" H 9600 3750 50  0001 C CNN
 	1    9600 3750
 	1    0    0    1   
@@ -1202,7 +1202,7 @@ F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/da
 $EndComp
 Text Label 2150 4700 0    50   ~ 0
 center
-Text Label 850  5000 2    50   ~ 0
+Text Label 850  5300 2    50   ~ 0
 down
 Text Label 850  5100 2    50   ~ 0
 up
@@ -1930,4 +1930,31 @@ F 3 "" H 5150 1950 50  0001 C CNN
 	1    5150 1950
 	1    0    0    -1  
 $EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5DEC94BB
+P 200 4100
+F 0 "SW?" H 200 4400 50  0000 C CNN
+F 1 "KMR2" H 200 4300 50  0000 C CNN
+F 2 "Button_Switch_SMD:SW_Push_1P1T_NO_CK_KMR2" H 200 4150 50  0001 C CNN
+F 3 "" H 200 4150 50  0001 C CNN
+	1    200  4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	700  4100 400  4100
+Connection ~ 700  4100
+$Comp
+L power:GND #PWR?
+U 1 1 5DED0756
+P 0 4150
+F 0 "#PWR?" H 0   3900 50  0001 C CNN
+F 1 "GND" H 5   3977 50  0000 C CNN
+F 2 "" H 0   4150 50  0001 C CNN
+F 3 "" H 0   4150 50  0001 C CNN
+	1    0    4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	0    4100 0    4150
 $EndSCHEMATC
