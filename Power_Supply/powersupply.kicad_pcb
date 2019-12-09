@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 21)
+    (drawings 23)
     (tracks 596)
     (zones 0)
     (modules 85)
@@ -859,7 +859,7 @@
     (tags "test point THT pad rectangle square")
     (path /5D4B85BC)
     (attr virtual)
-    (fp_text reference TP3 (at 2.5 -0.05) (layer F.SilkS)
+    (fp_text reference TP3 (at 2.475 0.2) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value Current_limit (at 0 1.75) (layer F.Fab)
@@ -4448,6 +4448,12 @@
     )
   )
 
+  (gr_text BOOT1 (at 73.85 45.825) (layer F.SilkS) (tstamp 5DEF1DCE)
+    (effects (font (size 0.8 0.8) (thickness 0.2)))
+  )
+  (gr_text RESET (at 48.025 43.725) (layer F.SilkS) (tstamp 5DEF1DC9)
+    (effects (font (size 0.8 0.8) (thickness 0.2)))
+  )
   (gr_text "V Lim Div" (at 84.725 51.4) (layer F.SilkS) (tstamp 5DEE8CF8)
     (effects (font (size 1 1) (thickness 0.25)) (justify right))
   )
