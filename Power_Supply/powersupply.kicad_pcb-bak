@@ -859,7 +859,7 @@
     (tags "test point THT pad rectangle square")
     (path /5D4B85BC)
     (attr virtual)
-    (fp_text reference TP3 (at 2.5 -0.05) (layer F.SilkS)
+    (fp_text reference TP3 (at 2.475 0.2) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value Current_limit (at 0 1.75) (layer F.Fab)

@@ -2021,4 +2021,6 @@ F 3 "~" H 5000 6700 50  0001 C CNN
 $EndComp
 Text Label 4800 6700 2    50   ~ 0
 V_lin_ctrl
+Text Label 2200 4500 0    50   ~ 0
+V_positive_out_div
 $EndSCHEMATC
