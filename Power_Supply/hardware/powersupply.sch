@@ -540,7 +540,7 @@ Connection ~ 9900 5300
 Wire Wire Line
 	9900 5300 10500 5300
 Text Label 5650 5500 0    50   ~ 0
-V_negative_out
+V_negative_out_offset
 Wire Wire Line
 	9000 5300 9150 5300
 Wire Wire Line
@@ -1301,8 +1301,6 @@ Text Label 2150 5000 0    50   ~ 0
 D-
 Wire Wire Line
 	3450 3550 3500 3550
-Text Label 2150 3900 0    50   ~ 0
-V_current_amplified
 Text Label 2950 4200 0    50   ~ 0
 V_lin_ctrl
 $Comp
@@ -2023,4 +2021,11 @@ Text Label 4800 6700 2    50   ~ 0
 V_lin_ctrl
 Text Label 2200 4500 0    50   ~ 0
 V_positive_out_div
+Connection ~ 7950 5300
+Text Label 7050 5300 0    50   ~ 0
+V_negative_out_offset
+Wire Wire Line
+	7050 5300 7950 5300
+Text Label 850  3900 2    50   ~ 0
+V_current_amplified
 $EndSCHEMATC
