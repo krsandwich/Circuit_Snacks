@@ -14,9 +14,9 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     measuredVoltageRawCircularBufferIndex = 0;
     measuredCurrentRawCircularBufferIndex = 0;
     
-    pinMode(V_BOOST_CTRL_PWM, OUTPUT); digitalWrite(V_BOOST_CTRL_PWM, HIGH);
-    pinMode(V_CURR_LIM_PWM, OUTPUT); digitalWrite(V_CURR_LIM_PWM, HIGH);
-    pinMode(V_LIN_CTRL_PWM, OUTPUT); digitalWrite(V_LIN_CTRL_PWM, LOW);
+    pinMode(V_BOOST_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_BOOST_CTRL_PWM_PIN, HIGH);
+    pinMode(V_CURR_LIM_PWM_PIN, OUTPUT); digitalWrite(V_CURR_LIM_PWM_PIN, HIGH);
+    pinMode(V_LIN_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_LIN_CTRL_PWM_PIN, LOW);
 }
 
 // Returns the measured voltage (after applying median filter and 

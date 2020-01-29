@@ -56,6 +56,7 @@ void setup(){
 
   initStates();
   u8g2.begin();
+
 }
 
 void loop(){
@@ -140,14 +141,14 @@ void initStates(){
 }
 
 void updateVoltage(){
-   if(voltage >= 4000) analogWrite(PA1,(1023 - (voltage*boost_increment/1000)-63)); // -53?
+   if(voltage >= 4000) analogWrite(V_BOOST_CTRL_PWM_PIN,(1023 - (voltage*boost_increment/1000)-63)); // -53?
    else analogWrite(18,1023);
    
    uint32_t linear_divider = voltage * linear_increment* 11 /(1100 + 5100);
-   if(voltage <= 4000) analogWrite(PA3, linear_divider); 
-   else if (voltage >= 18500) analogWrite(PA3, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
-   else analogWrite(PA3, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
+   if(voltage <= 4000) analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider); 
+   else if (voltage >= 18500) analogWrite(V_LIN_CTRL_PWM_PIN, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
+   else analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
    
 
-   analogWrite(PA2, (117 + current_increment*current));
+   analogWrite(V_CURR_LIM_PWM_PIN, (117 + current_increment*current));
 }
