@@ -110,6 +110,13 @@ void updateJoystick(){
     else voltageAdjust *= 10;
    }
    left.prev = left.curr;
+
+   center.curr = digitalRead(BUTTON_CENTER_N_PIN);
+   if((center.prev == 1) && (center.curr == 0))
+   {
+    mode = !mode;
+   }
+   center.prev = center.curr;
 }
 
 
