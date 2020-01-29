@@ -42,6 +42,9 @@ class CircuitSnacksPowerSupply
         uint16_t measuredCurrentRawCircularBuffer[FILTER_LENGTH];
         uint32_t measuredVoltageRawCircularBufferIndex;
         uint32_t measuredCurrentRawCircularBufferIndex;
+
+        uint32_t VoltageSet;
+        uint32_t CurrentSet;
         
     
 };

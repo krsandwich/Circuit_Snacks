@@ -58,3 +58,4 @@ void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV)
   
   u8g2.sendBuffer();
 }
+
