@@ -25,7 +25,7 @@ void updateJoystick();
 
 uint32_t voltageAdjust; 
 uint32_t currentAdjust;
-
+//
 uint32_t voltage;
 uint32_t current;
 
@@ -113,7 +113,7 @@ void updateJoystick(){
 }
 
 
-void initStatets(){
+void initStates(){
   up = {1, 1};
   down = {1, 1};
   left = {1, 1};
