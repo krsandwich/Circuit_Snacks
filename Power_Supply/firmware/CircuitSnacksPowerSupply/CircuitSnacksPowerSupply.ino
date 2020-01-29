@@ -75,10 +75,10 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV){
   u8g2.setFontDirection(0);
 
   // An example of how to center text, if desired.
-  sprintf(string_buffer, "%d.%d", voltagepoint_mV % 1000, voltagepoint_mV / 1000); 
+  sprintf(string_buffer, "%d.%d", voltagepoint_mV / 1000, voltagepoint_mV % 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 10, string_buffer);
 
-  sprintf(string_buffer, "%d.%d", voltage_measured_mV % 1000, voltage_measured_mV / 1000); 
+  sprintf(string_buffer, "%d.%d", voltage_measured_mV / 1000, voltage_measured_mV % 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 30, string_buffer);
   
   u8g2.sendBuffer();
