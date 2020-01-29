@@ -21,27 +21,28 @@ CircuitSnacksPowerSupply ps();
 char string_buffer[64];
 
 void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV);
+void initStatets();
+void updateJoystick();
 
-void setup() 
-{ 
+void setup(){ 
   pinMode(BUTTON_UP_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_DOWN_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_CENTER_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_LEFT_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_RIGHT_N_PIN, INPUT_PULLUP);
 
+  initStates();
   u8g2.begin();
 }
 
-void loop() 
-{
-  updateDisplay(1234, 2345);
+void loop(){
+  updateDisplay(voltage, current);
+  updateJoystick();
   delay(100);
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV)
-{
+void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV){
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_9x15_tf);
   u8g2.setFontRefHeightExtendedText();
@@ -59,3 +60,50 @@ void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV)
   u8g2.sendBuffer();
 }
 
+void updateJoystick(){
+   up.curr = digitalRead(BUTTON_UP_N_PIN);
+   if((up.prev == 1) && (up.curr == 0))
+   {
+    if(mode) current += currentAdjust;
+    else voltage += voltageAdjust;
+   }
+   up.prev = up.curr;
+
+  right.curr = digitalRead(BUTTON_RIGHT_N_PIN);
+   if((right.prev == 1) && (right.curr == 0))
+   {
+    if(mode) currentAdjust /= 10;
+    else voltageAdjust /= 10;
+   }
+   right.prev = right.curr;
+   
+   down.curr = digitalRead(BUTTON_DOWN_N_PIN);
+   if((down.prev == 1) && (down.curr == 0))
+   {
+    if(mode) current -= currentAdjust;
+    else voltage -= voltageAdjust;
+   }
+   down.prev = down.curr;
+
+   left.curr = digitalRead(BUTTON_LEFT_N_PIN);
+   if((left.prev == 1) && (left.curr == 0))
+   {
+    if(mode) currentAdjust *= 10;
+    else voltageAdjust *= 10;
+   }
+   left.prev = left.curr;
+}
+
+
+void initStatets(){
+  up = {1, 1};
+  down = {1, 1};
+  left = {1, 1};
+  right = {1, 1};
+  center = {1, 1};
+  voltage = 10000;
+  current = 200;
+  voltageAdjust = 1000;
+  currentAdjust = 100;
+  mode = 0; // voltage mode 
+}
