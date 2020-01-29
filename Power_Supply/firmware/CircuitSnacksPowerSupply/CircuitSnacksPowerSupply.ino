@@ -48,6 +48,8 @@ uint32_t linear_increment= 31;
 uint32_t current_increment = 5;
 
 void setup(){ 
+  Serial.begin(9600);
+  
   pinMode(BUTTON_UP_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_DOWN_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_CENTER_N_PIN, INPUT_PULLUP);
@@ -140,15 +142,29 @@ void initStates(){
   mode = 0; // voltage mode 
 }
 
-void updateVoltage(){
-   if(voltage >= 4000) analogWrite(V_BOOST_CTRL_PWM_PIN,(1023 - (voltage*boost_increment/1000)-63)); // -53?
-   else analogWrite(18,1023);
+void updateVoltage()
+{
+  
+
+  const float V_FB = 1.25;
+  const float R_C = 2.6e3;
+  const float R_OUT = 10e3;
+  const float R_GND = 910;
+  const float VDDf = 3.3;
+
+  float Vout = voltage/1000.0;
+
+  float Vc = V_FB+R_C*(V_FB-Vout)/R_OUT+R_C*V_FB/R_GND;
+
+  uint32_t value = Vc/VDDf*255;
+  Serial.println(value);
+  analogWrite(V_BOOST_CTRL_PWM_PIN, value);
    
-   uint32_t linear_divider = voltage * linear_increment* 11 /(1100 + 5100);
-   if(voltage <= 4000) analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider); 
-   else if (voltage >= 18500) analogWrite(V_LIN_CTRL_PWM_PIN, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
-   else analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
+   //uint32_t linear_divider = voltage * linear_increment* 11 /(1100 + 5100);
+   //if(voltage <= 4000) analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider); 
+   //else if (voltage >= 18500) analogWrite(V_LIN_CTRL_PWM_PIN, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
+   //else analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
    
 
-   analogWrite(V_CURR_LIM_PWM_PIN, (117 + current_increment*current));
+   //analogWrite(V_CURR_LIM_PWM_PIN, (117 + current_increment*current));
 }

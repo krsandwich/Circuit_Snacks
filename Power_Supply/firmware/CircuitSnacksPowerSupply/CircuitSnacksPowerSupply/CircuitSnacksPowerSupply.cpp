@@ -15,8 +15,8 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     measuredCurrentRawCircularBufferIndex = 0;
     
     pinMode(V_BOOST_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_BOOST_CTRL_PWM_PIN, HIGH);
-    pinMode(V_CURR_LIM_PWM_PIN, OUTPUT); digitalWrite(V_CURR_LIM_PWM_PIN, HIGH);
-    pinMode(V_LIN_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_LIN_CTRL_PWM_PIN, LOW);
+    pinMode(V_CURR_LIM_PWM_PIN, OUTPUT); digitalWrite(V_CURR_LIM_PWM_PIN, HIGH); // High = Current Limit Disabled
+    pinMode(V_LIN_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_LIN_CTRL_PWM_PIN, HIGH); // High = Linear Regulator Disabled
 }
 
 // Returns the measured voltage (after applying median filter and 
