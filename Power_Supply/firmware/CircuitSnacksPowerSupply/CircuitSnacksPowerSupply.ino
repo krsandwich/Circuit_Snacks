@@ -13,7 +13,6 @@
 #define BUTTON_RIGHT_N_PIN PB14 //PB15 in schematic
 #define BUTTON_LEFT_N_PIN PB12 //PB13 in schematic
 
-
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
 CircuitSnacksPowerSupply ps();
@@ -21,8 +20,27 @@ CircuitSnacksPowerSupply ps();
 char string_buffer[64];
 
 void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV);
-void initStatets();
+void initStates();
 void updateJoystick();
+
+uint32_t voltageAdjust; 
+uint32_t currentAdjust;
+
+uint32_t voltage;
+uint32_t current;
+
+uint8_t mode; // mode 0 = voltage, mode 1 = current
+
+struct joystick {
+    uint8_t prev;
+    uint8_t curr;
+};
+
+joystick up;
+joystick down;
+joystick left;
+joystick right;
+joystick center;
 
 void setup(){ 
   pinMode(BUTTON_UP_N_PIN, INPUT_PULLUP);
@@ -60,7 +78,7 @@ void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV){
   u8g2.sendBuffer();
 }
 
-void updateJoystick(){
+void updateJoystick(){   
    up.curr = digitalRead(BUTTON_UP_N_PIN);
    if((up.prev == 1) && (up.curr == 0))
    {
