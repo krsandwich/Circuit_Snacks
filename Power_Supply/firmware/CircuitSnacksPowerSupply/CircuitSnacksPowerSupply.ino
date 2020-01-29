@@ -19,7 +19,7 @@ CircuitSnacksPowerSupply ps();
 
 char string_buffer[64];
 
-void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV);
+void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV);
 void initStates();
 void updateJoystick();
 
@@ -42,6 +42,11 @@ joystick left;
 joystick right;
 joystick center;
 
+
+uint32_t boost_increment= 48;
+uint32_t linear_increment= 31;
+uint32_t current_increment = 5;
+
 void setup(){ 
   pinMode(BUTTON_UP_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_DOWN_N_PIN, INPUT_PULLUP);
@@ -56,11 +61,12 @@ void setup(){
 void loop(){
   updateDisplay(voltage, current);
   updateJoystick();
+  updateVoltage();
   delay(100);
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV){
+void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV){
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_9x15_tf);
   u8g2.setFontRefHeightExtendedText();
@@ -69,7 +75,7 @@ void updateDisplay(uint32_t voltage_setpoint_mV, uint32_t voltage_measured_mV){
   u8g2.setFontDirection(0);
 
   // An example of how to center text, if desired.
-  sprintf(string_buffer, "%d.%d", voltage_setpoint_mV % 1000, voltage_setpoint_mV / 1000); 
+  sprintf(string_buffer, "%d.%d", voltagepoint_mV % 1000, voltagepoint_mV / 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 10, string_buffer);
 
   sprintf(string_buffer, "%d.%d", voltage_measured_mV % 1000, voltage_measured_mV / 1000); 
@@ -131,4 +137,17 @@ void initStates(){
   voltageAdjust = 1000;
   currentAdjust = 100;
   mode = 0; // voltage mode 
+}
+
+void updateVoltage(){
+   if(voltage >= 4000) analogWrite(PA1,(1023 - (voltage*boost_increment/1000)-63)); // -53?
+   else analogWrite(18,1023);
+   
+   uint32_t linear_divider = voltage * linear_increment* 11 /(1100 + 5100);
+   if(voltage <= 4000) analogWrite(PA3, linear_divider); 
+   else if (voltage >= 18500) analogWrite(PA3, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
+   else analogWrite(PA3, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
+   
+
+   analogWrite(PA2, (117 + current_increment*current));
 }
