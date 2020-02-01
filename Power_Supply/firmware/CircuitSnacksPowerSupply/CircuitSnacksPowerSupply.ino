@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <U8g2lib.h>
-#include "CircuitSnacksPowerSupply/CircuitSnacksPowerSupply.h"
+#include "src/CircuitSnacksPowerSupply/CircuitSnacksPowerSupply.h"
 
 #define DISPLAY_WIDTH 128
 #define USER_LED_PIN PC13
@@ -15,7 +15,7 @@
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
-CircuitSnacksPowerSupply ps();
+CircuitSnacksPowerSupply ps;
 
 char string_buffer[64];
 
@@ -62,14 +62,14 @@ void setup(){
 }
 
 void loop(){
-  updateDisplay(voltage, current);
+  updateDisplay(voltage, current, ps.getMeasuredCurrent());
   updateJoystick();
   updateVoltage();
   delay(100);
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV){
+void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float current_measured){
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_9x15_tf);
   u8g2.setFontRefHeightExtendedText();
@@ -82,7 +82,10 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV){
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 10, string_buffer);
 
   sprintf(string_buffer, "%d.%d", voltage_measured_mV / 1000, voltage_measured_mV % 1000); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 30, string_buffer);
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 24, string_buffer);
+
+  sprintf(string_buffer, "%f",current_measured*1000); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 36, string_buffer);
   
   u8g2.sendBuffer();
 }

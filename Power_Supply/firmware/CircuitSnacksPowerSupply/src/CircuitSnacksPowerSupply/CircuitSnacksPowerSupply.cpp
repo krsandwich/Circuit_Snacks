@@ -30,9 +30,17 @@ uint32_t CircuitSnacksPowerSupply::getMeasuredVoltage()
 // Returns the measured current (after applying median filter and 
 // calibration correction) in mA based on the 
 // raw ADC values in the circular buffer.
-uint32_t CircuitSnacksPowerSupply::getMeasuredCurrent()
+float CircuitSnacksPowerSupply::getMeasuredCurrent()
 {
-    return 0;
+    const float CURRENT_SENSE_AMP_GAIN = 50;
+    const float CURRENT_SENSE_RESISTOR = 0.1;
+    const float CURRENT_SENSE_OFFSET_RESISTOR1 = 100;
+    const float CURRENT_SENSE_OFFSET_RESISTOR2 = 130e3;
+    
+    float v_meas = VDD*analogRead(V_CURRENT_AMPLIFIED_PIN)/ANALOG_READ_MAX;
+    float v_offset = CURRENT_SENSE_AMP_GAIN*VDD*CURRENT_SENSE_OFFSET_RESISTOR1/(CURRENT_SENSE_OFFSET_RESISTOR1+CURRENT_SENSE_OFFSET_RESISTOR2);
+    
+    return (v_meas-v_offset)/(CURRENT_SENSE_RESISTOR*CURRENT_SENSE_AMP_GAIN);
 }
 
 // Sets the DACs for the output voltage using the calibration values, if present
