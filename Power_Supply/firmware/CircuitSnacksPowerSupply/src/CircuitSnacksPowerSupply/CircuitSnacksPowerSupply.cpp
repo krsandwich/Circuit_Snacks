@@ -1,6 +1,7 @@
 #include "CircuitSnacksPowerSupply.h"
 #include "Arduino.h"
 
+const float VDD = 3.3;
 
 // To Do: 
 // - Set DAC PWM frequency. 
@@ -14,9 +15,22 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     measuredVoltageRawCircularBufferIndex = 0;
     measuredCurrentRawCircularBufferIndex = 0;
     
-    pinMode(V_BOOST_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_BOOST_CTRL_PWM_PIN, HIGH);
-    pinMode(V_CURR_LIM_PWM_PIN, OUTPUT); digitalWrite(V_CURR_LIM_PWM_PIN, HIGH); // High = Current Limit Disabled
-    pinMode(V_LIN_CTRL_PWM_PIN, OUTPUT); digitalWrite(V_LIN_CTRL_PWM_PIN, HIGH); // High = Linear Regulator Disabled
+    
+    // Used for PWM DAC
+    Timer2 = new HardwareTimer(TIM2);
+
+    Timer2->setMode(V_BOOST_CTRL_PWM_CHANNEL, TIMER_OUTPUT_COMPARE_PWM1, V_BOOST_CTRL_PWM_PIN);
+    Timer2->setMode(V_CURR_LIM_PWM_CHANNEL, TIMER_OUTPUT_COMPARE_PWM1, V_CURR_LIM_PWM_PIN);
+    Timer2->setMode(V_LIN_CTRL_PWM_CHANNEL, TIMER_OUTPUT_COMPARE_PWM1, V_LIN_CTRL_PWM_PIN);
+    
+    Timer2->setPrescaleFactor(1);
+    Timer2->setOverflow(1023, TICK_FORMAT); 
+    Timer2->setCaptureCompare(V_BOOST_CTRL_PWM_CHANNEL, 512, TICK_COMPARE_FORMAT);
+    Timer2->setCaptureCompare(V_CURR_LIM_PWM_CHANNEL, 1023, TICK_COMPARE_FORMAT);
+    Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, 1023, TICK_COMPARE_FORMAT);
+    Timer2->resume();
+    
+    
 }
 
 // Returns the measured voltage (after applying median filter and 
@@ -44,9 +58,29 @@ float CircuitSnacksPowerSupply::getMeasuredCurrent()
 }
 
 // Sets the DACs for the output voltage using the calibration values, if present
-void CircuitSnacksPowerSupply::setOutputVoltage(uint32_t millivolts)
+void CircuitSnacksPowerSupply::setOutputVoltage(float Vout)
 {
+    const float V_FB = 1.25;
+    const float R_C = 2.6e3;
+    const float R_OUT = 10e3;
+    const float R_GND = 910;
+    
+    const float V_DROPOUT = 2.0;
 
+    // set the boost converter voltage to Vout + V_DROPOUT
+    float Vc = V_FB+R_C*(V_FB-(Vout+V_DROPOUT))/R_OUT+R_C*V_FB/R_GND;
+    uint32_t value = (uint32_t) (Vc/VDD*1024);
+    Timer2->setCaptureCompare(V_BOOST_CTRL_PWM_CHANNEL, value, TICK_COMPARE_FORMAT);
+    
+    
+    // set the linear regulator voltage to Vout
+    const float R_116 = 5.76e3;
+    const float R_115 = 1e3;
+    
+    Vc = Vout*R_115/(R_115+R_116);
+    value = (uint32_t) (Vc/VDD*1024);
+    Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, value, TICK_COMPARE_FORMAT);
+    
 }
 
 // Sets the DACs for the output current limit using the calibration values, if present

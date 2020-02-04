@@ -6,14 +6,17 @@
  */
 
 
-#define V_BOOST_CTRL_PWM_PIN PA1
-#define V_CURR_LIM_PWM_PIN PA2
-#define V_LIN_CTRL_PWM_PIN PA3
+
+#define V_BOOST_CTRL_PWM_PIN PA1 // Timer 2.2
+#define V_BOOST_CTRL_PWM_CHANNEL 2
+#define V_CURR_LIM_PWM_PIN PA2 // Timer 2.3
+#define V_CURR_LIM_PWM_CHANNEL 3
+#define V_LIN_CTRL_PWM_PIN PA3 // Timer 2.4
+#define V_LIN_CTRL_PWM_CHANNEL 4
+
 
 #define V_CURRENT_AMPLIFIED_PIN PB0 //PA0
 #define V_POSITIVE_OUT_DIV_PIN PA6
-
-#define VDD 3.3
 
 #define ANALOG_READ_MAX 1024
 
@@ -26,7 +29,7 @@ class CircuitSnacksPowerSupply
         
         uint32_t getMeasuredVoltage();
         float getMeasuredCurrent();
-        void setOutputVoltage(uint32_t millivolts);
+        void setOutputVoltage(float Vout);
         void setOutputCurrent(uint32_t milliamps);
         
         void startVoltageCal();
@@ -58,6 +61,8 @@ class CircuitSnacksPowerSupply
         uint16_t measuredCurrentRawCircularBuffer[FILTER_LENGTH];
         uint32_t measuredVoltageRawCircularBufferIndex;
         uint32_t measuredCurrentRawCircularBufferIndex;
+        
+        HardwareTimer *Timer2;
 
     
 };

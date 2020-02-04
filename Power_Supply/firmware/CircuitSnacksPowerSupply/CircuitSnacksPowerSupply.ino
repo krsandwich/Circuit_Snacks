@@ -47,8 +47,11 @@ uint32_t boost_increment= 48;
 uint32_t linear_increment= 31;
 uint32_t current_increment = 5;
 
+// Used for PWM DAC
+//HardwareTimer 
+
 void setup(){ 
-  Serial.begin(9600);
+  //Serial.begin(9600);
   
   pinMode(BUTTON_UP_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_DOWN_N_PIN, INPUT_PULLUP);
@@ -58,13 +61,12 @@ void setup(){
 
   initStates();
   u8g2.begin();
-
 }
 
 void loop(){
   updateDisplay(voltage, current, ps.getMeasuredCurrent());
   updateJoystick();
-  updateVoltage();
+  ps.setOutputVoltage(voltage/1000.0);
   delay(100);
 }
 
@@ -84,7 +86,7 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float
   sprintf(string_buffer, "%d.%d", voltage_measured_mV / 1000, voltage_measured_mV % 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 24, string_buffer);
 
-  sprintf(string_buffer, "%f",current_measured*1000); 
+  sprintf(string_buffer, "%d mA",(uint32_t) (current_measured*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 36, string_buffer);
   
   u8g2.sendBuffer();
@@ -143,31 +145,4 @@ void initStates(){
   voltageAdjust = 1000;
   currentAdjust = 100;
   mode = 0; // voltage mode 
-}
-
-void updateVoltage()
-{
-  
-
-  const float V_FB = 1.25;
-  const float R_C = 2.6e3;
-  const float R_OUT = 10e3;
-  const float R_GND = 910;
-  const float VDDf = 3.3;
-
-  float Vout = voltage/1000.0;
-
-  float Vc = V_FB+R_C*(V_FB-Vout)/R_OUT+R_C*V_FB/R_GND;
-
-  uint32_t value = Vc/VDDf*255;
-  Serial.println(value);
-  analogWrite(V_BOOST_CTRL_PWM_PIN, value);
-   
-   //uint32_t linear_divider = voltage * linear_increment* 11 /(1100 + 5100);
-   //if(voltage <= 4000) analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider); 
-   //else if (voltage >= 18500) analogWrite(V_LIN_CTRL_PWM_PIN, (linear_divider + ((voltage-4000)/1000)*((voltage-4000)/1000))); 
-   //else analogWrite(V_LIN_CTRL_PWM_PIN, linear_divider +((voltage-4000)/1000)); //((voltage-4000)/1000))
-   
-
-   //analogWrite(V_CURR_LIM_PWM_PIN, (117 + current_increment*current));
 }
