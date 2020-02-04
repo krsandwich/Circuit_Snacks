@@ -4,7 +4,6 @@
 #include "src/CircuitSnacksPowerSupply/CircuitSnacksPowerSupply.h"
 
 #define DISPLAY_WIDTH 128
-#define USER_LED_PIN PC13
 
 // Incorrect labels in schematic - joystick is rotated from how symbol was drawn
 #define BUTTON_UP_N_PIN PB15 //PB12 in schematic
@@ -64,14 +63,15 @@ void setup(){
 }
 
 void loop(){
-  updateDisplay(voltage, current, ps.getMeasuredCurrent());
+  const float CURRENT_OFFSET_CAL = -0.023;
+  updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
   updateJoystick();
   ps.setOutputVoltage(voltage/1000.0);
   delay(100);
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float current_measured){
+void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float current_measured, float voltage_measured){
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_9x15_tf);
   u8g2.setFontRefHeightExtendedText();
@@ -88,6 +88,9 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float
 
   sprintf(string_buffer, "%d mA",(uint32_t) (current_measured*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 36, string_buffer);
+
+  sprintf(string_buffer, "%d.%d V",(uint32_t) (voltage_measured), ((uint32_t) (voltage_measured*100.0))%100); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 48, string_buffer);
   
   u8g2.sendBuffer();
 }

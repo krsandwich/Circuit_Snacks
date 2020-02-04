@@ -5,7 +5,7 @@
  * Anything that deals with hardware details other than the joystick should go here.
  */
 
-
+#define USER_LED_PIN PC13
 
 #define V_BOOST_CTRL_PWM_PIN PA1 // Timer 2.2
 #define V_BOOST_CTRL_PWM_CHANNEL 2
@@ -27,7 +27,7 @@ class CircuitSnacksPowerSupply
     public:
         CircuitSnacksPowerSupply();
         
-        uint32_t getMeasuredVoltage();
+        float getMeasuredVoltage();
         float getMeasuredCurrent();
         void setOutputVoltage(float Vout);
         void setOutputCurrent(uint32_t milliamps);
@@ -57,11 +57,20 @@ class CircuitSnacksPowerSupply
         joystick center;
         
     private:
+        static void Timer1_OverflowCallback(HardwareTimer* t);
+        
         uint16_t measuredVoltageRawCircularBuffer[FILTER_LENGTH];
         uint16_t measuredCurrentRawCircularBuffer[FILTER_LENGTH];
         uint32_t measuredVoltageRawCircularBufferIndex;
         uint32_t measuredCurrentRawCircularBufferIndex;
         
+        static float measuredVoltageFiltered;
+        static float measuredCurrentFiltered;
+        
+        // User for generating interrupt to measure voltage/current
+        HardwareTimer *Timer1;
+        
+        // Used for PWM DAC generation
         HardwareTimer *Timer2;
 
     

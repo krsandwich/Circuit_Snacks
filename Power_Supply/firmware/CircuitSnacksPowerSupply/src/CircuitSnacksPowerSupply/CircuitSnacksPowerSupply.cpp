@@ -3,6 +3,9 @@
 
 const float VDD = 3.3;
 
+float CircuitSnacksPowerSupply::measuredVoltageFiltered = 0.0;
+float CircuitSnacksPowerSupply::measuredCurrentFiltered = 0.0;
+
 // To Do: 
 // - Set DAC PWM frequency. 
 // - Restore calibration values from non-volatile memory.
@@ -15,6 +18,11 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     measuredVoltageRawCircularBufferIndex = 0;
     measuredCurrentRawCircularBufferIndex = 0;
     
+    // Used for measuring the output voltage/current
+    Timer1 = new HardwareTimer(TIM1);
+    Timer1->setOverflow(1000, HERTZ_FORMAT);
+    Timer1->attachInterrupt(Timer1_OverflowCallback);
+    Timer1->resume();
     
     // Used for PWM DAC
     Timer2 = new HardwareTimer(TIM2);
@@ -36,9 +44,9 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
 // Returns the measured voltage (after applying median filter and 
 // calibration correction) in mV based on the 
 // raw ADC values in the circular buffer.
-uint32_t CircuitSnacksPowerSupply::getMeasuredVoltage()
+float CircuitSnacksPowerSupply::getMeasuredVoltage()
 {
-    return 0;
+    return measuredVoltageFiltered;
 }
 
 // Returns the measured current (after applying median filter and 
@@ -46,6 +54,7 @@ uint32_t CircuitSnacksPowerSupply::getMeasuredVoltage()
 // raw ADC values in the circular buffer.
 float CircuitSnacksPowerSupply::getMeasuredCurrent()
 {
+    /*
     const float CURRENT_SENSE_AMP_GAIN = 50;
     const float CURRENT_SENSE_RESISTOR = 0.1;
     const float CURRENT_SENSE_OFFSET_RESISTOR1 = 100;
@@ -55,6 +64,9 @@ float CircuitSnacksPowerSupply::getMeasuredCurrent()
     float v_offset = CURRENT_SENSE_AMP_GAIN*VDD*CURRENT_SENSE_OFFSET_RESISTOR1/(CURRENT_SENSE_OFFSET_RESISTOR1+CURRENT_SENSE_OFFSET_RESISTOR2);
     
     return (v_meas-v_offset)/(CURRENT_SENSE_RESISTOR*CURRENT_SENSE_AMP_GAIN);
+    */
+    
+    return measuredCurrentFiltered;
 }
 
 // Sets the DACs for the output voltage using the calibration values, if present
@@ -122,4 +134,25 @@ void CircuitSnacksPowerSupply::performMeasuredCurrentCal(uint32_t measured_milli
 void CircuitSnacksPowerSupply::performCurrentLimitCal()
 {
 
+}
+
+void CircuitSnacksPowerSupply::Timer1_OverflowCallback(HardwareTimer* t)
+{
+    digitalWrite(USER_LED_PIN, !digitalRead(USER_LED_PIN));
+    const float FILTER_WEIGHT = 0.1;
+    
+    // measure voltage
+    const float R_112 = 18.2e3;
+    const float R_111 = 3.65e3;
+    float measuredVoltage = analogRead(V_POSITIVE_OUT_DIV_PIN)/1024.0*VDD*(R_112+R_111)/R_111;
+    measuredVoltageFiltered = (FILTER_WEIGHT)*measuredVoltage + (1-FILTER_WEIGHT)*measuredVoltageFiltered;
+    
+    // measure current
+    // TO DO: This doesn't take into account offset created by R117 and R118
+    const float INA_199_GAIN = 50.0;
+    const float R_SENSE = 0.1;
+    float measuredCurrent = (analogRead(V_CURRENT_AMPLIFIED_PIN)*VDD/1024)/(INA_199_GAIN*R_SENSE);
+    measuredCurrentFiltered = (FILTER_WEIGHT)*measuredCurrent + (1-FILTER_WEIGHT)*measuredCurrentFiltered;
+
+  //t->attachInterrupt(Timer1_OverflowCallback);// necessary?
 }
