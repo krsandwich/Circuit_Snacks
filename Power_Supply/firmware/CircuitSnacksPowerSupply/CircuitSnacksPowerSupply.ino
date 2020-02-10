@@ -1,9 +1,11 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <U8g2lib.h>
+#include <float.h>
 #include "src/CircuitSnacksPowerSupply/CircuitSnacksPowerSupply.h"
 
 #define DISPLAY_WIDTH 128
+#define DISPLAY_HEIGHT 64
 
 // Incorrect labels in schematic - joystick is rotated from how symbol was drawn
 #define BUTTON_UP_N_PIN PB15 //PB12 in schematic
@@ -21,6 +23,7 @@ char string_buffer[64];
 void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_measured, float voltage_measured);
 void initStates();
 void updateJoystick();
+void updateCursor();
 
 float voltageAdjust; 
 float currentAdjust;
@@ -66,7 +69,6 @@ void loop(){
   const float CURRENT_OFFSET_CAL = -0.023;
   updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
   updateJoystick();
-  updateCursor();
   ps.setOutputVoltage(voltage);
   delay(100);
 }
@@ -79,22 +81,30 @@ void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_m
   u8g2.setFontPosTop();
   u8g2.setFontDirection(0);
 
-  // An example of how to center text, if desired.
   u8g2.setFont(u8g2_font_9x15_tf);
-  sprintf(string_buffer, "%d .%d ", (int)voltagepoint_mV, (int)((voltagepoint_mV * 100) % 100)); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
+  
+  u8g2.drawStr(15, 5, "Volt");
+  u8g2.drawStr(DISPLAY_WIDTH/2 +5,5, " Curr");
+  u8g2.drawLine(DISPLAY_WIDTH/2, 0, DISPLAY_WIDTH/2, DISPLAY_HEIGHT);
+  
+  // An example of how to center text, if desired.
+  sprintf(string_buffer, "%d.%.2d ", (uint32_t)voltagepoint_mV, ((uint32_t)(voltagepoint_mV * 100)) % 100); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 20, string_buffer);
 
   //current wtf 
-  sprintf(string_buffer, "%f", currentpoint_mV); 
-  u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
+  sprintf(string_buffer, " .%.3d ", ((uint32_t)(currentpoint_mV * 1000)) % 1000); 
+  u8g2.drawStr(DISPLAY_WIDTH/2, 20, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
 
   sprintf(string_buffer, "%d.%.2d V ",(uint32_t) (voltage_measured), ((uint32_t) (voltage_measured*100.0))%100); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 48, string_buffer);
 
-  sprintf(string_buffer, "%d mA",(uint32_t) (current_measured*1000)); 
+  sprintf(string_buffer, "  %d mA",(uint32_t) (current_measured*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 48, string_buffer);
+
+
+  updateCursor();
   
   u8g2.sendBuffer();
 }
@@ -103,32 +113,32 @@ void updateJoystick(){
    up.curr = digitalRead(BUTTON_UP_N_PIN);
    if((up.prev == 1) && (up.curr == 0))
    {
-    if(mode) current += currentAdjust;
-    else voltage += voltageAdjust;
+    if(mode && (current + currentAdjust) < .250) current += currentAdjust;
+    else if (!mode && (voltage + voltageAdjust) <20) voltage += voltageAdjust;
    }
    up.prev = up.curr;
 
   right.curr = digitalRead(BUTTON_RIGHT_N_PIN);
    if((right.prev == 1) && (right.curr == 0))
    {
-    if(mode) currentAdjust /= 10;
-    else voltageAdjust /= 10;
+    if(mode && currentAdjust >.001) currentAdjust /= 10;
+    else if(!mode && voltageAdjust > .01) voltageAdjust /= 10;
    }
    right.prev = right.curr;
    
    down.curr = digitalRead(BUTTON_DOWN_N_PIN);
    if((down.prev == 1) && (down.curr == 0))
    {
-    if(mode) current -= currentAdjust;
-    else voltage -= voltageAdjust;
+    if(mode && (current - currentAdjust) > .001) current -= currentAdjust;
+    else if (!mode && (voltage - voltageAdjust) > 0.01) voltage -= voltageAdjust;
    }
    down.prev = down.curr;
 
    left.curr = digitalRead(BUTTON_LEFT_N_PIN);
    if((left.prev == 1) && (left.curr == 0))
    {
-    if(mode) currentAdjust *= 10;
-    else voltageAdjust *= 10;
+    if(mode && currentAdjust < .1) currentAdjust *= 10;
+    else if(!mode && voltageAdjust < 1) voltageAdjust *= 10;
    }
    left.prev = left.curr;
 
@@ -156,12 +166,23 @@ void initStates(){
 
 void updateCursor(){
   if(mode){
-    
+        // 9 is width of character 
+    if(abs(currentAdjust - .1) < .01) 
+      u8g2.drawLine(DISPLAY_WIDTH/2 + 9, 35, DISPLAY_WIDTH/2 + 2*9, 35); 
+    else if(abs(currentAdjust - 0.01) < .001)
+      u8g2.drawLine(DISPLAY_WIDTH/2 + 2*9, 35, DISPLAY_WIDTH/2 + 3*9, 35); 
+    else if(abs(currentAdjust - 0.001) < .0001)
+      u8g2.drawLine(DISPLAY_WIDTH/2 + 3*9, 35, DISPLAY_WIDTH/2 + 4*9, 35); 
     
   } else{
     // 9 is width of character 
-    u8g2.drawLine(10, 25,30, 25);
-
+    if(abs(voltageAdjust - 1) < .1) 
+      u8g2.drawLine(DISPLAY_WIDTH/2 - 5*9, 35, DISPLAY_WIDTH/2 - 4*9, 35); 
+    else if(abs(voltageAdjust - 0.1) < .01)
+      u8g2.drawLine(DISPLAY_WIDTH/2 - 3*9, 35, DISPLAY_WIDTH/2 - 2*9, 35); 
+    else if(abs(voltageAdjust - 0.01) < .001)
+      u8g2.drawLine(DISPLAY_WIDTH/2 - 2*9, 35, DISPLAY_WIDTH/2 - 9, 35); 
+       
     
   }
 }
