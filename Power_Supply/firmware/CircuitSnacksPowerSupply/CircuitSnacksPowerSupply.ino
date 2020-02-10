@@ -73,24 +73,25 @@ void loop(){
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
 void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float current_measured, float voltage_measured){
   u8g2.clearBuffer();
-  u8g2.setFont(u8g2_font_9x15_tf);
   u8g2.setFontRefHeightExtendedText();
   u8g2.setDrawColor(1);
   u8g2.setFontPosTop();
   u8g2.setFontDirection(0);
 
   // An example of how to center text, if desired.
-  sprintf(string_buffer, "%d.%d", voltagepoint_mV / 1000, voltagepoint_mV % 1000); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 10, string_buffer);
+  u8g2.setFont(u8g2_font_9x15_tf);
+  sprintf(string_buffer, "%d.%d ", voltagepoint_mV / 1000, voltagepoint_mV % 1000); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
   sprintf(string_buffer, "%d.%d", voltage_measured_mV / 1000, voltage_measured_mV % 1000); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 24, string_buffer);
+  u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
 
-  sprintf(string_buffer, "%d mA",(uint32_t) (current_measured*1000)); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 36, string_buffer);
+  u8g2.setFont(u8g2_font_7x14_tf);
+  sprintf(string_buffer, "%d mA ",(uint32_t) (current_measured*1000)); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 48, string_buffer);
 
   sprintf(string_buffer, "%d.%d V",(uint32_t) (voltage_measured), ((uint32_t) (voltage_measured*100.0))%100); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer)/2, 48, string_buffer);
+  u8g2.drawStr(DISPLAY_WIDTH/2, 48, string_buffer);
   
   u8g2.sendBuffer();
 }
