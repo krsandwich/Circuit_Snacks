@@ -67,7 +67,7 @@ void loop(){
   updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
   updateJoystick();
   updateCursor();
-  ps.setOutputVoltage(voltage/1000.0);
+  ps.setOutputVoltage(voltage);
   delay(100);
 }
 
@@ -81,7 +81,7 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t currentpoint_mV, float cur
 
   // An example of how to center text, if desired.
   u8g2.setFont(u8g2_font_9x15_tf);
-  sprintf(string_buffer, "%.2d ", voltagepoint_mV); 
+  sprintf(string_buffer, "%.2f ", voltagepoint_mV); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
   //current wtf 
@@ -148,7 +148,7 @@ void initStates(){
   right = {1, 1};
   center = {1, 1};
   voltage = 10.45;
-  current = 200;
+  current = .2;
   voltageAdjust = 1;
   currentAdjust = .1;
   mode = 0; // voltage mode 
@@ -160,7 +160,7 @@ void updateCursor(){
     
   } else{
     // 9 is width of character 
-    u8g2.drawLine(DISPLAY_WIDTH/2, 25, DISPLAY_WIDTH/2 + 9, 25);
+    u8g2.drawLine(10, 25,30, 25);
 
     
   }
