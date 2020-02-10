@@ -22,11 +22,11 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV);
 void initStates();
 void updateJoystick();
 
-uint32_t voltageAdjust; 
-uint32_t currentAdjust;
+float voltageAdjust; 
+float currentAdjust;
 //
-uint32_t voltage;
-uint32_t current;
+float voltage;
+float current;
 
 uint8_t mode; // mode 0 = voltage, mode 1 = current
 
@@ -85,7 +85,7 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t currentpoint_mV, float cur
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
   //current wtf 
-  sprintf(string_buffer, "%d.%d", currentpoint_mV / 1000, currentpoint_mV % 1000); 
+  sprintf(string_buffer, "%.3f", currentpoint_mV); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
