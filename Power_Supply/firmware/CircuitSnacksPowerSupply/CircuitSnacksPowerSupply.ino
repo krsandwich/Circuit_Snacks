@@ -81,7 +81,7 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t currentpoint_mV, float cur
 
   // An example of how to center text, if desired.
   u8g2.setFont(u8g2_font_9x15_tf);
-  sprintf(string_buffer, "%d.%.2d ", voltagepoint_mV / 1000, voltagepoint_mV % 1000); 
+  sprintf(string_buffer, "%.2d ", voltagepoint_mV); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
   //current wtf 
@@ -147,10 +147,10 @@ void initStates(){
   left = {1, 1};
   right = {1, 1};
   center = {1, 1};
-  voltage = 10450;
+  voltage = 10.45;
   current = 200;
-  voltageAdjust = 1000;
-  currentAdjust = 100;
+  voltageAdjust = 1;
+  currentAdjust = .1;
   mode = 0; // voltage mode 
 }
 
