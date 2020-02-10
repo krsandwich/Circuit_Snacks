@@ -18,7 +18,7 @@ CircuitSnacksPowerSupply ps;
 
 char string_buffer[64];
 
-void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV);
+void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_measured, float voltage_measured);
 void initStates();
 void updateJoystick();
 
@@ -72,7 +72,7 @@ void loop(){
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(uint32_t voltagepoint_mV, uint32_t currentpoint_mV, float current_measured, float voltage_measured){
+void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_measured, float voltage_measured){
   u8g2.clearBuffer();
   u8g2.setFontRefHeightExtendedText();
   u8g2.setDrawColor(1);
@@ -81,11 +81,11 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t currentpoint_mV, float cur
 
   // An example of how to center text, if desired.
   u8g2.setFont(u8g2_font_9x15_tf);
-  sprintf(string_buffer, "%.2f ", voltagepoint_mV); 
+  sprintf(string_buffer, "%d .%d ", (int)voltagepoint_mV, (int)((voltagepoint_mV * 100) % 100)); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
   //current wtf 
-  sprintf(string_buffer, "%.3f", currentpoint_mV); 
+  sprintf(string_buffer, "%f", currentpoint_mV); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
