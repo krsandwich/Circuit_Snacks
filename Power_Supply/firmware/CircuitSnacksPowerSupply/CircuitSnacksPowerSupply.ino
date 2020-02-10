@@ -66,6 +66,7 @@ void loop(){
   const float CURRENT_OFFSET_CAL = -0.023;
   updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
   updateJoystick();
+  updateCursor();
   ps.setOutputVoltage(voltage/1000.0);
   delay(100);
 }
@@ -83,14 +84,16 @@ void updateDisplay(uint32_t voltagepoint_mV, uint32_t voltage_measured_mV, float
   sprintf(string_buffer, "%d.%d ", voltagepoint_mV / 1000, voltagepoint_mV % 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
 
+  //current wtf 
   sprintf(string_buffer, "%d.%d", voltage_measured_mV / 1000, voltage_measured_mV % 1000); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
-  sprintf(string_buffer, "%d mA ",(uint32_t) (current_measured*1000)); 
+
+  sprintf(string_buffer, "%d.%.2d V ",(uint32_t) (voltage_measured), ((uint32_t) (voltage_measured*100.0))%100); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 48, string_buffer);
 
-  sprintf(string_buffer, "%d.%d V",(uint32_t) (voltage_measured), ((uint32_t) (voltage_measured*100.0))%100); 
+  sprintf(string_buffer, "%d mA",(uint32_t) (current_measured*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 48, string_buffer);
   
   u8g2.sendBuffer();
@@ -144,9 +147,21 @@ void initStates(){
   left = {1, 1};
   right = {1, 1};
   center = {1, 1};
-  voltage = 10000;
+  voltage = 10450;
   current = 200;
   voltageAdjust = 1000;
   currentAdjust = 100;
   mode = 0; // voltage mode 
+}
+
+void updateCursor(){
+  if(mode){
+    
+    
+  } else{
+    // 9 is width of character 
+    if(voltage >= 10000)
+      u8g2.drawLine(DISPLAY_WIDTH/2 - 9 * log(voltageAdjust) , 25, DISPLAY_WIDTH/2 - 9 * log(voltageAdjust) + 9, 25);
+    
+  }
 }
