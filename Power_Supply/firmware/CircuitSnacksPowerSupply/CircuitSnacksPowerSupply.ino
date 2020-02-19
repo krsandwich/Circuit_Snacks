@@ -19,7 +19,7 @@ CircuitSnacksPowerSupply ps;
 
 char string_buffer[64];
 
-void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_measured, float voltage_measured);
+void updateDisplay(float voltage_setpoint, float current_setpoint, float current_measured, float voltage_measured);
 void initStates();
 void updateJoystick();
 void updateMode();
@@ -91,8 +91,6 @@ void setup(){
     ps.finishCurrentCal(0.081);
     digitalWrite(USER_LED_PIN, HIGH); // LED OFF
   }
-
-  
 }
 
 void loop()
@@ -102,14 +100,17 @@ void loop()
   updateCursor();
   if(output_mode){
     ps.setOutputVoltage(voltage);
+    ps.setOutputCurrent(current);
   }else{
     ps.setOutputVoltage(0);
+    ps.setOutputCurrent(0);
   }
   delay(100);
 }
 
 // Making a struct that contains these values and passing a pointer might be a better way to do this as we add more things that need to be drawn...
-void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_measured, float voltage_measured){
+void updateDisplay(float voltage_setpoint, float current_setpoint, float current_measured, float voltage_measured)
+{
   u8g2.clearBuffer();
   u8g2.setFontRefHeightExtendedText();
   u8g2.setDrawColor(1);
@@ -127,16 +128,16 @@ void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_m
    sprintf(string_buffer, " %d.%.2d ", (uint32_t)voltage_measured, ((uint32_t)(voltage_measured * 100)) % 100); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 20, string_buffer);
 
-    sprintf(string_buffer, "  %.3d ", (uint32_t)current_measured); 
+    sprintf(string_buffer, "  %.3d ", (uint32_t)(current_measured*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 20, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
 
 
-  sprintf(string_buffer, "%d.%.2d V ",(uint32_t) (voltagepoint_mV), ((uint32_t) (voltagepoint_mV*100.0))%100); 
+  sprintf(string_buffer, "%d.%.2d V ",(uint32_t) (voltage_setpoint), ((uint32_t) (voltage_setpoint*100.0))%100); 
   u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 48, string_buffer);
 
-   sprintf(string_buffer, "  %d mA",(uint32_t)currentpoint_mV); 
+  sprintf(string_buffer, "  %d mA",(uint32_t)(current_setpoint*1000)); 
   u8g2.drawStr(DISPLAY_WIDTH/2, 48, string_buffer);
 
    updateCursor();
@@ -207,8 +208,8 @@ void initStates(){
   left = {1, 1};
   right = {1, 1};
   center = {1, 1};
-  voltage = 10.45;
-  current = 200;
+  voltage = 10.0;
+  current = 0.1;
   voltageAdjust = 1;
   currentAdjust = .1;
   mode = 0; // voltage mode 
