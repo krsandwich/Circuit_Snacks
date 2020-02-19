@@ -1,5 +1,5 @@
 #include "CircuitSnacksPowerSupply.h"
-#include "Arduino.h"
+
 
 const float VDD = 3.3;
 
@@ -42,6 +42,17 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     currentLimitOffsetCal = 0.0;
     currentLimitSlopeCal = 1.0;
         
+    
+    uint32_t data = 0;
+    if(EEPROM.get(EEPROM_ADDRESS_VOLTAGE_READBACK_SLOPE_CAL, data) != 0xFFFFFFFF)
+    {
+        EEPROM.get(EEPROM_ADDRESS_VOLTAGE_READBACK_SLOPE_CAL, voltageReadbackSlopeCal);
+        EEPROM.get(EEPROM_ADDRESS_VOLTAGE_SET_SLOPE_CAL, voltageSetSlopeCal);
+        EEPROM.get(EEPROM_ADDRESS_CURRENT_READBACK_OFFSET_CAL, currentReadbackOffsetCal);
+        EEPROM.get(EEPROM_ADDRESS_CURRENT_READBACK_SLOPE_CAL, currentReadbackSlopeCal);
+        EEPROM.get(EEPROM_ADDRESS_CURRENT_LIMIT_OFFSET_CAL, currentLimitOffsetCal);
+        EEPROM.get(EEPROM_ADDRESS_CURRENT_LIMIT_SLOPE_CAL, currentLimitSlopeCal);
+    }
     
 }
 
@@ -175,7 +186,12 @@ void CircuitSnacksPowerSupply::finishCurrentCal(float measured_amps)
     currentLimitOffsetCal = -1.0*x_i;
     currentLimitSlopeCal = 1.0/slope;
     
-    
+    EEPROM.put(EEPROM_ADDRESS_VOLTAGE_READBACK_SLOPE_CAL, voltageReadbackSlopeCal);
+    EEPROM.put(EEPROM_ADDRESS_VOLTAGE_SET_SLOPE_CAL, voltageSetSlopeCal);
+    EEPROM.put(EEPROM_ADDRESS_CURRENT_READBACK_OFFSET_CAL, currentReadbackOffsetCal);
+    EEPROM.put(EEPROM_ADDRESS_CURRENT_READBACK_SLOPE_CAL, currentReadbackSlopeCal);
+    EEPROM.put(EEPROM_ADDRESS_CURRENT_LIMIT_OFFSET_CAL, currentLimitOffsetCal);
+    EEPROM.put(EEPROM_ADDRESS_CURRENT_LIMIT_SLOPE_CAL, currentLimitSlopeCal);   
 }
 
 void CircuitSnacksPowerSupply::Timer1_OverflowCallback(HardwareTimer* t)
