@@ -41,31 +41,15 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     
 }
 
-// Returns the measured voltage (after applying median filter and 
-// calibration correction) in mV based on the 
-// raw ADC values in the circular buffer.
+// Returns the filtered measured voltage
 float CircuitSnacksPowerSupply::getMeasuredVoltage()
 {
     return measuredVoltageFiltered;
 }
 
-// Returns the measured current (after applying median filter and 
-// calibration correction) in mA based on the 
-// raw ADC values in the circular buffer.
+// Returns the filtered measured current
 float CircuitSnacksPowerSupply::getMeasuredCurrent()
-{
-    /*
-    const float CURRENT_SENSE_AMP_GAIN = 50;
-    const float CURRENT_SENSE_RESISTOR = 0.1;
-    const float CURRENT_SENSE_OFFSET_RESISTOR1 = 100;
-    const float CURRENT_SENSE_OFFSET_RESISTOR2 = 130e3;
-    
-    float v_meas = VDD*analogRead(V_CURRENT_AMPLIFIED_PIN)/ANALOG_READ_MAX;
-    float v_offset = CURRENT_SENSE_AMP_GAIN*VDD*CURRENT_SENSE_OFFSET_RESISTOR1/(CURRENT_SENSE_OFFSET_RESISTOR1+CURRENT_SENSE_OFFSET_RESISTOR2);
-    
-    return (v_meas-v_offset)/(CURRENT_SENSE_RESISTOR*CURRENT_SENSE_AMP_GAIN);
-    */
-    
+{   
     return measuredCurrentFiltered;
 }
 
@@ -92,13 +76,12 @@ void CircuitSnacksPowerSupply::setOutputVoltage(float Vout)
     Vc = Vout*R_115/(R_115+R_116);
     value = (uint32_t) (Vc/VDD*1024);
     Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, value, TICK_COMPARE_FORMAT);
-    
 }
 
 // Sets the DACs for the output current limit using the calibration values, if present
-void CircuitSnacksPowerSupply::setOutputCurrent(uint32_t milliamps)
+void CircuitSnacksPowerSupply::setOutputCurrent(float Iout)
 {
-
+    
 }
 
 // Start doing voltage calibration. Sets output to what we expect to be 10V 

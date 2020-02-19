@@ -30,7 +30,7 @@ class CircuitSnacksPowerSupply
         float getMeasuredVoltage();
         float getMeasuredCurrent();
         void setOutputVoltage(float Vout);
-        void setOutputCurrent(uint32_t milliamps);
+        void setOutputCurrent(float Iout);
         
         void startVoltageCal();
         void finishVoltageCal(uint32_t measured_millivolts);

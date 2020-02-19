@@ -70,6 +70,7 @@ void loop(){
   updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
   updateJoystick();
   ps.setOutputVoltage(voltage);
+  ps.setOutputCurrent(current);
   delay(100);
 }
 
