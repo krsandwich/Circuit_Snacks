@@ -42,19 +42,6 @@ class CircuitSnacksPowerSupply
 
         uint32_t voltage;
         uint32_t current;
-
-        uint8_t mode; // mode 0 = voltage, mode 1 = current
-
-        struct joystick {
-            uint8_t prev;
-            uint8_t curr;
-        };
-
-        joystick up;
-        joystick down;
-        joystick left;
-        joystick right;
-        joystick center;
         
     private:
         static void Timer1_OverflowCallback(HardwareTimer* t);
