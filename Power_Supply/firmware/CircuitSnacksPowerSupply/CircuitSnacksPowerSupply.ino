@@ -61,13 +61,43 @@ void setup(){
   pinMode(BUTTON_LEFT_N_PIN, INPUT_PULLUP);
   pinMode(BUTTON_RIGHT_N_PIN, INPUT_PULLUP);
 
+  pinMode(USER_LED_PIN, OUTPUT);
+  digitalWrite(USER_LED_PIN, HIGH);
+
   initStates();
   u8g2.begin();
+
+
+  // for testing calibration code. Hold center button on reset to activate
+  if(!digitalRead(BUTTON_CENTER_N_PIN))
+  {
+    // output must be open for this section
+    digitalWrite(USER_LED_PIN, LOW); // LED ON
+    ps.startVoltageCal();
+    delay(100);
+    // measured 10.01V
+    ps.finishVoltageCal(10.01);
+    ps.startCurrentCal();
+    delay(1000);
+    digitalWrite(USER_LED_PIN, HIGH); // LED OFF
+
+    // output must be shorted for this section, so wait for user to press button again
+    while(!digitalRead(BUTTON_CENTER_N_PIN)); // wait for button release
+    delay(100); //debounce
+    while(digitalRead(BUTTON_CENTER_N_PIN)); // wait for button press
+    
+    digitalWrite(USER_LED_PIN, LOW); // LED ON
+    // measured 81 mA
+    ps.finishCurrentCal(0.081);
+    digitalWrite(USER_LED_PIN, HIGH); // LED OFF
+  }
+
+  
 }
 
-void loop(){
-  const float CURRENT_OFFSET_CAL = -0.023;
-  updateDisplay(voltage, current, ps.getMeasuredCurrent() + CURRENT_OFFSET_CAL, ps.getMeasuredVoltage());
+void loop()
+{
+  updateDisplay(voltage, current, ps.getMeasuredCurrent(), ps.getMeasuredVoltage());
   updateJoystick();
   ps.setOutputVoltage(voltage);
   ps.setOutputCurrent(current);
@@ -110,7 +140,8 @@ void updateDisplay(float voltagepoint_mV, float currentpoint_mV, float current_m
   u8g2.sendBuffer();
 }
 
-void updateJoystick(){   
+void updateJoystick()
+{   
    up.curr = digitalRead(BUTTON_UP_N_PIN);
    if((up.prev == 1) && (up.curr == 0))
    {
@@ -119,7 +150,7 @@ void updateJoystick(){
    }
    up.prev = up.curr;
 
-  right.curr = digitalRead(BUTTON_RIGHT_N_PIN);
+   right.curr = digitalRead(BUTTON_RIGHT_N_PIN);
    if((right.prev == 1) && (right.curr == 0))
    {
     if(mode && currentAdjust >.001) currentAdjust /= 10;
@@ -165,8 +196,10 @@ void initStates(){
   mode = 0; // voltage mode 
 }
 
-void updateCursor(){
-  if(mode){
+void updateCursor()
+{
+  if(mode)
+  {
         // 9 is width of character 
     if(abs(currentAdjust - .1) < .01) 
       u8g2.drawLine(DISPLAY_WIDTH/2 + 9, 35, DISPLAY_WIDTH/2 + 2*9, 35); 
@@ -175,7 +208,9 @@ void updateCursor(){
     else if(abs(currentAdjust - 0.001) < .0001)
       u8g2.drawLine(DISPLAY_WIDTH/2 + 3*9, 35, DISPLAY_WIDTH/2 + 4*9, 35); 
     
-  } else{
+  }
+  else
+  {
     // 9 is width of character 
     if(abs(voltageAdjust - 1) < .1) 
       u8g2.drawLine(DISPLAY_WIDTH/2 - 5*9, 35, DISPLAY_WIDTH/2 - 4*9, 35); 
@@ -183,7 +218,6 @@ void updateCursor(){
       u8g2.drawLine(DISPLAY_WIDTH/2 - 3*9, 35, DISPLAY_WIDTH/2 - 2*9, 35); 
     else if(abs(voltageAdjust - 0.01) < .001)
       u8g2.drawLine(DISPLAY_WIDTH/2 - 2*9, 35, DISPLAY_WIDTH/2 - 9, 35); 
-       
-    
+
   }
 }

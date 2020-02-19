@@ -33,9 +33,9 @@ class CircuitSnacksPowerSupply
         void setOutputCurrent(float Iout);
         
         void startVoltageCal();
-        void finishVoltageCal(uint32_t measured_millivolts);
-        void performMeasuredCurrentCal(uint32_t measured_milliohms);
-        void performCurrentLimitCal();
+        void finishVoltageCal(float measured_volts);
+        void startCurrentCal();
+        void finishCurrentCal(float measured_amps);
 
         uint32_t voltageAdjust; 
         uint32_t currentAdjust;
@@ -66,6 +66,14 @@ class CircuitSnacksPowerSupply
         
         static float measuredVoltageFiltered;
         static float measuredCurrentFiltered;
+        
+        float voltageReadbackSlopeCal;
+        float voltageSetSlopeCal;
+        
+        float currentReadbackOffsetCal;
+        float currentReadbackSlopeCal;
+        float currentLimitOffsetCal;
+        float currentLimitSlopeCal;
         
         // User for generating interrupt to measure voltage/current
         HardwareTimer *Timer1;
