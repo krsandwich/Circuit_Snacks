@@ -30,9 +30,9 @@ CircuitSnacksPowerSupply::CircuitSnacksPowerSupply()
     
     Timer2->setPrescaleFactor(1);
     Timer2->setOverflow(1023, TICK_FORMAT); 
-    Timer2->setCaptureCompare(V_BOOST_CTRL_PWM_CHANNEL, 512, TICK_COMPARE_FORMAT);
-    Timer2->setCaptureCompare(V_CURR_LIM_PWM_CHANNEL, 1023, TICK_COMPARE_FORMAT);
-    Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, 1023, TICK_COMPARE_FORMAT);
+    Timer2->setCaptureCompare(V_BOOST_CTRL_PWM_CHANNEL, 1023, TICK_COMPARE_FORMAT);
+    Timer2->setCaptureCompare(V_CURR_LIM_PWM_CHANNEL, 0, TICK_COMPARE_FORMAT);
+    Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, 0, TICK_COMPARE_FORMAT);
     Timer2->resume();
     
     voltageReadbackSlopeCal = 1.0;
@@ -79,6 +79,10 @@ void CircuitSnacksPowerSupply::setOutputVoltage(float Vout)
     
     Vc = (voltageSetSlopeCal*Vout)*R_115/(R_115+R_116);
     value = (uint32_t) (Vc/VDD*1024);
+    if(Vout == 0.0)
+    {
+        value = 0;
+    }
     Timer2->setCaptureCompare(V_LIN_CTRL_PWM_CHANNEL, value, TICK_COMPARE_FORMAT);
 }
 
@@ -98,6 +102,10 @@ void CircuitSnacksPowerSupply::setOutputCurrent(float Iout)
      
     uint32_t value;
     value = (uint32_t) (V_curr_lim/VDD*1024);
+    if(Iout == 0.0)
+    {
+        value = 0;
+    }
     Timer2->setCaptureCompare(V_CURR_LIM_PWM_CHANNEL, value, TICK_COMPARE_FORMAT);
 }
 
