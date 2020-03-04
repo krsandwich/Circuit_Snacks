@@ -2,7 +2,6 @@
 #include <Wire.h>
 #include <U8g2lib.h>
 #include "src/CircuitSnacksPowerSupply/CircuitSnacksPowerSupply.h"
-#include "logo.h"
 
 #define DISPLAY_WIDTH 128
 #define DISPLAY_HEIGHT 64
@@ -81,10 +80,9 @@ void setup(){
   initStates();
   u8g2.begin();
 
-  // not enough space 
-  u8g2.clearBuffer();
-  u8g2.drawXBM(2, 2, 80, 79, logo);
-  u8g2.sendBuffer();
+//  u8g2.clearBuffer();
+//  u8g2.drawXBM(2, 2, 80, 79, logo);
+//  u8g2.sendBuffer();
   delay(1000);
 
   
@@ -122,14 +120,17 @@ void updateDisplay(float voltage_setpoint, float current_setpoint, float current
   // An example of how to center text, if desired.
   u8g2.setFont(u8g2_font_10x20_tf);
   
+  u8g2.drawStr(DISPLAY_WIDTH/4 - (u8g2.getStrWidth("V")/2), 0, "V");
+  u8g2.drawStr(3*DISPLAY_WIDTH/4, 0, "I");
+  
   u8g2.drawLine(0, DISPLAY_HEIGHT/2+10, DISPLAY_WIDTH/2-11, DISPLAY_HEIGHT/2+10);
   u8g2.drawLine(DISPLAY_WIDTH/2+11, DISPLAY_HEIGHT/2+10, DISPLAY_WIDTH, DISPLAY_HEIGHT/2+10);
   
-   sprintf(string_buffer, "%d.%.2dV ", (uint32_t)voltage_measured, ((uint32_t)(voltage_measured * 100)) % 100); 
-  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 10, string_buffer);
+   sprintf(string_buffer, "%d.%.2d ", (uint32_t)voltage_measured, ((uint32_t)(voltage_measured * 100)) % 100); 
+  u8g2.drawStr(DISPLAY_WIDTH/2-u8g2.getStrWidth(string_buffer), 17, string_buffer);
 
-    sprintf(string_buffer, " %dmA", (uint32_t)(current_measured*1000)); 
-  u8g2.drawStr(DISPLAY_WIDTH/2, 10, string_buffer);
+    sprintf(string_buffer, " %d", (uint32_t)(current_measured*1000)); 
+  u8g2.drawStr(3*DISPLAY_WIDTH/4-(u8g2.getStrWidth(string_buffer)/2), 17, string_buffer);
 
   u8g2.setFont(u8g2_font_7x14_tf);
 
